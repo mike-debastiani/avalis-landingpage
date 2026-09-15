@@ -1,25 +1,250 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Avalis Design-System-Tokens.
+ * Quelle: Figma "Avalis-Styleguide-BA-2026" (fileKey T7WsBMJeLI71tjKCs9tORo),
+ * verifiziert gegen den bestehenden Webapp-Prototyp (nta-tool-prototype,
+ * app/design-tokens/high-fidelity-*.css). Mapping-Tabelle: docs/05_design-system.md.
+ * Rollenfarben (beratung/in-decision/bewilligt) sind für die "Wirkung pro Rolle"-
+ * Sektion vorgesehen. Die vier reinen App-Workflow-Paletten der Webapp
+ * (Entwurf, In-Review, Anpassung, Abgelehnt) wurden bewusst nicht übernommen.
+ */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-dm-sans);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Graustufen (Stone) */
+  --color-stone-50: var(--stone-50);
+  --color-stone-100: var(--stone-100);
+  --color-stone-150: var(--stone-150);
+  --color-stone-200: var(--stone-200);
+  --color-stone-250: var(--stone-250);
+  --color-stone-300: var(--stone-300);
+  --color-stone-400: var(--stone-400);
+  --color-stone-500: var(--stone-500);
+  --color-stone-600: var(--stone-600);
+  --color-stone-700: var(--stone-700);
+  --color-stone-800: var(--stone-800);
+  --color-stone-900: var(--stone-900);
+  --color-stone-950: var(--stone-950);
+
+  /* Rollenfarben — Beratung & Empfehlung (Fachstelle, Blau) */
+  --color-beratung-50: var(--beratung-50);
+  --color-beratung-100: var(--beratung-100);
+  --color-beratung-200: var(--beratung-200);
+  --color-beratung-300: var(--beratung-300);
+  --color-beratung-400: var(--beratung-400);
+  --color-beratung-500: var(--beratung-500);
+  --color-beratung-600: var(--beratung-600);
+  --color-beratung-700: var(--beratung-700);
+  --color-beratung-800: var(--beratung-800);
+  --color-beratung-900: var(--beratung-900);
+  --color-beratung-950: var(--beratung-950);
+
+  /* Rollenfarben — In Entscheidung (Entscheidungsinstanz, Lila) */
+  --color-in-decision-50: var(--in-decision-50);
+  --color-in-decision-100: var(--in-decision-100);
+  --color-in-decision-200: var(--in-decision-200);
+  --color-in-decision-300: var(--in-decision-300);
+  --color-in-decision-400: var(--in-decision-400);
+  --color-in-decision-500: var(--in-decision-500);
+  --color-in-decision-600: var(--in-decision-600);
+  --color-in-decision-700: var(--in-decision-700);
+  --color-in-decision-800: var(--in-decision-800);
+  --color-in-decision-900: var(--in-decision-900);
+  --color-in-decision-950: var(--in-decision-950);
+
+  /* Rollenfarben — Bewilligt (Studierende, Grün) */
+  --color-bewilligt-50: var(--bewilligt-50);
+  --color-bewilligt-100: var(--bewilligt-100);
+  --color-bewilligt-200: var(--bewilligt-200);
+  --color-bewilligt-300: var(--bewilligt-300);
+  --color-bewilligt-400: var(--bewilligt-400);
+  --color-bewilligt-500: var(--bewilligt-500);
+  --color-bewilligt-600: var(--bewilligt-600);
+  --color-bewilligt-700: var(--bewilligt-700);
+  --color-bewilligt-800: var(--bewilligt-800);
+  --color-bewilligt-900: var(--bewilligt-900);
+  --color-bewilligt-950: var(--bewilligt-950);
+
+  /* Typografie (Webapp-Styleguide) */
+  --text-heading-1: var(--heading-1-size);
+  --text-heading-1--line-height: var(--heading-1-line-height);
+  --text-heading-1--font-weight: 600;
+  --text-heading-2: var(--heading-2-size);
+  --text-heading-2--line-height: var(--heading-2-line-height);
+  --text-heading-2--font-weight: 600;
+  --text-heading-3: var(--heading-3-size);
+  --text-heading-3--line-height: var(--heading-3-line-height);
+  --text-heading-3--font-weight: 600;
+  --text-heading-4: var(--heading-4-size);
+  --text-heading-4--line-height: var(--heading-4-line-height);
+  --text-heading-4--font-weight: 600;
+
+  --text-paragraph-large: var(--paragraph-large-size);
+  --text-paragraph-large--line-height: var(--paragraph-large-line-height);
+  --text-paragraph-regular: var(--paragraph-regular-size);
+  --text-paragraph-regular--line-height: var(--paragraph-regular-line-height);
+  --text-paragraph-small: var(--paragraph-small-size);
+  --text-paragraph-small--line-height: var(--paragraph-small-line-height);
+  --text-paragraph-mini: var(--paragraph-mini-size);
+  --text-paragraph-mini--line-height: var(--paragraph-mini-line-height);
+
+  --text-caption: var(--caption-size);
+  --text-caption--line-height: var(--caption-line-height);
+  --text-caption--letter-spacing: var(--caption-letter-spacing);
+  --text-caption--font-weight: 400;
+
+  /*
+   * Display (Hero) — Code-Entscheid, nicht im Figma-Webapp-Styleguide vorhanden
+   * (der ist für App-UI ausgelegt, nicht für eine Marketing-Landingpage).
+   * Fluid zwischen Mobile (40px) und Desktop (64px), Verhältnis/Weight
+   * konsistent zur SemiBold-Heading-Konvention fortgeführt.
+   * Siehe docs/05_design-system.md Abschnitt 4.
+   */
+  --text-display: clamp(2.5rem, 1.5rem + 4vw, 4rem);
+  --text-display--line-height: 1.05;
+  --text-display--font-weight: 600;
+  --text-display--letter-spacing: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #ffffff;
+  --foreground: #1c1917;
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+  --popover: #ffffff;
+  --popover-foreground: #1c1917;
+  --primary: #1c1917;
+  --primary-foreground: #fafaf9;
+  --secondary: #f5f5f4;
+  --secondary-foreground: #1c1917;
+  --muted: #f5f5f4;
+  --muted-foreground: #78716c;
+  --accent: #f5f5f5;
+  --accent-foreground: #1c1917;
+  --destructive: #ef4444;
+  --border: #dedbd9;
+  --input: #dedbd9;
+  --ring: #78716c;
+  --radius: 0.625rem;
+
+  /* Graustufen (Stone) */
+  --stone-50: #fafaf9;
+  --stone-100: #f5f5f4;
+  --stone-150: #eeeceb;
+  --stone-200: #e7e5e4;
+  --stone-250: #dedbd9;
+  --stone-300: #d6d3d1;
+  --stone-400: #a8a29e;
+  --stone-500: #78716c;
+  --stone-600: #57534e;
+  --stone-700: #44403c;
+  --stone-800: #292524;
+  --stone-900: #1c1917;
+  --stone-950: #0c0a09;
+
+  /* Rollenfarben — Beratung & Empfehlung (Blau) */
+  --beratung-50: #f1f7fe;
+  --beratung-100: #e3ecfb;
+  --beratung-200: #c0d9f7;
+  --beratung-300: #88bbf1;
+  --beratung-400: #4998e7;
+  --beratung-500: #227bd5;
+  --beratung-600: #1565c0;
+  --beratung-700: #114c93;
+  --beratung-800: #12427a;
+  --beratung-900: #153965;
+  --beratung-950: #0e2443;
+
+  /* Rollenfarben — In Entscheidung (Lila) */
+  --in-decision-50: #f8f3ff;
+  --in-decision-100: #f1e9fe;
+  --in-decision-200: #e6d6fe;
+  --in-decision-300: #d1b5fd;
+  --in-decision-400: #b68bfa;
+  --in-decision-500: #985cf6;
+  --in-decision-600: #8535e8;
+  --in-decision-700: #7324d4;
+  --in-decision-800: #6219c4;
+  --in-decision-900: #5214a8;
+  --in-decision-950: #421086;
+
+  /* Rollenfarben — Bewilligt (Grün) */
+  --bewilligt-50: #f0fdf5;
+  --bewilligt-100: #dcfce9;
+  --bewilligt-200: #bbf7d3;
+  --bewilligt-300: #86efb0;
+  --bewilligt-400: #4ade85;
+  --bewilligt-500: #22c563;
+  --bewilligt-600: #16a34e;
+  --bewilligt-700: #15803f;
+  --bewilligt-800: #166535;
+  --bewilligt-900: #14532d;
+  --bewilligt-950: #052e15;
+
+  /* Typografie */
+  --heading-1-size: 3rem;
+  --heading-1-line-height: 3rem;
+  --heading-2-size: 1.875rem;
+  --heading-2-line-height: 1.875rem;
+  --heading-3-size: 1.5rem;
+  --heading-3-line-height: 1.8rem;
+  --heading-4-size: 1.25rem;
+  --heading-4-line-height: 1.5rem;
+  --paragraph-large-size: 1.125rem;
+  --paragraph-large-line-height: 1.6875rem;
+  --paragraph-regular-size: 1rem;
+  --paragraph-regular-line-height: 1.5rem;
+  --paragraph-small-size: 0.875rem;
+  --paragraph-small-line-height: 1.25rem;
+  --paragraph-mini-size: 0.75rem;
+  --paragraph-mini-line-height: 1rem;
+  --caption-size: 0.875rem;
+  --caption-line-height: 1.3125rem;
+  --caption-letter-spacing: 0.09375rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+    font-size: var(--paragraph-regular-size);
+    line-height: var(--paragraph-regular-line-height);
+  }
+  html {
+    @apply font-sans;
+  }
 }

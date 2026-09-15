@@ -1,7 +1,7 @@
 # 05 – Design System
 
 > **Quelle der Wahrheit:** Figma Design System von avalis (Styleguide erstellt von Chiara Tremml).
-> **Figma-Link:** *folgt*
+> **Figma-Link:** [Avalis-Styleguide-BA-2026](https://www.figma.com/design/T7WsBMJeLI71tjKCs9tORo/Avalis-Styleguide-BA-2026)
 
 ---
 
@@ -42,6 +42,8 @@ Das Design System wurde für eine Web-Applikation erstellt. Für eine Landingpag
 
 Fehlen diese in Figma: im Team klären und in Figma ergänzen, bevor sie im Code verwendet werden.
 
+**Entscheid (15.09.2026):** Die Display-Typografie für den Hero (`--text-display`, fluid 40–64px) ist als Ausnahme direkt im Code definiert (`src/app/globals.css`), da der Webapp-Styleguide keine solche Stufe enthält und für App-UI auch keine braucht. Verhältnis und Weight (SemiBold) folgen konsistent der bestehenden Heading-Konvention. Noch nicht in Figma nachgezogen, siehe `08_open-points.md`.
+
 ## 5. Barrierefreiheit (verbindlich)
 
 Die Seite richtet sich an ein Netzwerk für Chancengleichheit. Barrierefreiheit ist deshalb Kernanforderung.
@@ -59,8 +61,62 @@ Die Seite richtet sich an ein Netzwerk für Chancengleichheit. Barrierefreiheit 
 
 ## 6. Token-Mapping
 
-*Wird beim Auslesen aus Figma ergänzt.*
+Ausgelesen via Figma MCP (`get_variable_defs`, Node `8122:54610`) und gegen den bestehenden Webapp-Prototyp (`nta-tool-prototype`, `app/design-tokens/high-fidelity-*.css`) verifiziert — beide Quellen stimmten exakt überein. Umgesetzt in `src/app/globals.css`.
+
+### Graustufen (Stone) — neutrale UI-Basis
 
 | Figma-Variable | CSS-Variable | Wert |
 |---|---|---|
-| | | |
+| `Graustufen (Stone)/50` | `--stone-50` / `--color-stone-50` | `#fafaf9` |
+| — | `--stone-100` / `--color-stone-100` | `#f5f5f4` |
+| — | `--stone-150` / `--color-stone-150` | `#eeeceb` |
+| — | `--stone-200` / `--color-stone-200` | `#e7e5e4` |
+| `general/border` | `--stone-250` / `--color-stone-250` | `#dedbd9` |
+| — | `--stone-300` … `--stone-950` | siehe `src/app/globals.css` |
+
+### Semantische Basis-Tokens (Light)
+
+| Figma-Variable | CSS-Variable | Wert |
+|---|---|---|
+| `general/foreground` | `--foreground` / `--color-foreground` | `#1c1917` (stone-900) |
+| `general/muted foreground` | `--muted-foreground` | `#78716c` (stone-500) |
+| `general/border` | `--border` | `#dedbd9` (stone-250) |
+| `unofficial/body background` | `--background` | `#ffffff` |
+| — | `--primary` | `#1c1917` (stone-900) |
+| — | `--primary-foreground` | `#fafaf9` (stone-50) |
+| `badge/neutral/background` | `--secondary` / `--muted` | `#f5f5f4` (stone-100) |
+| `general/background ghost` | `--accent` | `#f5f5f5` |
+| `badge/attention/foreground` (abgelehnt-500 im Prototyp) | `--destructive` | `#ef4444` |
+
+### Rollenfarben (für "Wirkung pro Rolle")
+
+| Figma-Variable | CSS-Variable | Basiswert (500) |
+|---|---|---|
+| `badge/review/foreground` + `/background` | `--beratung-*` / `--color-beratung-*` (Fachstelle, Blau) | `#227bd5` |
+| `badge/decision/foreground` + `/background` | `--in-decision-*` / `--color-in-decision-*` (Entscheidungsinstanz, Lila) | `#985cf6` |
+| — (Prototyp: `bewilligt-*`) | `--bewilligt-*` / `--color-bewilligt-*` (Studierende, Grün) | `#22c563` |
+
+Nicht übernommen: die vier reinen App-Workflow-Paletten `Entwurf`, `In-Review`, `Anpassung`, `Abgelehnt` — kein Bezug zur Landingpage.
+
+### Typografie
+
+| Figma-Variable | CSS-Variable | Wert |
+|---|---|---|
+| `heading 1/font-size` + `/line-height` | `--heading-1-size` / `--heading-1-line-height` | `3rem` / `3rem` |
+| `heading 3/font-size` + `/line-height` | `--heading-3-size` / `--heading-3-line-height` | `1.5rem` / `1.8rem` |
+| `paragraph/large/font-size` + `/line-height` | `--paragraph-large-size` / `-line-height` | `1.125rem` / `1.6875rem` |
+| `paragraph/regular/font-size` + `/line-height` | `--paragraph-regular-size` / `-line-height` | `1rem` / `1.5rem` |
+| `paragraph/small/font-size` + `/line-height` | `--paragraph-small-size` / `-line-height` | `0.875rem` / `1.25rem` |
+| `paragraph/mini/font-size` + `/line-height` | `--paragraph-mini-size` / `-line-height` | `0.75rem` / `1rem` |
+| `font definitions/font-family-body` | `--font-dm-sans` (via `next/font/google` in `layout.tsx`) | DM Sans |
+| *nicht in Figma* (Code-Entscheid) | `--text-display` | `clamp(2.5rem, 1.5rem + 4vw, 4rem)` |
+
+Heading 2 (30px) im Code ergänzt analog zur Skala, im MCP-Response nicht enthalten — bei Gelegenheit gegen Figma verifizieren.
+
+### Radien und Schatten
+
+| Figma-Variable | CSS-Variable | Wert |
+|---|---|---|
+| `radius-lg` (Basis) | `--radius` | `0.625rem` (10px) |
+| `rounded-sm` / `rounded-md` / `rounded-xl` | `--radius-sm` / `--radius-md` / `--radius-xl` | abgeleitet via `calc(var(--radius) * …)` |
+| `shadow-lg` (`lg/shadow 1`, `lg/shadow 2`) | *kein Custom-Token* | identisch mit Tailwind-Standard-Utility `shadow-lg`, daher direkt verwendbar |
