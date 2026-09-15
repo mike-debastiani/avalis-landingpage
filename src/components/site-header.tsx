@@ -36,7 +36,7 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
           <div className="hidden sm:block">
             <LanguageSwitcher locale={locale} />
           </div>
-          <Button asChild size="sm">
+          <Button asChild size="sm" className="rounded-full">
             <a href="#registrierung">{t("cta")}</a>
           </Button>
         </div>

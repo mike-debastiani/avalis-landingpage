@@ -8,15 +8,16 @@
 
 ## Aufbau des Onepagers
 
+> **Stand 15.09.2026 (Redesign):** "Wirkung pro Rolle" ist keine eigene Sektion mehr, sondern in "Die Lösung avalis" integriert (6er-Feature-Raster: 3 Prinzipien + 3 Rollen-Wirkungen). Keine separate Testimonial-Sektion, da nur ein einziges echtes Zitat vorhanden ist (UZH) – dieses wird stattdessen gross in der Ausgangslage-Sektion dargestellt. Inhaltliche Texte unten bleiben unverändert, nur die strukturelle Zuordnung hat sich geändert.
+
 1. Header
 2. Hero mit CTA
-3. Ausgangslage
+3. Ausgangslage (inkl. grosser Zitat-Darstellung)
 4. Research und Erkenntnis
-5. Die Lösung avalis
-6. Wirkung pro Rolle
-7. Team
-8. Registrierung (CTA)
-9. Footer
+5. Die Lösung avalis (inkl. Wirkung pro Rolle)
+6. Team
+7. Registrierung (CTA)
+8. Footer
 
 ---
 

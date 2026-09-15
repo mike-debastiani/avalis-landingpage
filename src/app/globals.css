@@ -270,4 +270,9 @@
   .section-spacing {
     @apply py-16 sm:py-20 lg:py-24;
   }
+
+  /* Rein dekorativer Platzhalter-Balken (z.B. Hero-Visual), keine echten Daten. */
+  .skeleton-bar {
+    @apply h-2.5 rounded-full bg-stone-200;
+  }
 }

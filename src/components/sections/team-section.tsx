@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 
 function initials(name: string) {
@@ -15,19 +16,20 @@ export async function TeamSection() {
 
   return (
     <section id="team" className="section-container section-spacing">
-      <h2 className="max-w-3xl text-heading-2 text-foreground">{t("title")}</h2>
-      <p className="mt-6 max-w-3xl text-paragraph-large text-muted-foreground">{t("body")}</p>
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="text-heading-2 text-foreground">{t("title")}</h2>
+        <p className="mt-4 text-paragraph-large text-muted-foreground">{t("body")}</p>
+      </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
         {members.map((name) => (
-          <Card key={name}>
+          <Card key={name} className="rounded-2xl">
             <CardContent className="flex flex-col items-center gap-3 pt-6 text-center">
-              <span
-                aria-hidden="true"
-                className="flex size-16 items-center justify-center rounded-full bg-stone-100 text-heading-4 text-stone-500"
-              >
-                {initials(name)}
-              </span>
+              <Avatar className="size-16">
+                <AvatarFallback className="text-heading-4 bg-stone-100 text-stone-500">
+                  {initials(name)}
+                </AvatarFallback>
+              </Avatar>
               <p className="font-medium text-foreground">{name}</p>
               <p className="text-paragraph-small text-muted-foreground">{t("bioPending")}</p>
             </CardContent>

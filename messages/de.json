@@ -18,7 +18,12 @@
     "headline": "Die digitale Lösung für Nachteilsausgleichsprozesse an Schweizer Hochschulen",
     "lead": "Wir haben den Nachteilsausgleich an 17 Schweizer Hochschulen untersucht, drei grundlegende Prozessmodelle identifiziert und daraus avalis entwickelt: einen Prototyp, in dem Studierende, Fachstellen und Entscheidungsinstanzen am selben Antrag arbeiten.",
     "primaryCta": "Research Report erhalten",
-    "secondaryCta": "Mehr erfahren"
+    "secondaryCta": "Mehr erfahren",
+    "bandText": "Gemeinsam am selben Antrag",
+    "videoLabel": "Vorstellungsvideo abspielen",
+    "videoTitle": "avalis – Vorstellungsvideo",
+    "videoPending": "Video folgt in Kürze.",
+    "statInstitutionsLabel": "Hochschulen im Research"
   },
   "Context": {
     "title": "Die Fallzahlen steigen. Die Prozesse sind nicht mitgewachsen.",
@@ -28,6 +33,7 @@
     "legalReference": "BV Art. 8 Abs. 2 · BehiG Art. 2 Abs. 5 lit. b"
   },
   "Research": {
+    "label": "Research",
     "title": "17 Hochschulen. Drei Prozessmodelle.",
     "statInstitutions": "17",
     "statInstitutionsLabel": "teilnehmende Institutionen",
@@ -51,25 +57,26 @@
     "hintCta": "Jetzt registrieren"
   },
   "Solution": {
+    "badge": "Die Lösung",
     "title": "Ein Antrag. Alle Beteiligten. Ein gemeinsamer Stand.",
     "body": "avalis bildet den Nachteilsausgleich als durchgängigen Prozess ab: von der Antragstellung über Beratung und fachliche Prüfung bis zur Verfügung. Alle Rollen arbeiten am selben Antrag, jede aus ihrer Perspektive und mit klar geregelten Zuständigkeiten.",
     "portalTitle": "Studierenden-Portal",
     "portalDescription": "Antrag geführt erstellen, gezielt anpassen und den Status jederzeit verfolgen.",
     "workspaceTitle": "Administration Workspace",
     "workspaceDescription": "Beraten und empfehlen, Anträge Block für Block prüfen, entscheiden und Verfügungen erstellen.",
+    "principle1Title": "Klare Trennung",
     "principle1": "Empfehlung und Entscheid bleiben getrennt",
+    "principle2Title": "Datenschutz",
     "principle2": "Sensible Gesundheitsdaten nur dort sichtbar, wo nötig",
+    "principle3Title": "Anpassbar",
     "principle3": "Anpassbar an die Abläufe jeder Hochschule",
+    "roleStudentsLabel": "Studierende",
+    "roleStudentsDescription": "Geführter Antragsprozess mit Hilfestellungen, Status jederzeit einsehbar, klare Zuständigkeiten, alles an einem Ort.",
+    "roleOfficesLabel": "Fachstellen",
+    "roleOfficesDescription": "Digitale Fallführung statt E-Mail und Excel, zentrale Antragsübersicht, Statustracking, automatische Weiterleitung und Statistiken.",
+    "roleDecisionMakersLabel": "Entscheidungsinstanzen",
+    "roleDecisionMakersDescription": "Strukturierte Übergabe des Dossiers, fachliche Empfehlung direkt einsehbar, geführter Entscheid und automatisch generierte Verfügung.",
     "status": "avalis ist ein funktionaler Prototyp aus einem Bachelorprojekt und mit Fachpersonen getestet. Er ist nicht für den produktiven Einsatz bestimmt."
-  },
-  "Roles": {
-    "title": "Was sich für die Beteiligten ändert",
-    "studentsLabel": "Studierende",
-    "studentsDescription": "Geführter Antragsprozess mit Hilfestellungen, Status jederzeit einsehbar, klare Zuständigkeiten, alles an einem Ort.",
-    "officesLabel": "Fachstellen",
-    "officesDescription": "Digitale Fallführung statt E-Mail und Excel, zentrale Antragsübersicht, Statustracking, automatische Weiterleitung und Statistiken.",
-    "decisionMakersLabel": "Entscheidungsinstanzen",
-    "decisionMakersDescription": "Strukturierte Übergabe des Dossiers, fachliche Empfehlung direkt einsehbar, geführter Entscheid und automatisch generierte Verfügung."
   },
   "Team": {
     "title": "Wer hinter avalis steht",
@@ -80,6 +87,7 @@
     "bioPending": "Kurzbeschreibung folgt."
   },
   "Registration": {
+    "badge": "Research Report",
     "title": "Research Report und Updates erhalten",
     "body": "Registrieren Sie sich und erhalten Sie unseren Research Report zum Nachteilsausgleich an Schweizer Hochschulen. Wir informieren Sie ausserdem gelegentlich über die weitere Entwicklung von avalis. Die Abmeldung ist jederzeit möglich.",
     "emailLabel": "E-Mail",
@@ -87,7 +95,10 @@
     "consentPrefix": "Ich bin einverstanden, dass meine Angaben zum Versand des Research Reports und von Updates zu avalis gespeichert und verwendet werden. Details in der",
     "consentLinkLabel": "Datenschutzerklärung",
     "submit": "Jetzt registrieren",
-    "pending": "Die Registrierung folgt in Kürze."
+    "pending": "Die Registrierung folgt in Kürze.",
+    "benefit1": "Research Report als PDF",
+    "benefit2": "Updates zu avalis",
+    "benefit3": "Jederzeit abmeldbar"
   },
   "Footer": {
     "tagline": "Bachelorprojekt Digital Ideation, Hochschule Luzern, 2026",
