@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Gavel, GraduationCap, MessageCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -12,6 +13,8 @@ export async function ResearchSection() {
     { value: t("statDocuments"), label: t("statDocumentsLabel") },
   ];
 
+  const roleIcons = [GraduationCap, MessageCircle, Gavel];
+
   const models = [
     { title: t("modelATitle"), description: t("modelADescription"), ratio: t("modelARatio") },
     { title: t("modelBTitle"), description: t("modelBDescription"), ratio: t("modelBRatio") },
@@ -20,24 +23,43 @@ export async function ResearchSection() {
 
   return (
     <section id="research" className="section-container section-spacing bg-stone-50">
-      <h2 className="max-w-3xl text-heading-2 text-foreground">{t("title")}</h2>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-12">
+        <div className="lg:col-span-1">
+          <p className="text-paragraph-small font-medium uppercase tracking-wide text-muted-foreground">
+            {t("label")}
+          </p>
+        </div>
+        <div className="lg:col-span-2">
+          <h2 className="text-heading-2 text-foreground">{t("title")}</h2>
+          <p className="mt-4 text-paragraph-regular text-muted-foreground">{t("body")}</p>
+        </div>
+        <div className="flex items-center gap-2 lg:col-span-1 lg:justify-end">
+          {roleIcons.map((Icon, index) => (
+            <span
+              key={index}
+              aria-hidden="true"
+              className="flex size-10 items-center justify-center rounded-full border-2 border-stone-50 bg-background text-muted-foreground shadow-sm -ml-3 first:ml-0"
+            >
+              <Icon className="size-4" />
+            </span>
+          ))}
+        </div>
+      </div>
 
-      <dl className="mt-10 grid grid-cols-2 gap-6 lg:grid-cols-4">
+      <dl className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
         {stats.map((stat) => (
-          <div key={stat.label} className="rounded-xl border border-border bg-background p-6">
-            <dt className="text-paragraph-small text-muted-foreground">{stat.label}</dt>
-            <dd className="mt-2 text-heading-2 text-foreground">{stat.value}</dd>
+          <div key={stat.label} className="rounded-2xl border border-border bg-background p-6">
+            <dd className="text-heading-1 text-foreground">{stat.value}</dd>
+            <dt className="mt-1 text-paragraph-small text-muted-foreground">{stat.label}</dt>
           </div>
         ))}
       </dl>
 
-      <p className="mt-10 max-w-3xl text-paragraph-large text-muted-foreground">{t("body")}</p>
-
       <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
         {models.map((model) => (
-          <Card key={model.title}>
+          <Card key={model.title} className="rounded-2xl">
             <CardHeader>
-              <Badge variant="secondary" className="w-fit">
+              <Badge variant="secondary" className="w-fit rounded-full">
                 {model.ratio}
               </Badge>
               <CardTitle className="mt-3 text-heading-4">{model.title}</CardTitle>
