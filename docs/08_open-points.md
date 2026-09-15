@@ -8,7 +8,6 @@
 
 | # | Thema | Was fehlt | Wer | Bis |
 |---|---|---|---|---|
-| 1 | Figma | Link zum Design-System-File, Zugriff für Figma MCP | Mike | 20.09. |
 | 2 | Brevo | Liste anlegen, Listen-ID | Mike | 04.10. |
 | 3 | Brevo | Attribute `HOCHSCHULE`, `ROLLE`, `SOURCE`, `SPRACHE` anlegen, exakte Namen der Namensfelder notieren | Mike | 04.10. |
 | 4 | Brevo | Double-Opt-in-Templates DE und EN, Template-IDs | Team | 11.10. |
@@ -31,6 +30,8 @@
 | 21 | Visuals | Screenshots des Prototyps (nur Mock-Daten), OpenGraph-Bild | Team | 11.10. |
 | 22 | Englisch | Übersetzung der finalen Texte prüfen | Team | 11.10. |
 | 23 | Event | QR-Code mit `?src=netzwerktreffen` für Präsentation | Team | 21.10. |
+| 24 | Design System | Hero-Display-Typografie (`--text-display`) ist nur im Code definiert, nicht in Figma abgesichert – bei Gelegenheit mit Team/Figma nachziehen | Team | 04.10. |
+| 25 | Design System | Heading-2-Grösse (30px) im Code aus der Typografie-Skala abgeleitet, aber im Figma-MCP-Response nicht enthalten – gegen Figma verifizieren | Mike | 04.10. |
 
 ## Entschieden
 
@@ -42,3 +43,5 @@
 | 15.09.2026 | Design Tokens werden über den Figma MCP ausgelesen |
 | 15.09.2026 | Live spätestens 21.10.2026, Event am 23.10.2026 |
 | 15.09.2026 | Branch- und Pull-Request-Workflow, Merge nur manuell |
+| 15.09.2026 | Figma-Link und Zugriff für Figma MCP vorhanden: [Avalis-Styleguide-BA-2026](https://www.figma.com/design/T7WsBMJeLI71tjKCs9tORo/Avalis-Styleguide-BA-2026) |
+| 15.09.2026 | Design-System-Basis (Stone-Palette, Rollenfarben Beratung/In-Decision/Bewilligt, Typografie, Radien) aus Figma ausgelesen und gegen `nta-tool-prototype` verifiziert, in `src/app/globals.css` umgesetzt; shadcn/ui mit Preset `radix-vega` (identisch zum Prototyp) eingerichtet |
