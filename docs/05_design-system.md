@@ -37,7 +37,7 @@ Das Design System wurde für eine Web-Applikation erstellt. Für eine Landingpag
 
 - Grössere Überschriften (Display-Grössen) für den Hero
 - Sektionsabstände auf Seitenebene
-- Responsive Typografie-Skala für Mobile
+- Responsive Typografie-Skala für Mobile — **100% responsive**, geprüft auf Mobile (~360px), Tablet (~768px) und Desktop (~1280px+), kein horizontales Scrollen, keine Layout-Brüche
 - Formularzustände: Fehler, Erfolg, Laden, deaktiviert
 
 Fehlen diese in Figma: im Team klären und in Figma ergänzen, bevor sie im Code verwendet werden.

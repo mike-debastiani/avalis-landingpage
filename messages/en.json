@@ -1,13 +1,103 @@
 {
   "Metadata": {
-    "title": "avalis – Accommodation Processes at Swiss Universities",
-    "description": "The digital solution for accommodation processes at Swiss universities."
+    "title": "avalis – The Digital Solution for Accommodation Processes at Swiss Universities",
+    "description": "We studied accommodation processes at 17 Swiss universities, identified three process models and built avalis from those findings."
   },
-  "Placeholder": {
-    "skipLink": "Skip to content",
-    "logo": "avalis",
-    "heading": "avalis",
-    "body": "The landing page is coming soon.",
-    "footer": "Bachelor's project Digital Ideation, Lucerne University of Applied Sciences and Arts, 2026"
+  "Layout": {
+    "skipLink": "Skip to content"
+  },
+  "Header": {
+    "navContext": "Context",
+    "navResearch": "Research",
+    "navSolution": "Solution",
+    "navTeam": "Team",
+    "cta": "Get the Research Report"
+  },
+  "Hero": {
+    "eyebrow": "Bachelor's Project · Digital Ideation · Lucerne University of Applied Sciences and Arts",
+    "headline": "The Digital Solution for Accommodation Processes at Swiss Universities",
+    "lead": "We studied accommodation processes at 17 Swiss universities, identified three fundamental process models, and built avalis from those findings: a prototype in which students, support offices and decision-making bodies work on the same application.",
+    "primaryCta": "Get the Research Report",
+    "secondaryCta": "Learn more"
+  },
+  "Context": {
+    "title": "Case numbers are rising. Processes haven't kept up.",
+    "body": "Swiss universities are legally required to provide students with disabilities equal conditions for studying and taking exams. The path there, the accommodation process, is a multi-step process involving many stakeholders. Today it runs almost everywhere via email, PDF and Excel. Applications get stuck at handoffs, students don't know where their application stands, and sensitive health data circulates without structure.",
+    "quote": "Last year, the Office for Studies and Disability conducted 604 consultations on accommodations, around 400 of them initial consultations – and the trend is rising.",
+    "quoteSource": "University of Zurich, 2025",
+    "legalReference": "Federal Constitution Art. 8 para. 2 · Disability Discrimination Act Art. 2 para. 5 lit. b"
+  },
+  "Research": {
+    "title": "17 universities. Three process models.",
+    "statInstitutions": "17",
+    "statInstitutionsLabel": "participating institutions",
+    "statInterviews": "8",
+    "statInterviewsLabel": "interviews",
+    "statSurveys": "9",
+    "statSurveysLabel": "surveys",
+    "statDocuments": "59",
+    "statDocumentsLabel": "process documents analysed",
+    "body": "We surveyed support offices, programme directors and other stakeholders at universities, universities of applied sciences and universities of teacher education, and analysed their official process documents. The key insight: however different the processes look in detail, they can be reduced to three basic models. That's exactly what makes a modular solution possible.",
+    "modelATitle": "Model A – Central office, decentralised decision",
+    "modelADescription": "A central office advises and recommends; the decision is made at the programme level.",
+    "modelARatio": "7 of 17 universities",
+    "modelBTitle": "Model B – Centralised process, decision by committee",
+    "modelBDescription": "The entire process is centralised; a committee decides uniformly.",
+    "modelBRatio": "3 of 17 universities",
+    "modelCTitle": "Model C – Case ownership at faculty level",
+    "modelCDescription": "The faculty or programme director owns the case; the support office advises on request.",
+    "modelCRatio": "7 of 17 universities",
+    "hint": "The full analysis with key findings is in the research report.",
+    "hintCta": "Register now"
+  },
+  "Solution": {
+    "title": "One application. Everyone involved. One shared status.",
+    "body": "avalis maps the accommodation process end to end: from submitting the application through advice and formal review to the final decision. All roles work on the same application, each from their own perspective and with clearly defined responsibilities.",
+    "portalTitle": "Student Portal",
+    "portalDescription": "Create the application with guidance, make targeted adjustments and track the status at any time.",
+    "workspaceTitle": "Administration Workspace",
+    "workspaceDescription": "Advise and recommend, review applications block by block, decide and generate the formal ruling.",
+    "principle1": "Recommendation and decision stay separate",
+    "principle2": "Sensitive health data is only visible where necessary",
+    "principle3": "Adaptable to the processes of every university",
+    "status": "avalis is a functional prototype from a Bachelor's project, tested with professionals. It is not intended for production use."
+  },
+  "Roles": {
+    "title": "What changes for those involved",
+    "studentsLabel": "Students",
+    "studentsDescription": "A guided application process with support, status visible at any time, clear responsibilities, everything in one place.",
+    "officesLabel": "Support offices",
+    "officesDescription": "Digital case management instead of email and Excel, a central overview of applications, status tracking, automatic routing and statistics.",
+    "decisionMakersLabel": "Decision-making bodies",
+    "decisionMakersDescription": "A structured handover of the case file, the professional recommendation visible at a glance, a guided decision and an automatically generated ruling."
+  },
+  "Team": {
+    "title": "Who's behind avalis",
+    "body": "We are Chiara Tremml, Dario Foti and Mike De Bastiani, and we built avalis as a Bachelor's project in the Digital Ideation programme, Design focus, at Lucerne University of Applied Sciences and Arts.",
+    "member1Name": "Chiara Tremml",
+    "member2Name": "Dario Foti",
+    "member3Name": "Mike De Bastiani",
+    "bioPending": "Short bio coming soon."
+  },
+  "Registration": {
+    "title": "Get the research report and updates",
+    "body": "Register to receive our research report on accommodation processes at Swiss universities. We'll also occasionally update you on the further development of avalis. You can unsubscribe at any time.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "name@university.ch",
+    "consentPrefix": "I agree that my details will be stored and used to send the research report and updates on avalis. Details in the",
+    "consentLinkLabel": "privacy policy",
+    "submit": "Register now",
+    "pending": "Registration is coming soon."
+  },
+  "Footer": {
+    "tagline": "Bachelor's project Digital Ideation, Lucerne University of Applied Sciences and Arts, 2026",
+    "contact": "Contact details coming soon",
+    "imprint": "Imprint",
+    "privacy": "Privacy"
+  },
+  "Legal": {
+    "imprintTitle": "Imprint",
+    "privacyTitle": "Privacy",
+    "pending": "Content coming soon."
   }
 }

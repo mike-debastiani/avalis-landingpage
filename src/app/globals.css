@@ -247,4 +247,27 @@
   html {
     @apply font-sans;
   }
+
+  /*
+   * Deutsche Komposita (z.B. "Nachteilsausgleichsprozesse") haben keine
+   * natürliche Trennstelle und laufen bei grossen Schriftgrössen (Display,
+   * Headings) sonst über den Viewport hinaus. break-word statt hyphens:
+   * bricht nur wenn nötig, keine automatischen Trennstriche im Fliesstext.
+   */
+  h1,
+  h2,
+  h3,
+  h4 {
+    overflow-wrap: break-word;
+  }
+}
+
+@layer utilities {
+  .section-container {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12;
+  }
+
+  .section-spacing {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
 }
