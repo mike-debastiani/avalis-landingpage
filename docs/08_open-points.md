@@ -32,6 +32,9 @@
 | 23 | Event | QR-Code mit `?src=netzwerktreffen` für Präsentation | Team | 21.10. |
 | 24 | Design System | Hero-Display-Typografie (`--text-display`) ist nur im Code definiert, nicht in Figma abgesichert – bei Gelegenheit mit Team/Figma nachziehen | Team | 04.10. |
 | 25 | Design System | Heading-2-Grösse (30px) im Code aus der Typografie-Skala abgeleitet, aber im Figma-MCP-Response nicht enthalten – gegen Figma verifizieren | Mike | 04.10. |
+| 26 | Sicherheit | CSP `script-src` nutzt aktuell `'unsafe-inline'` statt Nonce: Next.js 16 appliziert einen per-Request-Nonce (korrekt via `Content-Security-Policy`-Header gesetzt) nicht auf seine eigenen Hydration-`<script>`-Tags, geprüft in Produktion. Bei neuerer Next.js-Version erneut mit Nonce statt `unsafe-inline` versuchen | Mike | – |
+| 27 | Registrierung | Formular zeigt heute nur E-Mail + Einwilligung, Submit deaktiviert. Institution/Rolle-Felder und Brevo-Anbindung folgen mit Punkten #2–#5, #10, #11 | Mike | 11.10. |
+| 28 | Inhalte | Team-Kurzbeschreibungen, Fotos, Kontakt-E-Mail sowie Impressum/Datenschutz-Inhalt sind Platzhalter ("folgt") | Team | 04.10.–11.10. |
 
 ## Entschieden
 

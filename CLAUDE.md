@@ -21,6 +21,7 @@ Next.js (App Router, TypeScript strict) · Tailwind CSS mit Figma-Tokens · next
 - Barrierefreiheit nach WCAG 2.2 AA ist Pflicht, nicht optional.
 - Mobile first.
 - Keine Fakten, Zahlen oder Zitate zu avalis erfinden. Quelle ist [`docs/02_avalis-context.md`](docs/02_avalis-context.md) und [`docs/06_content-draft.md`](docs/06_content-draft.md).
+- Die Seite muss **100% responsive** sein: auf allen gängigen Breakpoints (Mobile ~360px, Tablet ~768px, Desktop ~1280px+) ohne horizontales Scrollen, Layout-Brüche oder abgeschnittene Inhalte. Gängige Web-Best-Practices sind Pflicht: semantisches HTML, `next/image` für Bilder, keine Layout-Shifts, wiederverwendete Section-Container/-Spacing-Utilities statt Wertwiederholung.
 
 ## Git-Workflow (verbindlich)
 
