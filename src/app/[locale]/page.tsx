@@ -1,11 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
-import { HeroSection } from "@/components/sections/hero-section";
-import { ContextSection } from "@/components/sections/context-section";
-import { ResearchSection } from "@/components/sections/research-section";
-import { SolutionSection } from "@/components/sections/solution-section";
-import { TeamSection } from "@/components/sections/team-section";
-import { RegistrationSection } from "@/components/sections/registration-section";
-import type { Locale } from "@/i18n/routing";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export default async function HomePage({
   params,
@@ -14,15 +7,11 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations("Placeholder");
 
   return (
-    <>
-      <HeroSection />
-      <ContextSection />
-      <ResearchSection />
-      <SolutionSection />
-      <TeamSection />
-      <RegistrationSection locale={locale as Locale} />
-    </>
+    <div className="section-container section-spacing text-center">
+      <p className="text-paragraph-large text-muted-foreground">{t("body")}</p>
+    </div>
   );
 }
