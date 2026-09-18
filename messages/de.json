@@ -1,26 +1,31 @@
 {
   "Metadata": {
     "title": "avalis – Die digitale Lösung für Nachteilsausgleichsprozesse an Schweizer Hochschulen",
-    "description": "Wir haben den Nachteilsausgleich an 17 Schweizer Hochschulen untersucht, drei Prozessmodelle identifiziert und daraus avalis entwickelt."
+    "description": "avalis bündelt den Nachteilsausgleichsprozess an Schweizer Hochschulen in einer digitalen Lösung. Registrieren Sie sich für den Research Report und Updates zum Projekt."
   },
   "Layout": {
     "skipLink": "Zum Inhalt springen"
   },
   "Header": {
-    "navContext": "Ausgangslage",
-    "navResearch": "Research",
-    "navSolution": "Lösung",
     "navTeam": "Team",
+    "navSolution": "Lösung",
+    "navRegistration": "Research Report",
+    "navContact": "Kontakt",
     "cta": "Research Report erhalten"
   },
-  "Placeholder": {
-    "body": "Diese Sektion wird gerade neu aufgebaut."
-  },
   "Footer": {
-    "tagline": "Bachelorprojekt Digital Ideation, Hochschule Luzern, 2026",
-    "contact": "Kontakt folgt in Kürze",
+    "tagline": "avalis ist ein eigenständiges Projekt für den Nachteilsausgleichsprozess an Schweizer Hochschulen.",
+    "contact": "kontakt@avalis-projekt.ch",
     "imprint": "Impressum",
     "privacy": "Datenschutz"
+  },
+  "Sections": {
+    "pending": "Inhalt folgt.",
+    "heroHeading": "avalis",
+    "teamHeading": "Team",
+    "solutionHeading": "Was avalis ist und löst",
+    "registrationHeading": "Registrierung",
+    "contactHeading": "Kontakt"
   },
   "Legal": {
     "imprintTitle": "Impressum",

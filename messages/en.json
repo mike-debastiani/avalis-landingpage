@@ -1,26 +1,31 @@
 {
   "Metadata": {
     "title": "avalis – The Digital Solution for Accommodation Processes at Swiss Universities",
-    "description": "We studied accommodation processes at 17 Swiss universities, identified three process models and built avalis from those findings."
+    "description": "avalis brings the accommodation process at Swiss universities together in one digital solution. Register to receive the research report and project updates."
   },
   "Layout": {
     "skipLink": "Skip to content"
   },
   "Header": {
-    "navContext": "Context",
-    "navResearch": "Research",
-    "navSolution": "Solution",
     "navTeam": "Team",
+    "navSolution": "Solution",
+    "navRegistration": "Research Report",
+    "navContact": "Contact",
     "cta": "Get the Research Report"
   },
-  "Placeholder": {
-    "body": "This section is being rebuilt."
-  },
   "Footer": {
-    "tagline": "Bachelor's project Digital Ideation, Lucerne University of Applied Sciences and Arts, 2026",
-    "contact": "Contact details coming soon",
+    "tagline": "avalis is an independent project for the accommodation process at Swiss universities.",
+    "contact": "kontakt@avalis-projekt.ch",
     "imprint": "Imprint",
     "privacy": "Privacy"
+  },
+  "Sections": {
+    "pending": "Content coming soon.",
+    "heroHeading": "avalis",
+    "teamHeading": "Team",
+    "solutionHeading": "What avalis is and solves",
+    "registrationHeading": "Registration",
+    "contactHeading": "Contact"
   },
   "Legal": {
     "imprintTitle": "Imprint",
