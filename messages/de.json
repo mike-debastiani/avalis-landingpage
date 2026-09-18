@@ -19,10 +19,6 @@
     "imprint": "Impressum",
     "privacy": "Datenschutz"
   },
-  "Sections": {
-    "pending": "Inhalt folgt.",
-    "contactHeading": "Kontakt"
-  },
   "Hero": {
     "eyebrow": "Nachteilsausgleich an Schweizer Hochschulen",
     "headline": "Die digitale Lösung für den Nachteilsausgleich an Schweizer Hochschulen",
@@ -96,6 +92,17 @@
     "successBody": "Bitte bestätigen Sie Ihre Anmeldung über den Link in der E-Mail, die wir Ihnen gerade geschickt haben. Prüfen Sie bei Bedarf auch Ihren Spam-Ordner.",
     "errorTitle": "Das hat leider nicht geklappt",
     "errorBody": "Die Anmeldung hat nicht funktioniert. Bitte versuchen Sie es in ein paar Minuten erneut."
+  },
+  "Contact": {
+    "title": "Fragen zu avalis?",
+    "body": "Wir sprechen gerne über das Projekt, stellen es vor und tauschen uns zum Nachteilsausgleichsprozess aus.",
+    "email": "kontakt@avalis-projekt.ch"
+  },
+  "Confirmed": {
+    "title": "Anmeldung bestätigt",
+    "body": "Vielen Dank. Ihre Registrierung ist bestätigt, Sie erhalten künftig Updates zu avalis. Der Research Report steht hier bald zum Download bereit.",
+    "downloadCta": "Research Report herunterladen",
+    "downloadPending": "Der Download-Link folgt in Kürze."
   },
   "Legal": {
     "imprintTitle": "Impressum",

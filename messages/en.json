@@ -19,10 +19,6 @@
     "imprint": "Imprint",
     "privacy": "Privacy"
   },
-  "Sections": {
-    "pending": "Content coming soon.",
-    "contactHeading": "Contact"
-  },
   "Hero": {
     "eyebrow": "Accommodation process at Swiss universities",
     "headline": "The digital solution for accommodation processes at Swiss universities",
@@ -96,6 +92,17 @@
     "successBody": "Please confirm your registration via the link in the email we just sent you. Check your spam folder if needed.",
     "errorTitle": "Something went wrong",
     "errorBody": "The registration did not go through. Please try again in a few minutes."
+  },
+  "Contact": {
+    "title": "Questions about avalis?",
+    "body": "We're happy to talk about the project, present it, and exchange views on the accommodation process.",
+    "email": "kontakt@avalis-projekt.ch"
+  },
+  "Confirmed": {
+    "title": "Registration confirmed",
+    "body": "Thank you. Your registration is confirmed and you'll receive future updates on avalis. The Research Report will be available for download here soon.",
+    "downloadCta": "Download the Research Report",
+    "downloadPending": "The download link is coming soon."
   },
   "Legal": {
     "imprintTitle": "Imprint",
