@@ -21,7 +21,6 @@
   },
   "Sections": {
     "pending": "Inhalt folgt.",
-    "registrationHeading": "Registrierung",
     "contactHeading": "Kontakt"
   },
   "Hero": {
@@ -51,6 +50,52 @@
     "videoContext": "Ein kurzer Rundgang zeigt, wie der Antragsprozess in avalis abläuft.",
     "videoLabel": "Walkthrough-Video, folgt in Kürze",
     "statusNote": "avalis ist ein funktionaler Prototyp und wurde mit Fachpersonen getestet. Für den produktiven Einsatz an Hochschulen ist er nicht vorgesehen."
+  },
+  "Registration": {
+    "eyebrow": "Registrierung",
+    "title": "Registrieren und Research Report erhalten",
+    "lead": "Grundlage ist eine schweizweite Erhebung über 17 Hochschulen hinweg, mit Interviews, Umfragen und der Auswertung offizieller Prozessdokumente. Der Report zeigt, wie der Nachteilsausgleichsprozess an Schweizer Hochschulen tatsächlich abläuft und wo er an Grenzen stösst. Wer sich registriert, erhält zusätzlich gelegentliche Updates zur Weiterentwicklung von avalis. Abmeldung jederzeit möglich, keine Weitergabe an Dritte.",
+    "coverLabel": "Platzhalter für das Cover des Research Reports",
+    "fields": {
+      "emailLabel": "E-Mail-Adresse",
+      "emailPlaceholder": "name@hochschule.ch",
+      "firstNameLabel": "Vorname",
+      "lastNameLabel": "Nachname",
+      "institutionLabel": "Institution",
+      "institutionPlaceholder": "Bitte auswählen",
+      "otherInstitutionLabel": "Name der Institution",
+      "roleLabel": "Rolle",
+      "rolePlaceholder": "Bitte auswählen",
+      "consentLabel": "Ich bin einverstanden, dass avalis mich per E-Mail kontaktiert und meine Angaben gemäss",
+      "consentLinkLabel": "Datenschutzerklärung"
+    },
+    "institutions": {
+      "uni": "Universität",
+      "fh": "Fachhochschule",
+      "ph": "Pädagogische Hochschule",
+      "andere": "Andere"
+    },
+    "roles": {
+      "fachstelle": "Fachstelle / Beratung",
+      "gleichstellung": "Gleichstellung / Diversity",
+      "studiengangsleitung": "Studiengangsleitung",
+      "dozierende": "Dozierende",
+      "pruefungsadministration": "Prüfungsadministration",
+      "hochschulleitung": "Hochschulleitung",
+      "studierende": "Studierende",
+      "andere": "Andere"
+    },
+    "errors": {
+      "required": "Dieses Feld ist erforderlich.",
+      "invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "too_long": "Diese Angabe ist zu lang."
+    },
+    "submit": "Research Report erhalten",
+    "submitPending": "Wird gesendet …",
+    "successTitle": "Fast geschafft",
+    "successBody": "Bitte bestätigen Sie Ihre Anmeldung über den Link in der E-Mail, die wir Ihnen gerade geschickt haben. Prüfen Sie bei Bedarf auch Ihren Spam-Ordner.",
+    "errorTitle": "Das hat leider nicht geklappt",
+    "errorBody": "Die Anmeldung hat nicht funktioniert. Bitte versuchen Sie es in ein paar Minuten erneut."
   },
   "Legal": {
     "imprintTitle": "Impressum",

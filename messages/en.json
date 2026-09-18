@@ -21,7 +21,6 @@
   },
   "Sections": {
     "pending": "Content coming soon.",
-    "registrationHeading": "Registration",
     "contactHeading": "Contact"
   },
   "Hero": {
@@ -51,6 +50,52 @@
     "videoContext": "A short walkthrough shows how the request process works in avalis.",
     "videoLabel": "Walkthrough video, coming soon",
     "statusNote": "avalis is a functional prototype tested with subject-matter experts. It is not intended for productive use."
+  },
+  "Registration": {
+    "eyebrow": "Registration",
+    "title": "Register to receive the Research Report",
+    "lead": "It is based on a nationwide survey across 17 universities, combining interviews, questionnaires, and an analysis of official process documents. The report shows how the accommodation process actually works at Swiss universities today and where it runs into limits. Registering also gets you occasional updates on the development of avalis. You can unsubscribe at any time; we never share your data with third parties.",
+    "coverLabel": "Placeholder for the Research Report cover",
+    "fields": {
+      "emailLabel": "Email address",
+      "emailPlaceholder": "name@university.ch",
+      "firstNameLabel": "First name",
+      "lastNameLabel": "Last name",
+      "institutionLabel": "Institution",
+      "institutionPlaceholder": "Please select",
+      "otherInstitutionLabel": "Name of your institution",
+      "roleLabel": "Role",
+      "rolePlaceholder": "Please select",
+      "consentLabel": "I agree that avalis may contact me by email and process my details according to the",
+      "consentLinkLabel": "privacy policy"
+    },
+    "institutions": {
+      "uni": "University",
+      "fh": "University of Applied Sciences",
+      "ph": "University of Teacher Education",
+      "andere": "Other"
+    },
+    "roles": {
+      "fachstelle": "Advisory office",
+      "gleichstellung": "Equal opportunity / diversity",
+      "studiengangsleitung": "Programme director",
+      "dozierende": "Lecturer",
+      "pruefungsadministration": "Exam administration",
+      "hochschulleitung": "University management",
+      "studierende": "Student",
+      "andere": "Other"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "invalid_email": "Please enter a valid email address.",
+      "too_long": "This entry is too long."
+    },
+    "submit": "Get the Research Report",
+    "submitPending": "Sending …",
+    "successTitle": "Almost there",
+    "successBody": "Please confirm your registration via the link in the email we just sent you. Check your spam folder if needed.",
+    "errorTitle": "Something went wrong",
+    "errorBody": "The registration did not go through. Please try again in a few minutes."
   },
   "Legal": {
     "imprintTitle": "Imprint",
