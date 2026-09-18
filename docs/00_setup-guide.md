@@ -92,7 +92,7 @@ Die `CLAUDE.md` soll enthalten:
   - Deutsch in Schweizer Rechtschreibung («ss» statt «ß»).
   - Barrierefreiheit nach WCAG 2.2 AA ist Pflicht, nicht optional.
   - Mobile first.
-  - Keine Fakten, Zahlen oder Zitate zu avalis erfinden. Quelle ist `02_avalis-context.md` und `06_content-draft.md`.
+  - Keine Fakten, Zahlen oder Zitate zu avalis erfinden. Quelle ist `02_avalis-context.md` und `06_page-structure.md`.
   - Die Seite muss **100% responsive** sein: auf allen gängigen Breakpoints (Mobile ~360px, Tablet ~768px, Desktop ~1280px+) ohne horizontales Scrollen, Layout-Brüche oder abgeschnittene Inhalte. Gängige Web-Best-Practices sind Pflicht: semantisches HTML, `next/image` für Bilder, keine Layout-Shifts, wiederverwendete Section-Container/-Spacing-Utilities statt Wertwiederholung.
 - **Arbeitsweise:** Eine Aufgabe pro Session, zuerst Plan Mode, kleine Commits, jede Änderung in der Vercel Preview prüfen.
 - **Definition of Done** pro Aufgabe: Typecheck und Lint ohne Fehler, auf Mobile und Desktop geprüft, Tastaturbedienung geprüft, beide Sprachen vorhanden.

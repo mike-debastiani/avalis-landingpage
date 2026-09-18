@@ -43,6 +43,7 @@ Ein mandantenfähiger Tool-Prototyp, der die drei etablierten Prozessmodelle ber
 - Fragebogen in zwei Sprachversionen, **132** Mails in drei Sprachen
 - Aufbereitung zu **75 Seiten** strukturierter Prozessbeschreibung und **17** Stakeholder-Phasen-Matrizen
 - Analyse: 3 Prozessmodell-Typologien, 3 Swimlane-Diagramme, 6 Rollenaggregationen, 6 Rollen-User-Journey-Maps
+- Abdeckung: Universitäten und Pädagogische Hochschulen aus allen Sprachregionen der Schweiz; daraus wurden direkte Implikationen für die Lösungsgestaltung abgeleitet (siehe Abschnitt 6)
 
 **Teilnehmende Institutionen (laut Präsentation):**
 - Universitäten: ETH, UZH, UniLu, UNIL, EPFL, HSG, Uni Bern
@@ -85,6 +86,8 @@ Der NTA-Prozess an Schweizer Hochschulen lässt sich auf **drei Prozessmodelle**
 - **Studierenden-Portal:** Antrag erstellen und einreichen, Anpassungen vornehmen, Status verfolgen, Verfügung einsehen.
 - **Administration Workspace:** Beratung und Empfehlung, Review des Antrags Block für Block, Anpassungen anfordern, Bewilligung oder Ablehnung, Verfügung erstellen, Übersicht über alle Anträge.
 
+**Funktionsweise der Plattform:** avalis ersetzt entkoppelte E-Mails, Excel-Listen und parallele Ablagen durch ein gemeinsames Fallobjekt. Alle beteiligten Instanzen arbeiten am selben, statusbasierten Antrag. Das ermöglicht einen einzigen, nachvollziehbaren Vorgang mit kontrollierten Verantwortungsübergaben – von der Antragsstellung bis zur ausgestellten Verfügung.
+
 **Scope des Prototyps:** NTA-Antrag erstellen (Studierende) → Prüfung des Antrags (Fachstelle) ⇄ Anpassungen (Studierende) → Bewilligung und Verfügung (Entscheidungsinstanz). Prüfungsplanung und Umsetzung sind noch nicht abgebildet. Priorisiert ist Prozessmodell A.
 
 **Impact pro Rolle (aus der Präsentation):**
@@ -95,13 +98,19 @@ Der NTA-Prozess an Schweizer Hochschulen lässt sich auf **drei Prozessmodelle**
 | Fachstellen | Prozess über E-Mail, PDF und Excel, Anträge bleiben an Schnittstellen hängen, Statistiken aufwändig, kein Fallüberblick, manuelle Weiterleitung | Digitales Fallführungssystem, Statustracking, Statistiken automatisch verfügbar, zentrale Antragsübersicht, automatische Weiterleitung |
 | Entscheidungsinstanzen | Anträge im E-Mail-Postfach, Entscheid ohne strukturierte Grundlage, fehlende Fachgrundlage, manuelle Verfügungen | Strukturierte Übergabe des Dossiers, geführter Entscheidungsprozess, fachliche Empfehlung direkt einsehbar, automatisch generierte Verfügung |
 
-**Validierung:** Mid-Fidelity-Testing (Demo-Day) und High-Fidelity-Testing mit realen Nutzer:innen (3 Szenarien, 15 Aufgaben, über 30 generierte Testanträge).
+**Praxisrelevanz und Transferierbarkeit:** Die Lösung schliesst eine Lücke, die im Schweizer Hochschulkontext bisher nicht adressiert wurde. Das Tool erzwingt keinen Einheitsablauf, sondern ist durch seinen modularen Aufbau so konzipiert, dass es sich an die heterogenen Abläufe verschiedener Institutionen anpassen lässt. Zudem schafft das System eine Datengrundlage für hochschulübergreifendes Monitoring und Prozessplanung.
 
-## 8. Zukunftspotenzial (aus der Präsentation)
+**Validierung:** Mid-Fidelity-Testing (Demo-Day) und High-Fidelity-Testing mit realen Nutzer:innen (3 Szenarien, 15 Aufgaben, über 30 generierte Testanträge). Die Umsetzbarkeit wurde in mehreren Testing-Loops mit realen Stakeholdern aus Beratung, Entscheidungsinstanz und Administration validiert.
+
+## 8. Nachhaltigkeit (SDGs)
+
+avalis leistet einen direkten Beitrag zum Abbau struktureller Ungleichheiten (SDG 4.5 «Inklusive und gerechte Bildung» und SDG 10 «Weniger Ungleichheiten»), da die Plattform die Voraussetzung für eine faire, nachvollziehbare Behandlung gleichartiger Fälle über Rollen und Institutionen hinweg schafft.
+
+## 9. Zukunftspotenzial (aus der Präsentation)
 
 Requirements Engineering, Rollen erweitern (Prüfungsadministration, Dozierende), Datenschutzkonzept, Mehrmandantenfähigkeit, Sicherheitsinfrastruktur, Anbindung an Prüfungssysteme, Tool-Vorstellung bei Gleichstellungsbeauftragten.
 
-## 9. Team
+## 10. Team
 
 | Person | Schwerpunkt im Projekt |
 |---|---|
