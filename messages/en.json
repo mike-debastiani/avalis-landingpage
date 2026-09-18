@@ -1,26 +1,108 @@
 {
   "Metadata": {
     "title": "avalis – The Digital Solution for Accommodation Processes at Swiss Universities",
-    "description": "We studied accommodation processes at 17 Swiss universities, identified three process models and built avalis from those findings."
+    "description": "avalis brings the accommodation process at Swiss universities together in one digital solution. Register to receive the research report and project updates."
   },
   "Layout": {
     "skipLink": "Skip to content"
   },
   "Header": {
-    "navContext": "Context",
-    "navResearch": "Research",
-    "navSolution": "Solution",
     "navTeam": "Team",
+    "navSolution": "Solution",
+    "navRegistration": "Research Report",
+    "navContact": "Contact",
     "cta": "Get the Research Report"
   },
-  "Placeholder": {
-    "body": "This section is being rebuilt."
-  },
   "Footer": {
-    "tagline": "Bachelor's project Digital Ideation, Lucerne University of Applied Sciences and Arts, 2026",
-    "contact": "Contact details coming soon",
+    "tagline": "avalis is an independent project for the accommodation process at Swiss universities.",
+    "contact": "kontakt@avalis-projekt.ch",
     "imprint": "Imprint",
     "privacy": "Privacy"
+  },
+  "Hero": {
+    "eyebrow": "Accommodation process at Swiss universities",
+    "headline": "The digital solution for accommodation processes at Swiss universities",
+    "lead": "The accommodation process is fragmented and resource-intensive today. avalis brings it together in one digital solution and makes it transparent for everyone involved.",
+    "primaryCta": "Get the Research Report",
+    "secondaryCta": "What is avalis?",
+    "imageLabel": "Placeholder for a screenshot of the prototype"
+  },
+  "Team": {
+    "eyebrow": "Team",
+    "headline": "Who is behind avalis",
+    "lead": "avalis is built by a three-person team with a design background. In the video, we share how we got into the topic and why it matters to us.",
+    "member1": "Chiara Tremml",
+    "member2": "Dario Foti",
+    "member3": "Mike De Bastiani",
+    "videoLabel": "Introduction video, coming soon"
+  },
+  "Solution": {
+    "eyebrow": "What avalis is and solves",
+    "headline": "One process, many handoffs",
+    "problemTitle": "The situation today",
+    "problemBody": "The accommodation process spans multiple stages and parties. Today it mostly runs over email, PDF, and spreadsheets: requests get stuck at handoffs, and status is often not visible to those affected.",
+    "solutionTitle": "The solution",
+    "solutionBody": "avalis brings the process together in one digital solution, from submitting a request through approval to implementation. Applicants, advisory offices, decision-making bodies, exam scheduling, lecturers, and exam administrators are all connected. Built on nationwide research, modular, and adaptable to each university's process structures.",
+    "videoContext": "A short walkthrough shows how the request process works in avalis.",
+    "videoLabel": "Walkthrough video, coming soon",
+    "statusNote": "avalis is a functional prototype tested with subject-matter experts. It is not intended for productive use."
+  },
+  "Registration": {
+    "eyebrow": "Registration",
+    "title": "Register to receive the Research Report",
+    "lead": "It is based on a nationwide survey across 17 universities, combining interviews, questionnaires, and an analysis of official process documents. The report shows how the accommodation process actually works at Swiss universities today and where it runs into limits. Registering also gets you occasional updates on the development of avalis. You can unsubscribe at any time; we never share your data with third parties.",
+    "coverLabel": "Placeholder for the Research Report cover",
+    "fields": {
+      "emailLabel": "Email address",
+      "emailPlaceholder": "name@university.ch",
+      "firstNameLabel": "First name",
+      "lastNameLabel": "Last name",
+      "institutionLabel": "Institution",
+      "institutionPlaceholder": "Please select",
+      "otherInstitutionLabel": "Name of your institution",
+      "roleLabel": "Role",
+      "rolePlaceholder": "Please select",
+      "consentLabel": "I agree that avalis may contact me by email and process my details according to the",
+      "consentLinkLabel": "privacy policy"
+    },
+    "institutions": {
+      "uni": "University",
+      "fh": "University of Applied Sciences",
+      "ph": "University of Teacher Education",
+      "andere": "Other"
+    },
+    "roles": {
+      "fachstelle": "Advisory office",
+      "gleichstellung": "Equal opportunity / diversity",
+      "studiengangsleitung": "Programme director",
+      "dozierende": "Lecturer",
+      "pruefungsadministration": "Exam administration",
+      "hochschulleitung": "University management",
+      "studierende": "Student",
+      "andere": "Other"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "invalid_email": "Please enter a valid email address.",
+      "too_long": "This entry is too long."
+    },
+    "submit": "Get the Research Report",
+    "submitPending": "Sending …",
+    "successTitle": "Almost there",
+    "successBody": "Please confirm your registration via the link in the email we just sent you. Check your spam folder if needed.",
+    "errorTitle": "Something went wrong",
+    "errorBody": "The registration did not go through. Please try again in a few minutes."
+  },
+  "Contact": {
+    "title": "Questions about avalis?",
+    "body": "We're happy to talk about the project, present it, and exchange views on the accommodation process.",
+    "email": "kontakt@avalis-projekt.ch"
+  },
+  "Confirmed": {
+    "title": "Registration confirmed",
+    "body": "Thank you. Your registration is confirmed and you'll receive future updates on avalis. The Research Report will be available for download here soon.",
+    "downloadCta": "Download the Research Report",
+    "downloadPending": "The download link is coming soon."
   },
   "Legal": {
     "imprintTitle": "Imprint",

@@ -1,17 +1,26 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
+import { HeroSection } from "@/components/sections/hero-section";
+import { TeamSection } from "@/components/sections/team-section";
+import { SolutionSection } from "@/components/sections/solution-section";
+import { RegistrationSection } from "@/components/sections/registration-section";
+import { ContactSection } from "@/components/sections/contact-section";
+import type { Locale } from "@/i18n/routing";
 
 export default async function HomePage({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("Placeholder");
 
   return (
-    <div className="section-container section-spacing text-center">
-      <p className="text-paragraph-large text-muted-foreground">{t("body")}</p>
-    </div>
+    <>
+      <HeroSection />
+      <TeamSection />
+      <SolutionSection />
+      <RegistrationSection locale={locale} />
+      <ContactSection />
+    </>
   );
 }

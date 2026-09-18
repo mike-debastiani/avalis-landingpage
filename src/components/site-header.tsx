@@ -7,10 +7,10 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
   const t = await getTranslations("Header");
 
   const navItems = [
-    { href: "#ausgangslage", label: t("navContext") },
-    { href: "#research", label: t("navResearch") },
-    { href: "#loesung", label: t("navSolution") },
     { href: "#team", label: t("navTeam") },
+    { href: "#loesung", label: t("navSolution") },
+    { href: "#registrierung", label: t("navRegistration") },
+    { href: "#kontakt", label: t("navContact") },
   ];
 
   return (
@@ -33,9 +33,7 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
         </nav>
 
         <div className="flex items-center gap-4">
-          <div className="hidden sm:block">
-            <LanguageSwitcher locale={locale} />
-          </div>
+          <LanguageSwitcher locale={locale} />
           <Button asChild size="sm" className="rounded-full">
             <a href="#registrierung">{t("cta")}</a>
           </Button>

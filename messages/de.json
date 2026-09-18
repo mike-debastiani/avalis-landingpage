@@ -1,26 +1,108 @@
 {
   "Metadata": {
     "title": "avalis – Die digitale Lösung für Nachteilsausgleichsprozesse an Schweizer Hochschulen",
-    "description": "Wir haben den Nachteilsausgleich an 17 Schweizer Hochschulen untersucht, drei Prozessmodelle identifiziert und daraus avalis entwickelt."
+    "description": "avalis bündelt den Nachteilsausgleichsprozess an Schweizer Hochschulen in einer digitalen Lösung. Registrieren Sie sich für den Research Report und Updates zum Projekt."
   },
   "Layout": {
     "skipLink": "Zum Inhalt springen"
   },
   "Header": {
-    "navContext": "Ausgangslage",
-    "navResearch": "Research",
-    "navSolution": "Lösung",
     "navTeam": "Team",
+    "navSolution": "Lösung",
+    "navRegistration": "Research Report",
+    "navContact": "Kontakt",
     "cta": "Research Report erhalten"
   },
-  "Placeholder": {
-    "body": "Diese Sektion wird gerade neu aufgebaut."
-  },
   "Footer": {
-    "tagline": "Bachelorprojekt Digital Ideation, Hochschule Luzern, 2026",
-    "contact": "Kontakt folgt in Kürze",
+    "tagline": "avalis ist ein eigenständiges Projekt für den Nachteilsausgleichsprozess an Schweizer Hochschulen.",
+    "contact": "kontakt@avalis-projekt.ch",
     "imprint": "Impressum",
     "privacy": "Datenschutz"
+  },
+  "Hero": {
+    "eyebrow": "Nachteilsausgleich an Schweizer Hochschulen",
+    "headline": "Die digitale Lösung für den Nachteilsausgleich an Schweizer Hochschulen",
+    "lead": "Der Nachteilsausgleichsprozess ist heute fragmentiert und ressourcenintensiv. avalis bündelt ihn in einer digitalen Lösung und macht ihn für alle Beteiligten transparent.",
+    "primaryCta": "Research Report erhalten",
+    "secondaryCta": "Was ist avalis?",
+    "imageLabel": "Platzhalter für einen Screenshot des Prototyps"
+  },
+  "Team": {
+    "eyebrow": "Team",
+    "headline": "Wer hinter avalis steht",
+    "lead": "Hinter avalis steht ein dreiköpfiges Team mit Designhintergrund. Im Video erzählen wir, wie wir zum Thema kamen und warum es uns beschäftigt.",
+    "member1": "Chiara Tremml",
+    "member2": "Dario Foti",
+    "member3": "Mike De Bastiani",
+    "videoLabel": "Vorstellungsvideo, folgt in Kürze"
+  },
+  "Solution": {
+    "eyebrow": "Was avalis ist und löst",
+    "headline": "Ein Prozess, viele Schnittstellen",
+    "problemTitle": "Die Ausgangslage",
+    "problemBody": "Der Nachteilsausgleich ist ein mehrstufiger Prozess über mehrere Instanzen hinweg. Er läuft heute grösstenteils über E-Mail, PDF und Excel: Anträge bleiben an Schnittstellen liegen, und der Status ist für Betroffene oft nicht sichtbar.",
+    "solutionTitle": "Die Lösung",
+    "solutionBody": "avalis bündelt den Prozess von der Antragseinreichung über die Bewilligung bis zur Umsetzung in einer digitalen Lösung. Antragstellende, Beratungsfachstellen, Entscheidungsinstanzen, Prüfungsplanung, Dozierende und Prüfungsverantwortliche sind vernetzt. Entstanden auf Basis eines schweizweiten Researchs, modular aufgebaut und an die Prozessstrukturen einzelner Hochschulen anpassbar.",
+    "videoContext": "Ein kurzer Rundgang zeigt, wie der Antragsprozess in avalis abläuft.",
+    "videoLabel": "Walkthrough-Video, folgt in Kürze",
+    "statusNote": "avalis ist ein funktionaler Prototyp und wurde mit Fachpersonen getestet. Für den produktiven Einsatz an Hochschulen ist er nicht vorgesehen."
+  },
+  "Registration": {
+    "eyebrow": "Registrierung",
+    "title": "Registrieren und Research Report erhalten",
+    "lead": "Grundlage ist eine schweizweite Erhebung über 17 Hochschulen hinweg, mit Interviews, Umfragen und der Auswertung offizieller Prozessdokumente. Der Report zeigt, wie der Nachteilsausgleichsprozess an Schweizer Hochschulen tatsächlich abläuft und wo er an Grenzen stösst. Wer sich registriert, erhält zusätzlich gelegentliche Updates zur Weiterentwicklung von avalis. Abmeldung jederzeit möglich, keine Weitergabe an Dritte.",
+    "coverLabel": "Platzhalter für das Cover des Research Reports",
+    "fields": {
+      "emailLabel": "E-Mail-Adresse",
+      "emailPlaceholder": "name@hochschule.ch",
+      "firstNameLabel": "Vorname",
+      "lastNameLabel": "Nachname",
+      "institutionLabel": "Institution",
+      "institutionPlaceholder": "Bitte auswählen",
+      "otherInstitutionLabel": "Name der Institution",
+      "roleLabel": "Rolle",
+      "rolePlaceholder": "Bitte auswählen",
+      "consentLabel": "Ich bin einverstanden, dass avalis mich per E-Mail kontaktiert und meine Angaben gemäss",
+      "consentLinkLabel": "Datenschutzerklärung"
+    },
+    "institutions": {
+      "uni": "Universität",
+      "fh": "Fachhochschule",
+      "ph": "Pädagogische Hochschule",
+      "andere": "Andere"
+    },
+    "roles": {
+      "fachstelle": "Fachstelle / Beratung",
+      "gleichstellung": "Gleichstellung / Diversity",
+      "studiengangsleitung": "Studiengangsleitung",
+      "dozierende": "Dozierende",
+      "pruefungsadministration": "Prüfungsadministration",
+      "hochschulleitung": "Hochschulleitung",
+      "studierende": "Studierende",
+      "andere": "Andere"
+    },
+    "errors": {
+      "required": "Dieses Feld ist erforderlich.",
+      "invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "too_long": "Diese Angabe ist zu lang."
+    },
+    "submit": "Research Report erhalten",
+    "submitPending": "Wird gesendet …",
+    "successTitle": "Fast geschafft",
+    "successBody": "Bitte bestätigen Sie Ihre Anmeldung über den Link in der E-Mail, die wir Ihnen gerade geschickt haben. Prüfen Sie bei Bedarf auch Ihren Spam-Ordner.",
+    "errorTitle": "Das hat leider nicht geklappt",
+    "errorBody": "Die Anmeldung hat nicht funktioniert. Bitte versuchen Sie es in ein paar Minuten erneut."
+  },
+  "Contact": {
+    "title": "Fragen zu avalis?",
+    "body": "Wir sprechen gerne über das Projekt, stellen es vor und tauschen uns zum Nachteilsausgleichsprozess aus.",
+    "email": "kontakt@avalis-projekt.ch"
+  },
+  "Confirmed": {
+    "title": "Anmeldung bestätigt",
+    "body": "Vielen Dank. Ihre Registrierung ist bestätigt, Sie erhalten künftig Updates zu avalis. Der Research Report steht hier bald zum Download bereit.",
+    "downloadCta": "Research Report herunterladen",
+    "downloadPending": "Der Download-Link folgt in Kürze."
   },
   "Legal": {
     "imprintTitle": "Impressum",

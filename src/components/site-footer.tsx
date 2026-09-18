@@ -11,8 +11,13 @@ export async function SiteFooter({ locale }: { locale: Locale }) {
       <div className="section-container flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="font-semibold text-foreground">avalis</p>
-          <p className="mt-1 text-paragraph-small text-muted-foreground">{t("tagline")}</p>
-          <p className="mt-1 text-paragraph-small text-muted-foreground">{t("contact")}</p>
+          <p className="mt-1 max-w-sm text-paragraph-small text-muted-foreground">{t("tagline")}</p>
+          <a
+            href={`mailto:${t("contact")}`}
+            className="mt-1 inline-block text-paragraph-small text-muted-foreground underline underline-offset-4 hover:text-foreground"
+          >
+            {t("contact")}
+          </a>
         </div>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
