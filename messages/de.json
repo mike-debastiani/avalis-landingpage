@@ -21,11 +21,36 @@
   },
   "Sections": {
     "pending": "Inhalt folgt.",
-    "heroHeading": "avalis",
-    "teamHeading": "Team",
-    "solutionHeading": "Was avalis ist und löst",
     "registrationHeading": "Registrierung",
     "contactHeading": "Kontakt"
+  },
+  "Hero": {
+    "eyebrow": "Nachteilsausgleich an Schweizer Hochschulen",
+    "headline": "Die digitale Lösung für den Nachteilsausgleich an Schweizer Hochschulen",
+    "lead": "Der Nachteilsausgleichsprozess ist heute fragmentiert und ressourcenintensiv. avalis bündelt ihn in einer digitalen Lösung und macht ihn für alle Beteiligten transparent.",
+    "primaryCta": "Research Report erhalten",
+    "secondaryCta": "Was ist avalis?",
+    "imageLabel": "Platzhalter für einen Screenshot des Prototyps"
+  },
+  "Team": {
+    "eyebrow": "Team",
+    "headline": "Wer hinter avalis steht",
+    "lead": "Hinter avalis steht ein dreiköpfiges Team mit Designhintergrund. Im Video erzählen wir, wie wir zum Thema kamen und warum es uns beschäftigt.",
+    "member1": "Chiara Tremml",
+    "member2": "Dario Foti",
+    "member3": "Mike De Bastiani",
+    "videoLabel": "Vorstellungsvideo, folgt in Kürze"
+  },
+  "Solution": {
+    "eyebrow": "Was avalis ist und löst",
+    "headline": "Ein Prozess, viele Schnittstellen",
+    "problemTitle": "Die Ausgangslage",
+    "problemBody": "Der Nachteilsausgleich ist ein mehrstufiger Prozess über mehrere Instanzen hinweg. Er läuft heute grösstenteils über E-Mail, PDF und Excel: Anträge bleiben an Schnittstellen liegen, und der Status ist für Betroffene oft nicht sichtbar.",
+    "solutionTitle": "Die Lösung",
+    "solutionBody": "avalis bündelt den Prozess von der Antragseinreichung über die Bewilligung bis zur Umsetzung in einer digitalen Lösung. Antragstellende, Beratungsfachstellen, Entscheidungsinstanzen, Prüfungsplanung, Dozierende und Prüfungsverantwortliche sind vernetzt. Entstanden auf Basis eines schweizweiten Researchs, modular aufgebaut und an die Prozessstrukturen einzelner Hochschulen anpassbar.",
+    "videoContext": "Ein kurzer Rundgang zeigt, wie der Antragsprozess in avalis abläuft.",
+    "videoLabel": "Walkthrough-Video, folgt in Kürze",
+    "statusNote": "avalis ist ein funktionaler Prototyp und wurde mit Fachpersonen getestet. Für den produktiven Einsatz an Hochschulen ist er nicht vorgesehen."
   },
   "Legal": {
     "imprintTitle": "Impressum",

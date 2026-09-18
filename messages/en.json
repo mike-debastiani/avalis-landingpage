@@ -21,11 +21,36 @@
   },
   "Sections": {
     "pending": "Content coming soon.",
-    "heroHeading": "avalis",
-    "teamHeading": "Team",
-    "solutionHeading": "What avalis is and solves",
     "registrationHeading": "Registration",
     "contactHeading": "Contact"
+  },
+  "Hero": {
+    "eyebrow": "Accommodation process at Swiss universities",
+    "headline": "The digital solution for accommodation processes at Swiss universities",
+    "lead": "The accommodation process is fragmented and resource-intensive today. avalis brings it together in one digital solution and makes it transparent for everyone involved.",
+    "primaryCta": "Get the Research Report",
+    "secondaryCta": "What is avalis?",
+    "imageLabel": "Placeholder for a screenshot of the prototype"
+  },
+  "Team": {
+    "eyebrow": "Team",
+    "headline": "Who is behind avalis",
+    "lead": "avalis is built by a three-person team with a design background. In the video, we share how we got into the topic and why it matters to us.",
+    "member1": "Chiara Tremml",
+    "member2": "Dario Foti",
+    "member3": "Mike De Bastiani",
+    "videoLabel": "Introduction video, coming soon"
+  },
+  "Solution": {
+    "eyebrow": "What avalis is and solves",
+    "headline": "One process, many handoffs",
+    "problemTitle": "The situation today",
+    "problemBody": "The accommodation process spans multiple stages and parties. Today it mostly runs over email, PDF, and spreadsheets: requests get stuck at handoffs, and status is often not visible to those affected.",
+    "solutionTitle": "The solution",
+    "solutionBody": "avalis brings the process together in one digital solution, from submitting a request through approval to implementation. Applicants, advisory offices, decision-making bodies, exam scheduling, lecturers, and exam administrators are all connected. Built on nationwide research, modular, and adaptable to each university's process structures.",
+    "videoContext": "A short walkthrough shows how the request process works in avalis.",
+    "videoLabel": "Walkthrough video, coming soon",
+    "statusNote": "avalis is a functional prototype tested with subject-matter experts. It is not intended for productive use."
   },
   "Legal": {
     "imprintTitle": "Imprint",
