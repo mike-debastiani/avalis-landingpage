@@ -2,16 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { DM_Sans } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import "../globals.css";
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -48,7 +42,7 @@ export default async function LocaleLayout({
   const t = await getTranslations({ locale, namespace: "Layout" });
 
   return (
-    <html lang={locale} className={`${dmSans.variable} h-full antialiased`}>
+    <html lang={locale} className="h-full antialiased">
       <body className="min-h-full flex flex-col font-sans">
         <NextIntlClientProvider>
           <a

@@ -8,10 +8,10 @@ const localeLabels: Record<Locale, string> = {
 
 export function LanguageSwitcher({ locale }: { locale: Locale }) {
   return (
-    <nav aria-label="Sprachauswahl" className="flex items-center gap-1 text-paragraph-small">
+    <nav aria-label="Sprachauswahl" className="flex items-center gap-1 text-sm">
       {routing.locales.map((loc, index) => (
         <span key={loc} className="flex items-center gap-1">
-          {index > 0 && <span aria-hidden="true" className="text-stone-300">/</span>}
+          {index > 0 && <span aria-hidden="true" className="text-muted-foreground">/</span>}
           {loc === locale ? (
             <span aria-current="page" className="font-medium text-foreground">
               {localeLabels[loc]}

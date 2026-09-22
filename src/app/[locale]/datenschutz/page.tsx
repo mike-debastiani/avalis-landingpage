@@ -10,9 +10,9 @@ export default async function DatenschutzPage({
   const t = await getTranslations("Legal");
 
   return (
-    <div className="section-container section-spacing">
-      <h1 className="text-heading-2 text-foreground">{t("privacyTitle")}</h1>
-      <p className="mt-4 text-paragraph-regular text-muted-foreground">{t("pending")}</p>
+    <div className="mx-auto w-full max-w-6xl px-6 py-16">
+      <h1 className="text-2xl font-semibold text-foreground">{t("privacyTitle")}</h1>
+      <p className="mt-4 text-muted-foreground">{t("pending")}</p>
     </div>
   );
 }

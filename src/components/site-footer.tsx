@@ -8,20 +8,11 @@ export async function SiteFooter({ locale }: { locale: Locale }) {
 
   return (
     <footer className="border-t border-border">
-      <div className="section-container flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="font-semibold text-foreground">avalis</p>
-          <p className="mt-1 max-w-sm text-paragraph-small text-muted-foreground">{t("tagline")}</p>
-          <a
-            href={`mailto:${t("contact")}`}
-            className="mt-1 inline-block text-paragraph-small text-muted-foreground underline underline-offset-4 hover:text-foreground"
-          >
-            {t("contact")}
-          </a>
-        </div>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
+        <p className="font-semibold text-foreground">avalis</p>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-          <nav aria-label="Rechtliches" className="flex gap-4 text-paragraph-small">
+          <nav aria-label="Rechtliches" className="flex gap-4 text-sm">
             <Link href="/impressum" locale={locale} className="text-muted-foreground hover:text-foreground">
               {t("imprint")}
             </Link>
