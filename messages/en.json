@@ -6,6 +6,10 @@
   "Layout": {
     "skipLink": "Skip to content"
   },
+  "Banner": {
+    "text": "We're presenting avalis at the swissuniversities network meeting for equal opportunity – 23 October 2026.",
+    "closeLabel": "Dismiss notice"
+  },
   "Header": {
     "navTeam": "Team",
     "navSolution": "Solution",

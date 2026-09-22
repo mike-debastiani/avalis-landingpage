@@ -6,6 +6,10 @@
   "Layout": {
     "skipLink": "Zum Inhalt springen"
   },
+  "Banner": {
+    "text": "Wir stellen avalis am Netzwerktreffen für Chancengleichheit von swissuniversities vor – 23. Oktober 2026.",
+    "closeLabel": "Hinweis schliessen"
+  },
   "Header": {
     "navTeam": "Team",
     "navSolution": "Lösung",

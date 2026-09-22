@@ -6,6 +6,7 @@ import { DM_Sans } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { EventBanner } from "@/components/event-banner";
 import "../globals.css";
 
 const dmSans = DM_Sans({
@@ -46,6 +47,7 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Layout" });
+  const tBanner = await getTranslations({ locale, namespace: "Banner" });
 
   return (
     <html lang={locale} className={`${dmSans.variable} h-full antialiased`}>
@@ -57,6 +59,7 @@ export default async function LocaleLayout({
           >
             {t("skipLink")}
           </a>
+          <EventBanner text={tBanner("text")} closeLabel={tBanner("closeLabel")} />
           <SiteHeader locale={locale} />
           <main id="main" className="flex-1">
             {children}
