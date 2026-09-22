@@ -41,12 +41,51 @@
     "videoLabel": "Introduction video, coming soon"
   },
   "Solution": {
-    "eyebrow": "What avalis is and solves",
-    "headline": "One process, many handoffs",
-    "problemTitle": "The situation today",
-    "problemBody": "The accommodation process spans multiple stages and parties. Today it mostly runs over email, PDF, and spreadsheets: requests get stuck at handoffs, and status is often not visible to those affected.",
-    "solutionTitle": "The solution",
-    "solutionBody": "avalis brings the process together in one digital solution, from submitting a request through approval to implementation. Applicants, advisory offices, decision-making bodies, exam scheduling, lecturers, and exam administrators are all connected. Built on nationwide research, modular, and adaptable to each university's process structures.",
+    "badge": "17 universities surveyed nationwide",
+    "eyebrow": "What avalis solves",
+    "headline": "One digital process instead of scattered emails and spreadsheets",
+    "lead": "The accommodation process today runs over email, PDF, and spreadsheets, with no overview for anyone involved. avalis brings the whole process together in one shared, status-based request, from submission to the final decision.",
+    "benefits": {
+      "shared": {
+        "title": "One shared request",
+        "body": "Every party works on the same status-based request, with clearly defined handoffs."
+      },
+      "status": {
+        "title": "Status visible at all times",
+        "body": "Applicants can see where their request stands at any time."
+      },
+      "modular": {
+        "title": "Adaptable to any university",
+        "body": "Built modularly and adaptable to each university's process structures."
+      }
+    },
+    "rolesTitle": "What that means in practice",
+    "roles": {
+      "students": {
+        "name": "Students",
+        "items": [
+          "Guided application process with built-in support",
+          "Status visible at all times, clear responsibilities",
+          "Everything in one place"
+        ]
+      },
+      "advisory": {
+        "name": "Advisory offices",
+        "items": [
+          "Digital case management with status tracking",
+          "Statistics available automatically",
+          "Automatic handoff to the next instance"
+        ]
+      },
+      "decision": {
+        "name": "Decision-making bodies",
+        "items": [
+          "Structured handover of the case file",
+          "Expert recommendation visible directly",
+          "Automatically generated decision"
+        ]
+      }
+    },
     "videoContext": "A short walkthrough shows how the request process works in avalis.",
     "videoLabel": "Walkthrough video, coming soon",
     "statusNote": "avalis is a functional prototype tested with subject-matter experts. It is not intended for productive use."

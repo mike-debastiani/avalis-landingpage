@@ -41,12 +41,51 @@
     "videoLabel": "Vorstellungsvideo, folgt in Kürze"
   },
   "Solution": {
-    "eyebrow": "Was avalis ist und löst",
-    "headline": "Ein Prozess, viele Schnittstellen",
-    "problemTitle": "Die Ausgangslage",
-    "problemBody": "Der Nachteilsausgleich ist ein mehrstufiger Prozess über mehrere Instanzen hinweg. Er läuft heute grösstenteils über E-Mail, PDF und Excel: Anträge bleiben an Schnittstellen liegen, und der Status ist für Betroffene oft nicht sichtbar.",
-    "solutionTitle": "Die Lösung",
-    "solutionBody": "avalis bündelt den Prozess von der Antragseinreichung über die Bewilligung bis zur Umsetzung in einer digitalen Lösung. Antragstellende, Beratungsfachstellen, Entscheidungsinstanzen, Prüfungsplanung, Dozierende und Prüfungsverantwortliche sind vernetzt. Entstanden auf Basis eines schweizweiten Researchs, modular aufgebaut und an die Prozessstrukturen einzelner Hochschulen anpassbar.",
+    "badge": "17 Hochschulen, schweizweit befragt",
+    "eyebrow": "Was avalis löst",
+    "headline": "Ein digitaler Prozess statt verstreuter E-Mails und Excel-Listen",
+    "lead": "Der Nachteilsausgleich läuft heute über E-Mail, PDF und Excel, ohne Überblick für alle Beteiligten. avalis bündelt den ganzen Prozess in einem gemeinsamen, statusbasierten Antrag – von der Einreichung bis zur Verfügung.",
+    "benefits": {
+      "shared": {
+        "title": "Ein gemeinsamer Antrag",
+        "body": "Alle Instanzen arbeiten am selben, statusbasierten Antrag, mit klar geregelten Übergaben."
+      },
+      "status": {
+        "title": "Status jederzeit sichtbar",
+        "body": "Antragstellende sehen jederzeit, wo ihr Antrag steht."
+      },
+      "modular": {
+        "title": "Anpassbar an jede Hochschule",
+        "body": "Modular aufgebaut und an die Prozessstrukturen einzelner Hochschulen anpassbar."
+      }
+    },
+    "rolesTitle": "Was das konkret bedeutet",
+    "roles": {
+      "students": {
+        "name": "Studierende",
+        "items": [
+          "Geführter Antragsprozess mit Hilfestellungen",
+          "Status jederzeit einsehbar, klare Zuständigkeiten",
+          "Alles an einem Ort"
+        ]
+      },
+      "advisory": {
+        "name": "Fachstellen",
+        "items": [
+          "Digitales Fallführungssystem mit Statustracking",
+          "Statistiken automatisch verfügbar",
+          "Automatische Weiterleitung an die nächste Instanz"
+        ]
+      },
+      "decision": {
+        "name": "Entscheidungsinstanzen",
+        "items": [
+          "Strukturierte Übergabe des Dossiers",
+          "Fachliche Empfehlung direkt einsehbar",
+          "Automatisch generierte Verfügung"
+        ]
+      }
+    },
     "videoContext": "Ein kurzer Rundgang zeigt, wie der Antragsprozess in avalis abläuft.",
     "videoLabel": "Walkthrough-Video, folgt in Kürze",
     "statusNote": "avalis ist ein funktionaler Prototyp und wurde mit Fachpersonen getestet. Für den produktiven Einsatz an Hochschulen ist er nicht vorgesehen."
