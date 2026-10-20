@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { impactRoles, type ImpactRoleKey } from "@/lib/impact-roles";
 import { cn } from "@/lib/utils";
 
-// Vereinfachter Ersatz für die handgezeichneten Rollen-Illustrationen aus
-// Figma (farbiger Kreis + Icon statt Linien-Avatar) – bewusste Vereinfachung
-// für diese Version, siehe docs/05_design-system.md Abschnitt 7.
+// Handgezeichnete Rollen-Illustrationen aus Figma (public/avatars/*.svg),
+// mit farbigem Ring zur Rollen-Kennzeichnung (gleiche Farben wie die Pills
+// in der Solution-Section).
 export function RoleAvatar({
   role,
   label,
@@ -15,20 +16,25 @@ export function RoleAvatar({
   size?: "md" | "lg";
   className?: string;
 }) {
-  const { icon: Icon, circle } = impactRoles[role];
+  const { avatarSrc, ring } = impactRoles[role];
+  const dimension = size === "lg" ? 112 : 80;
 
   return (
     <div className={cn("flex flex-col items-center gap-2", className)}>
       <span
-        role="img"
-        aria-label={label}
         className={cn(
-          "flex items-center justify-center rounded-full",
-          circle,
+          "flex items-center justify-center overflow-hidden rounded-full ring-4",
+          ring,
           size === "lg" ? "size-24 sm:size-28" : "size-16 sm:size-20"
         )}
       >
-        <Icon className={size === "lg" ? "size-9 sm:size-10" : "size-6 sm:size-7"} aria-hidden="true" />
+        <Image
+          src={avatarSrc}
+          alt=""
+          width={dimension}
+          height={dimension}
+          className="size-full rounded-full object-cover"
+        />
       </span>
       <span className="text-paragraph-small font-medium text-foreground">{label}</span>
     </div>
