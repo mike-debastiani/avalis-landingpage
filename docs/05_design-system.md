@@ -1,7 +1,12 @@
 # 05 – Design System
 
 > **Quelle der Wahrheit:** Figma Design System von avalis (Styleguide erstellt von Chiara Tremml).
-> **Figma-Link:** [Avalis-Styleguide-BA-2026](https://www.figma.com/design/T7WsBMJeLI71tjKCs9tORo/Avalis-Styleguide-BA-2026)
+> **Figma-Link (Styleguide/Komponenten/Raw-Tokens):** [Avalis-Styleguide-BA-2026](https://www.figma.com/design/T7WsBMJeLI71tjKCs9tORo/Avalis-Styleguide-BA-2026)
+> **Figma-Link (konkrete Landingpage, Stand 20.10.2026, nicht final):** [Avalis-Landingpage](https://www.figma.com/design/WRJ76gBGDPxE8gJXf7VUY9/Avalis-Landingpage)
+>
+> **Zwei Files, zwei Rollen:** Das Styleguide-File liefert die rohen Tokens (Farben, Typografie, Radien, Basiskomponenten) und bleibt verbindlich für deren Werte. Das Landingpage-File zeigt, **wie** diese Tokens auf der konkreten Seite eingesetzt werden (Layout, Hierarchie, welche Rollenfarbe wo, welche Komponente an welcher Stelle) – siehe Abschnitt 7. Bei Widerspruch zwischen den Files: Werte aus dem Styleguide-File, Anwendung/Layout aus dem Landingpage-File.
+>
+> **Aktueller Code-Stand:** `src/app/globals.css` wurde im Rahmen des kompletten Projekt-Neuaufbaus auf die reinen shadcn-Neutral-Defaults zurückgesetzt (keine Figma-Tokens mehr im Code). Das Token-Mapping in Abschnitt 6 bleibt die Grundlage für den nächsten Anlauf, muss aber neu in den Code übertragen werden.
 
 ---
 
@@ -120,3 +125,15 @@ Heading 2 (30px) im Code ergänzt analog zur Skala, im MCP-Response nicht enthal
 | `radius-lg` (Basis) | `--radius` | `0.625rem` (10px) |
 | `rounded-sm` / `rounded-md` / `rounded-xl` | `--radius-sm` / `--radius-md` / `--radius-xl` | abgeleitet via `calc(var(--radius) * …)` |
 | `shadow-lg` (`lg/shadow 1`, `lg/shadow 2`) | *kein Custom-Token* | identisch mit Tailwind-Standard-Utility `shadow-lg`, daher direkt verwendbar |
+
+## 7. Landingpage-spezifische visuelle Muster (aus dem Avalis-Landingpage-File)
+
+Beobachtet im Figma-File «Avalis-Landingpage» (Node `10067:2049`), noch nicht im Code umgesetzt. Exakte Tokens (Farbwerte, Gradient-Stops, Abstände) vor der Umsetzung live über den Figma MCP auslesen, nicht aus den Screenshots abschätzen.
+
+- **Markenakzent als Farbverlauf:** Logo-Icon und ein einzelnes hervorgehobenes Wort im Hero-H1 («alle») nutzen einen Blau-Grün-Lila-Farbverlauf (dieselbe Farbfamilie wie die drei Rollenfarben). Bewusst sparsam eingesetzt, nicht grossflächig.
+- **Rollenfarben live bestätigt:** Die Rollen-Pills in der «Was avalis ist und löst»-Section und die Rollenkreise im Hero nutzen exakt die bestehenden Tokens `bewilligt` (Studierende, Grün), `beratung` (Fachstellen, Blau), `in-decision` (Entscheidungsinstanzen, Lila). Kein neues Mapping nötig.
+- **Registrierungs-Section invertiert:** Einzige Section mit dunklem/invertiertem Hintergrund (helle Schrift, weisse Formular-Karte darauf). Alle anderen Sections bleiben hell/neutral. Macht die Section bewusst zur visuell stärksten der Seite, ohne zusätzliche Farbe einzuführen.
+- **Rollenillustrationen:** Schwarz-Weiss-Linienstil-Avatare (siehe Abschnitt 2), in der Landingpage in farbigen Kreisen (Rollenfarbe als Hintergrund) freigestellt.
+- **Modularitäts-Icon-Set:** Drei organische «Puzzleteil»-Formen als Icon-Trio für die Anpassbarkeits-Aussage (S5 in `06_page-structure.md`). Noch nicht im Styleguide-File als eigenständige Komponente identifiziert – beim nächsten Figma-Durchgang klären, ob es eine Icon-Komponente dafür gibt oder ob es Illustration ist.
+- **Video-Platzhalter-Muster (wiederkehrend, zwei Mal verwendet):** Box im Format 16:9, oben links Format-Label («VIDEO · 16:9»), oben rechts Status («Platzhalter · nicht abspielbar»), mittig Icon + Titel + Hinweistext, unten eine (inaktive) Player-Leiste mit Play-Button, Zeitleiste und CC-Untertitel-Control. Als wiederverwendbare Komponente bauen, nicht pro Section neu.
+- **Schweizer-Kantonskarte:** Neues, spezifisches Visual in der Registrierungs-Section («Interaktive Karte aller teilnehmenden Hochschulen»), Kantone grün eingefärbt je nach Teilnahme. Braucht echte Geodaten/Institutionszuordnung, siehe `08_open-points.md`. Keine erfundene Kartendarstellung bauen, bevor die Datengrundlage steht.

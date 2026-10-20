@@ -18,23 +18,23 @@
 | 9 | Research Report | Darf der Download-Link auf `/bestaetigt` öffentlich erreichbar sein, oder nur per Mail? | Team | 04.10. |
 | 10 | Hochschulliste | Liste der Institutionen für das Dropdown | Team | 04.10. |
 | 11 | Rollenliste | Rollen im Formular bestätigen | Team | 04.10. |
-| 12 | Texte | Content-Entwurf prüfen und freigeben | Team | 04.10. |
-| 13 | Anrede | Du oder Sie (provisorisch Sie) | Team | 27.09. |
-| 14 | Schreibweise | «avalis» oder «Avalis» im Fliesstext | Team | 27.09. |
-| 15 | Team-Sektion | Fotos, Kurzbeschreibungen, LinkedIn, Mentor:innen nennen? | Team | 04.10. |
-| 16 | Kontakt | Öffentliche Kontakt-E-Mail | Team | 04.10. |
+| 12 | Texte | Figma-Entwurf (Stand 20.10., `06_page-structure.md`) mit dem Team final abstimmen – als Richtung gesetzt, aber ausdrücklich nicht final | Team | – |
+| 15 | Team-Sektion | Figma zeigt nur Namen + Video, keine Fotos/Kurzbios/LinkedIn. Bestätigen, dass das so bleibt, oder Mentor:innen-Nennung ergänzen | Team | – |
+| 16 | Kontakt | Öffentliche Kontakt-E-Mail. Bis dahin **nicht** mit einer Platzhalter-Adresse arbeiten, sondern mit dem Figma-Text «Kontaktadresse folgt» | Team | – |
+| 29 | Registrierung | Figma zeigt eine **einzelne kombinierte** Einwilligungs-Checkbox (Report + Updates + Datenschutz) statt getrennter Zustimmungen – mit Brevo-Anbindung (#2–#5) abgleichen, ob das rechtlich/technisch so umsetzbar ist | Mike | – |
+| 30 | Visuals | Schweizer-Kantonskarte in der Registrierungs-Section («Interaktive Karte aller teilnehmenden Hochschulen») braucht echte Geodaten und eine Zuordnung Kanton → teilnehmende Hochschule(n). Ohne diese Daten keine Karte bauen | Team | – |
+| 31 | Rechtliches/Visuals | Logo-Reihe in der Registrierungs-Section zeigt im Figma-Entwurf teils generische Platzhalter-Logos (Notion, Airtable, Evernote – vermutlich Figma-Komponenten-Dummies, kein Bezug zu avalis) neben echten (swissuniversities, HSLU). Klären, welche Logos real gezeigt werden sollen | Team | – |
+| 32 | Rechtliches | **Spannung:** Das Figma-File zeigt bereits ein HSLU-Logo in der Registrierungs-Section, obwohl Punkt #18 (HSLU-Name/Logo-Nutzung) noch offen ist. Vor der Umsetzung klären, sonst wird im Design etwas vorweggenommen, das rechtlich noch nicht abgesegnet ist | Team / Mentor:innen | – |
 | 17 | Rechtliches | Verantwortliche Personen und Adresse für Impressum und Datenschutz | Team | 11.10. |
 | 18 | Rechtliches | Verwendung HSLU-Name und Logo | Team / Mentor:innen | 04.10. |
 | 19 | Rechtliches | Teilnehmende Institutionen namentlich nennen? (Anonymisierung im Report) | Team / Mentor:innen | 04.10. |
 | 20 | Spam-Schutz | Nur Honeypot oder zusätzlich Cloudflare Turnstile | Mike | 11.10. |
-| 21 | Visuals | Screenshots des Prototyps (nur Mock-Daten), OpenGraph-Bild | Team | 11.10. |
-| 22 | Englisch | Übersetzung der finalen Texte prüfen | Team | 11.10. |
+| 21 | Visuals | Screenshots des Prototyps (nur Mock-Daten), OpenGraph-Bild, Schweizer-Kantonskarte (siehe #30) | Team | – |
+| 22 | Englisch | Übersetzung der finalen Texte prüfen | Team | – |
 | 23 | Event | QR-Code mit `?src=netzwerktreffen` für Präsentation | Team | 21.10. |
-| 24 | Design System | Hero-Display-Typografie (`--text-display`) ist nur im Code definiert, nicht in Figma abgesichert – bei Gelegenheit mit Team/Figma nachziehen | Team | 04.10. |
-| 25 | Design System | Heading-2-Grösse (30px) im Code aus der Typografie-Skala abgeleitet, aber im Figma-MCP-Response nicht enthalten – gegen Figma verifizieren | Mike | 04.10. |
-| 26 | Sicherheit | CSP `script-src` nutzt aktuell `'unsafe-inline'` statt Nonce: Next.js 16 appliziert einen per-Request-Nonce (korrekt via `Content-Security-Policy`-Header gesetzt) nicht auf seine eigenen Hydration-`<script>`-Tags, geprüft in Produktion. Bei neuerer Next.js-Version erneut mit Nonce statt `unsafe-inline` versuchen | Mike | – |
-| 27 | Registrierung | Formular zeigt heute nur E-Mail + Einwilligung, Submit deaktiviert. Institution/Rolle-Felder und Brevo-Anbindung folgen mit Punkten #2–#5, #10, #11 | Mike | 11.10. |
-| 28 | Inhalte | Team-Kurzbeschreibungen, Fotos, Kontakt-E-Mail sowie Impressum/Datenschutz-Inhalt sind Platzhalter ("folgt") | Team | 04.10.–11.10. |
+| 26 | Sicherheit | CSP `script-src` nutzt aktuell `'unsafe-inline'` statt Nonce: Next.js 16 appliziert einen per-Request-Nonce (korrekt via `Content-Security-Policy`-Header gesetzt) nicht auf seine eigenen Hydration-`<script>`-Tags, geprüft in Produktion. Bei neuerer Next.js-Version erneut mit Nonce statt `unsafe-inline` versuchen. Nach dem Projekt-Neuaufbau erneut prüfen, ob/wie CSP-Header wieder gesetzt werden | Mike | – |
+| 27 | Code-Stand | Das komplette Webprojekt wurde am 20.10.2026 gelöscht und wird neu aufgesetzt (reines Next.js/Tailwind-Default-Setup, i18n-Gerüst bleibt). Design-System-Tokens (#24/#25 alt) und alle Sections müssen neu gebaut werden, siehe `05_design-system.md` Abschnitt 7 und `06_page-structure.md` | Mike | – |
+| 28 | Inhalte | Team-Kurzbeschreibungen, Fotos, Kontakt-E-Mail sowie Impressum/Datenschutz-Inhalt sind Platzhalter ("folgt") | Team | – |
 
 ## Entschieden
 
@@ -48,3 +48,7 @@
 | 15.09.2026 | Branch- und Pull-Request-Workflow, Merge nur manuell |
 | 15.09.2026 | Figma-Link und Zugriff für Figma MCP vorhanden: [Avalis-Styleguide-BA-2026](https://www.figma.com/design/T7WsBMJeLI71tjKCs9tORo/Avalis-Styleguide-BA-2026) |
 | 15.09.2026 | Design-System-Basis (Stone-Palette, Rollenfarben Beratung/In-Decision/Bewilligt, Typografie, Radien) aus Figma ausgelesen und gegen `nta-tool-prototype` verifiziert, in `src/app/globals.css` umgesetzt; shadcn/ui mit Preset `radix-vega` (identisch zum Prototyp) eingerichtet |
+| 20.10.2026 | Figma-Landingpage-File als konkrete Vorlage vorhanden und gesichtet: [Avalis-Landingpage](https://www.figma.com/design/WRJ76gBGDPxE8gJXf7VUY9/Avalis-Landingpage). Ersetzt frühere Annahmen zu Seitenstruktur und -texten, siehe `06_page-structure.md` |
+| 20.10.2026 | Anrede: **Sie** (durch Figma-Formulartexte bestätigt, z.B. «Registrieren Sie sich») |
+| 20.10.2026 | Schreibweise: **«avalis» durchgehend klein**, auch im Logo-Wortzeichen (durch Figma bestätigt) |
+| 20.10.2026 | Komplettes Webprojekt zurückgesetzt, Neuaufbau mit reinem Next.js/Tailwind-Default-Setup auf Basis des neuen Figma-Plans (i18n-Gerüst bleibt bestehen) |

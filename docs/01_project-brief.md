@@ -11,7 +11,7 @@ Das Bachelorprojekt «avalis» (Digital Ideation, Fokus Design, Hochschule Luzer
 ## 2. Ziele
 
 1. **Verstehen:** Besuchende verstehen in unter einer Minute, welches Problem avalis adressiert und wie die Lösung aussieht.
-2. **Glaubwürdigkeit:** Die Seite vermittelt die im Research erarbeitete **Expertise** (17 Institutionen, drei Prozessmodelle). Wir verkaufen kein Produkt, sondern zeigen Erkenntnisse und eine fundierte Lösungsidee.
+2. **Glaubwürdigkeit:** Die Seite vermittelt die im Research erarbeitete **Expertise** (schweizweite Erhebung über 17 Hochschulen). Wir verkaufen kein Produkt, sondern zeigen eine fundierte Lösungsidee. Wichtig: **«drei Prozessmodelle» ist ein Key Finding und wird auf der Landingpage nicht genannt** (siehe `02_avalis-context.md` Abschnitt 4 und `06_page-structure.md` Grundregeln) – die Erhebungszahl («17 Hochschulen») trägt die Glaubwürdigkeit, nicht die Erkenntnis selbst.
 3. **Registrieren:** Möglichst viele interessierte Fachpersonen registrieren sich, um den Research Report und künftige Updates zu erhalten.
 4. **Lernen:** Wir erfahren, welche Hochschulen und Rollen sich für die Arbeit interessieren.
 
@@ -29,7 +29,7 @@ Das Bachelorprojekt «avalis» (Digital Ideation, Fokus Design, Hochschule Luzer
 ## 4. Scope
 
 **Im Scope (Launch):**
-- Onepager mit den Sektionen gemäss `06_content-draft.md`
+- Onepager mit den Sektionen gemäss `06_page-structure.md`
 - Registrierung mit Double-Opt-in über Brevo
 - Bestätigungsseite nach Double-Opt-in mit Zugang zum Research Report
 - Sprachversionen DE und EN

@@ -1,7 +1,8 @@
 # 04 – Registrierung und Double-Opt-in
 
-> **Stand:** 15.09.2026 · Brevo-Werte (Liste, Templates, Attribute) sind noch nicht angelegt.
+> **Stand:** 20.10.2026 · Brevo-Werte (Liste, Templates, Attribute) sind noch nicht angelegt.
 > Die Brevo-API-Details vor der Umsetzung in der offiziellen Dokumentation prüfen (developers.brevo.com).
+> Formular-UI-Stand gemäss Figma-File [Avalis-Landingpage](https://www.figma.com/design/WRJ76gBGDPxE8gJXf7VUY9/Avalis-Landingpage), Node `10067:2283` («Registrierungsformular · Normalzustand») – nicht final, zeigt aber die aktuelle Richtung für Feldbeschriftungen und Button-Text.
 
 ---
 
@@ -19,7 +20,7 @@ Interessierte registrieren sich mit wenigen Angaben. Nach Bestätigung per Mail 
 | Institution | ja | Auswahl | `HOCHSCHULE` | Feste Liste (folgt) + «Andere» |
 | Andere Institution | bedingt | Text | `HOCHSCHULE` | Nur sichtbar und Pflicht, wenn «Andere» gewählt |
 | Rolle | ja | Auswahl | `ROLLE` | Werte siehe unten |
-| Einwilligung | ja | Checkbox | – | Nicht vorausgewählt, Link zur Datenschutzerklärung |
+| Einwilligung | ja | Checkbox | – | Nicht vorausgewählt, **eine** kombinierte Checkbox für Report-Versand, gelegentliche Updates und Datenschutz-Zustimmung (siehe Figma-Text unten), Link zur Datenschutzerklärung |
 | `source` | – | versteckt | `SOURCE` | Aus `?src=` gelesen, nur erlaubte Werte |
 | `language` | – | versteckt | `SPRACHE` | Aus der aktuellen Route (`de`, `en`) |
 | Honeypot | – | versteckt | – | Für Menschen unsichtbar, auch für Screenreader (`aria-hidden`, `tabindex="-1"`) |
@@ -31,6 +32,15 @@ Interessierte registrieren sich mit wenigen Angaben. Nach Bestätigung per Mail 
 **Erlaubte `source`-Werte:** `netzwerktreffen`, `mail`, `direkt` (Fallback, wenn kein oder ein unbekannter Wert vorhanden ist).
 
 **Institutionsliste:** Folgt. Wird in `src/lib/institutions.ts` als Array mit stabilem Schlüssel und Namen gepflegt. Nicht von Claude generieren lassen.
+
+**Formulartexte aus Figma (Stand, nicht final):**
+- Titel: «Research Report erhalten»
+- Begleittext: «Registrieren Sie sich für den Report und gelegentliche Updates zur Weiterentwicklung von avalis.»
+- Pflichtfeldhinweis: «\* Pflichtfeld · alle weiteren Angaben sind optional» – nur E-Mail, Hochschule und Rolle sind mit `*` markiert, Vorname/Nachname sind explizit als «(optional)» beschriftet.
+- Einwilligungstext (eine Checkbox, kombiniert): «Ich möchte den Research Report und gelegentliche Updates per E-Mail erhalten und stimme der Datenschutzerklärung zu.»
+- Button: **«Jetzt registrieren»** (nicht «Research Report erhalten» – das ist der Header-/Hero-CTA, der zum Formular scrollt)
+- Hinweis unter dem Button: «Jederzeit abmeldbar. Keine Weitergabe Ihrer Daten an Dritte.»
+- Kleiner Entwurfshinweis (so lange keine Brevo-Anbindung existiert): «Formularentwurf · noch ohne Versandfunktion»
 
 ## 3. Ablauf
 
