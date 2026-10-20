@@ -4,12 +4,12 @@
 
 /*
  * Avalis Design-System-Tokens.
- * Quelle: Figma "Avalis-Styleguide-BA-2026" (fileKey T7WsBMJeLI71tjKCs9tORo),
- * verifiziert gegen den bestehenden Webapp-Prototyp (nta-tool-prototype,
- * app/design-tokens/high-fidelity-*.css). Mapping-Tabelle: docs/05_design-system.md.
- * Rollenfarben (beratung/in-decision/bewilligt) sind für die "Wirkung pro Rolle"-
- * Sektion vorgesehen. Die vier reinen App-Workflow-Paletten der Webapp
- * (Entwurf, In-Review, Anpassung, Abgelehnt) wurden bewusst nicht übernommen.
+ * Quelle: Figma "Avalis-Landingpage" (fileKey WRJ76gBGDPxE8gJXf7VUY9), Stand
+ * 20.10.2026, per Figma MCP (get_variable_defs) direkt aus der Landingpage
+ * ausgelesen. Rollenfarben (beratung/in-decision/bewilligt) decken sich fast
+ * exakt mit der früheren Styleguide-Extraktion, zwei Lila-Stufen wurden mit
+ * den neuen, direkt aus der Landingpage gelesenen Werten aktualisiert.
+ * Mapping-Tabelle: docs/05_design-system.md.
  */
 
 @theme inline {
@@ -35,13 +35,13 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
 
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.25rem;
+  --radius-4xl: 1.5rem;
 
   /* Graustufen (Stone) */
   --color-stone-50: var(--stone-50);
@@ -97,7 +97,7 @@
   --color-bewilligt-900: var(--bewilligt-900);
   --color-bewilligt-950: var(--bewilligt-950);
 
-  /* Typografie (Webapp-Styleguide) */
+  /* Typografie (aus Figma, Section 05_design-system.md) */
   --text-heading-1: var(--heading-1-size);
   --text-heading-1--line-height: var(--heading-1-line-height);
   --text-heading-1--font-weight: 600;
@@ -120,17 +120,11 @@
   --text-paragraph-mini: var(--paragraph-mini-size);
   --text-paragraph-mini--line-height: var(--paragraph-mini-line-height);
 
-  --text-caption: var(--caption-size);
-  --text-caption--line-height: var(--caption-line-height);
-  --text-caption--letter-spacing: var(--caption-letter-spacing);
-  --text-caption--font-weight: 400;
-
   /*
-   * Display (Hero) — Code-Entscheid, nicht im Figma-Webapp-Styleguide vorhanden
-   * (der ist für App-UI ausgelegt, nicht für eine Marketing-Landingpage).
-   * Fluid zwischen Mobile (40px) und Desktop (64px), Verhältnis/Weight
-   * konsistent zur SemiBold-Heading-Konvention fortgeführt.
-   * Siehe docs/05_design-system.md Abschnitt 4.
+   * Display (Hero) — Code-Entscheid, nicht im Figma-File als eigenes Token
+   * vorhanden (bestätigt beim Auslesen der Landingpage-Variablen). Fluid
+   * zwischen Mobile (40px) und Desktop (64px), SemiBold wie die übrigen
+   * Headings. Siehe docs/05_design-system.md Abschnitt 4.
    */
   --text-display: clamp(2.5rem, 1.5rem + 4vw, 4rem);
   --text-display--line-height: 1.05;
@@ -139,7 +133,7 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #fafaf9;
   --foreground: #1c1917;
   --card: #ffffff;
   --card-foreground: #1c1917;
@@ -157,7 +151,7 @@
   --border: #dedbd9;
   --input: #dedbd9;
   --ring: #78716c;
-  --radius: 0.625rem;
+  --radius: 0.5rem;
 
   /* Graustufen (Stone) */
   --stone-50: #fafaf9;
@@ -195,8 +189,8 @@
   --in-decision-400: #b68bfa;
   --in-decision-500: #985cf6;
   --in-decision-600: #8535e8;
-  --in-decision-700: #7324d4;
-  --in-decision-800: #6219c4;
+  --in-decision-700: #6d28d9;
+  --in-decision-800: #5b21b6;
   --in-decision-900: #5214a8;
   --in-decision-950: #421086;
 
@@ -230,9 +224,6 @@
   --paragraph-small-line-height: 1.25rem;
   --paragraph-mini-size: 0.75rem;
   --paragraph-mini-line-height: 1rem;
-  --caption-size: 0.875rem;
-  --caption-line-height: 1.3125rem;
-  --caption-letter-spacing: 0.09375rem;
 }
 
 @layer base {
@@ -268,10 +259,10 @@
   }
 
   .section-spacing {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-12 sm:py-16 lg:py-24;
   }
 
-  /* Rein dekorativer Platzhalter-Balken (z.B. Hero-Visual), keine echten Daten. */
+  /* Rein dekorativer Platzhalter-Balken, keine echten Daten. */
   .skeleton-bar {
     @apply h-2.5 rounded-full bg-stone-200;
   }

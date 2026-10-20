@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { LogoMark } from "@/components/logo-mark";
 import type { Locale } from "@/i18n/routing";
 
 export async function SiteFooter({ locale }: { locale: Locale }) {
@@ -10,14 +11,12 @@ export async function SiteFooter({ locale }: { locale: Locale }) {
     <footer className="border-t border-border">
       <div className="section-container flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="font-semibold text-foreground">avalis</p>
-          <p className="mt-1 max-w-sm text-paragraph-small text-muted-foreground">{t("tagline")}</p>
-          <a
-            href={`mailto:${t("contact")}`}
-            className="mt-1 inline-block text-paragraph-small text-muted-foreground underline underline-offset-4 hover:text-foreground"
-          >
-            {t("contact")}
-          </a>
+          <div className="flex items-center gap-2 font-semibold text-foreground">
+            <LogoMark className="size-6" />
+            <span>avalis</span>
+          </div>
+          <p className="mt-2 max-w-sm text-paragraph-small text-muted-foreground">{t("tagline")}</p>
+          <p className="mt-1 text-paragraph-mini text-muted-foreground">{t("legalPending")}</p>
         </div>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">

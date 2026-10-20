@@ -1,19 +1,29 @@
 import { getTranslations } from "next-intl/server";
-import { ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PlaceholderBox } from "@/components/placeholder-box";
+import { RoleAvatar } from "@/components/role-avatar";
 
 export async function HeroSection() {
   const t = await getTranslations("Hero");
+  const tRoles = await getTranslations("ImpactRoles");
 
   return (
     <section id="hero" className="section-container section-spacing">
-      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-12">
+      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[3fr_2fr] lg:gap-16">
         <div>
           <p className="text-paragraph-small font-medium uppercase tracking-wide text-muted-foreground">
             {t("eyebrow")}
           </p>
-          <h1 className="mt-4 text-display text-foreground">{t("headline")}</h1>
+          <h1 className="mt-4 text-display text-foreground">
+            {t("headlineLine1")}
+            <br />
+            {t("headlineLine2")}
+            <br />
+            {t("headlineLine3Before")}
+            <span className="bg-linear-to-r from-beratung-500 via-bewilligt-500 to-in-decision-500 bg-clip-text text-transparent">
+              {t("headlineAccent")}
+            </span>
+            {t("headlineLine3After")}
+          </h1>
           <p className="mt-6 text-paragraph-large text-muted-foreground">{t("lead")}</p>
 
           <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
@@ -29,7 +39,13 @@ export async function HeroSection() {
           </div>
         </div>
 
-        <PlaceholderBox icon={ImageIcon} label={t("imageLabel")} className="aspect-4/3 w-full" />
+        <div className="flex flex-col items-center gap-6">
+          <RoleAvatar role="advisory" label={tRoles("advisory")} />
+          <div className="flex items-start justify-center gap-6 sm:gap-10">
+            <RoleAvatar role="students" label={tRoles("students")} />
+            <RoleAvatar role="decision" label={tRoles("decision")} />
+          </div>
+        </div>
       </div>
     </section>
   );
