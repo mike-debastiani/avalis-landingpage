@@ -28,7 +28,6 @@
 | 17 | Rechtliches | Verantwortliche Personen und Adresse für Impressum und Datenschutz | Team | 11.10. |
 | 18 | Rechtliches | Verwendung HSLU-Name und Logo | Team / Mentor:innen | 04.10. |
 | 19 | Rechtliches | Teilnehmende Institutionen namentlich nennen? (Anonymisierung im Report) | Team / Mentor:innen | 04.10. |
-| 20 | Spam-Schutz | Nur Honeypot oder zusätzlich Cloudflare Turnstile | Mike | 11.10. |
 | 21 | Visuals | Screenshots des Prototyps (nur Mock-Daten), OpenGraph-Bild, Schweizer-Kantonskarte (siehe #30) | Team | – |
 | 22 | Englisch | Übersetzung der finalen Texte prüfen | Team | – |
 | 23 | Event | QR-Code mit `?src=netzwerktreffen` für Präsentation | Team | 21.10. |
@@ -51,4 +50,5 @@
 | 20.10.2026 | Figma-Landingpage-File als konkrete Vorlage vorhanden und gesichtet: [Avalis-Landingpage](https://www.figma.com/design/WRJ76gBGDPxE8gJXf7VUY9/Avalis-Landingpage). Ersetzt frühere Annahmen zu Seitenstruktur und -texten, siehe `06_page-structure.md` |
 | 20.10.2026 | Anrede: **Sie** (durch Figma-Formulartexte bestätigt, z.B. «Registrieren Sie sich») |
 | 20.10.2026 | Schreibweise: **«avalis» durchgehend klein**, auch im Logo-Wortzeichen (durch Figma bestätigt) |
+| 21.10.2026 | Spam-Schutz: vorerst nur Honeypot, kein Cloudflare Turnstile |
 | 20.10.2026 | Komplettes Webprojekt zurückgesetzt, Neuaufbau mit reinem Next.js/Tailwind-Default-Setup auf Basis des neuen Figma-Plans (i18n-Gerüst bleibt bestehen) |

@@ -1,5 +1,6 @@
 "use server";
 
+import { BrevoError, subscribeDoubleOptin } from "@/lib/brevo";
 import {
   HONEYPOT_FIELD_NAME,
   validateRegistration,
@@ -22,13 +23,22 @@ export async function registerAction(
     return { status: "error", fieldErrors: result.fieldErrors };
   }
 
-  // TODO: Brevo-Anbindung einsetzen (siehe docs/04_registration-flow.md
-  // Abschnitt 3-4 und docs/03_tech-architecture.md Abschnitt 2-3):
-  // POST https://api.brevo.com/v3/contacts/doubleOptinConfirmation mit
-  // result.data (email, attributes für Institution/Rolle/Name),
-  // BREVO_API_KEY, BREVO_LIST_ID, sprachspezifischer BREVO_DOI_TEMPLATE_ID_*
-  // und redirectionUrl auf `${NEXT_PUBLIC_SITE_URL}/{locale}/bestaetigt`.
-  // Aktuell wird nichts an Brevo gesendet.
+  try {
+    await subscribeDoubleOptin(result.data);
+  } catch (error) {
+    // Nie personenbezogene Daten oder rohe Brevo-Fehlertexte loggen/ausgeben
+    // (siehe docs/03_tech-architecture.md Abschnitt 4). BrevoError enthält
+    // nur Status-Code und Brevos Fehlercode, keine Nutzerdaten.
+    console.error(
+      "Brevo-Registrierung fehlgeschlagen:",
+      error instanceof BrevoError ? error.message : "unbekannter Fehler"
+    );
+    return { status: "error" };
+  }
 
+  // Jede 2xx-Antwort von Brevo gilt als Erfolg, auch bei bereits
+  // existierendem Kontakt – erfüllt die Vorgabe "neutrale Erfolgsmeldung,
+  // keine Auskunft ob eine E-Mail bereits registriert ist" ohne weitere
+  // Sonderlogik (siehe docs/04_registration-flow.md Abschnitt 4).
   return { status: "success" };
 }

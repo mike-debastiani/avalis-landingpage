@@ -35,7 +35,6 @@ export async function RegistrationSection({ locale }: { locale: Locale }) {
             </div>
 
             <p className="mt-6 text-paragraph-small text-muted-foreground">{t("belowButtonNote")}</p>
-            <p className="mt-2 text-paragraph-mini text-muted-foreground">{t("draftNote")}</p>
           </div>
         </div>
       </div>

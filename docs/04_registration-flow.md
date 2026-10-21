@@ -1,7 +1,6 @@
 # 04 – Registrierung und Double-Opt-in
 
-> **Stand:** 20.10.2026 · Brevo-Werte (Liste, Templates, Attribute) sind noch nicht angelegt.
-> Die Brevo-API-Details vor der Umsetzung in der offiziellen Dokumentation prüfen (developers.brevo.com).
+> **Stand:** 21.10.2026 · Code-seitig implementiert (`src/lib/brevo.ts`, `src/actions/register.ts`). Brevo-seitig (Liste, Attribute, Templates) noch nicht angelegt, siehe Abschnitt 8 und `docs/08_open-points.md` #2–#5.
 > Formular-UI-Stand gemäss Figma-File [Avalis-Landingpage](https://www.figma.com/design/WRJ76gBGDPxE8gJXf7VUY9/Avalis-Landingpage), Node `10067:2283` («Registrierungsformular · Normalzustand») – nicht final, zeigt aber die aktuelle Richtung für Feldbeschriftungen und Button-Text.
 
 ---
@@ -15,8 +14,8 @@ Interessierte registrieren sich mit wenigen Angaben. Nach Bestätigung per Mail 
 | Feld | Pflicht | Typ | Brevo-Attribut | Hinweise |
 |---|---|---|---|---|
 | E-Mail | ja | E-Mail | `email` (Standard) | Trimmen, klein schreiben |
-| Vorname | nein | Text | *Name in Brevo prüfen* (`FIRSTNAME` oder `VORNAME`) | max. 100 Zeichen |
-| Nachname | nein | Text | *Name in Brevo prüfen* (`LASTNAME` oder `NACHNAME`) | max. 100 Zeichen |
+| Vorname | nein | Text | `FIRSTNAME` (Brevo-Standardattribut) | max. 100 Zeichen |
+| Nachname | nein | Text | `LASTNAME` (Brevo-Standardattribut) | max. 100 Zeichen |
 | Institution | ja | Auswahl | `HOCHSCHULE` | Feste Liste (folgt) + «Andere» |
 | Andere Institution | bedingt | Text | `HOCHSCHULE` | Nur sichtbar und Pflicht, wenn «Andere» gewählt |
 | Rolle | ja | Auswahl | `ROLLE` | Werte siehe unten |
@@ -40,17 +39,16 @@ Interessierte registrieren sich mit wenigen Angaben. Nach Bestätigung per Mail 
 - Einwilligungstext (eine Checkbox, kombiniert): «Ich möchte den Research Report und gelegentliche Updates per E-Mail erhalten und stimme der Datenschutzerklärung zu.»
 - Button: **«Jetzt registrieren»** (nicht «Research Report erhalten» – das ist der Header-/Hero-CTA, der zum Formular scrollt)
 - Hinweis unter dem Button: «Jederzeit abmeldbar. Keine Weitergabe Ihrer Daten an Dritte.»
-- Kleiner Entwurfshinweis (so lange keine Brevo-Anbindung existiert): «Formularentwurf · noch ohne Versandfunktion»
-
 ## 3. Ablauf
 
 1. Person füllt das Formular aus und sendet ab.
 2. Server Action prüft den Honeypot. Ist er ausgefüllt: Erfolgsmeldung anzeigen, aber nichts an Brevo senden.
 3. Validierung mit Zod. Fehler werden feldweise zurückgegeben.
-4. Aufruf der Brevo-API für Double-Opt-in-Kontakte:
-   - Endpoint (in Doku verifizieren): `POST https://api.brevo.com/v3/contacts/doubleOptinConfirmation`
+4. Aufruf der Brevo-API für Double-Opt-in-Kontakte (implementiert in `src/lib/brevo.ts`):
+   - Endpoint: `POST https://api.brevo.com/v3/contacts/doubleOptinConfirmation`
    - Header: `api-key: <BREVO_API_KEY>`, `content-type: application/json`
-   - Body sinngemäss: `email`, `attributes` (Institution, Rolle, Source, Sprache, Name), `includeListIds: [BREVO_LIST_ID]`, `templateId` (je nach Sprache), `redirectionUrl` (`{SITE_URL}/{locale}/bestaetigt`)
+   - Body: `email`, `attributes` (`FIRSTNAME`, `LASTNAME`, `HOCHSCHULE`, `ROLLE`, `SOURCE`, `SPRACHE`), `includeListIds: [BREVO_LIST_ID]`, `templateId` (je nach Sprache), `redirectionUrl` (`{NEXT_PUBLIC_SITE_URL}/{language}/bestaetigt`)
+   - Fehlt eine der benötigten Umgebungsvariablen, wirft der Code sofort einen klaren Fehler statt still zu scheitern (siehe `docs/03_tech-architecture.md` Abschnitt 3)
 5. Erfolgsmeldung im Formular: «Fast geschafft. Bitte bestätigen Sie Ihre Anmeldung über den Link in der Mail.» Hinweis auf den Spam-Ordner.
 6. Brevo verschickt die Bestätigungsmail.
 7. Person klickt den Link, Brevo fügt den Kontakt der Liste hinzu und leitet auf `/[locale]/bestaetigt` weiter.
@@ -61,7 +59,7 @@ Interessierte registrieren sich mit wenigen Angaben. Nach Bestätigung per Mail 
 | Fall | Verhalten |
 |---|---|
 | Validierungsfehler | Fehlermeldung direkt am Feld, Fokus auf das erste fehlerhafte Feld, Meldungen per `aria-live` angekündigt |
-| E-Mail bereits registriert | Neutrale Erfolgsmeldung wie bei neuer Registrierung (keine Auskunft, ob eine Adresse existiert). Verhalten der API bei bestehenden Kontakten in der Doku prüfen |
+| E-Mail bereits registriert | Neutrale Erfolgsmeldung wie bei neuer Registrierung (keine Auskunft, ob eine Adresse existiert). Umgesetzt, indem jede 2xx-Antwort von Brevo als Erfolg gilt, unabhängig vom Kontaktstatus. Mit echten Brevo-Werten gegen Testcheckliste (Abschnitt 7) verifizieren |
 | Brevo nicht erreichbar oder Fehler | Klare Meldung «Die Anmeldung hat nicht geklappt. Bitte versuchen Sie es in ein paar Minuten erneut.» Fehler serverseitig ohne personenbezogene Daten loggen. **Nie eine falsche Erfolgsmeldung** |
 | Doppelklick auf Absenden | Button während des Sendens deaktivieren, Ladezustand anzeigen |
 | JavaScript deaktiviert | Formular funktioniert dank Server Action trotzdem |
@@ -92,3 +90,14 @@ Alle Mails enthalten einen Abmeldelink. Ob Automationen im Free-Plan im benötig
 - [ ] Honeypot getestet
 - [ ] Abmeldung funktioniert
 - [ ] Formular vollständig per Tastatur und mit Screenreader bedienbar
+
+## 8. Noch offen: Einrichtung in Brevo
+
+Der Code (`src/lib/brevo.ts`, `src/actions/register.ts`) ist fertig und wartet auf diese Werte. Ohne sie zeigt das Formular korrekt die Fehlermeldung aus Abschnitt 4, statt eine falsche Erfolgsmeldung vorzutäuschen. Entspricht den offenen Punkten #2–#5 in `docs/08_open-points.md`:
+
+1. Liste **„Avalis Registrierungen"** in Brevo anlegen → `BREVO_LIST_ID`.
+2. Kontaktattribute anlegen: `HOCHSCHULE`, `ROLLE`, `SOURCE`, `SPRACHE` (Text). `FIRSTNAME`/`LASTNAME` existieren als Brevo-Standardattribute bereits.
+3. Double-Opt-in-Templates DE und EN erstellen, je mit dem Platzhalter `{{ doubleoptin }}` für den Bestätigungsbutton → `BREVO_DOI_TEMPLATE_ID_DE` / `BREVO_DOI_TEMPLATE_ID_EN`.
+4. Neuer API-Key, nur serverseitig verwendet → `BREVO_API_KEY`. IP-Sperre für unbekannte Adressen deaktivieren (Vercel nutzt wechselnde IPs).
+5. Alle Werte in Vercel (*Settings → Environment Variables*, Production/Preview/Development) und lokal in `.env.local` eintragen, zusätzlich `NEXT_PUBLIC_SITE_URL`.
+6. Sobald vorhanden: Testcheckliste oben durchgehen.

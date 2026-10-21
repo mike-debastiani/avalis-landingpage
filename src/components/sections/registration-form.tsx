@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { CheckCircle2, CircleAlert } from "lucide-react";
 import { registerAction } from "@/actions/register";
@@ -49,6 +49,25 @@ const emptyValues: FormValues = {
   role: "",
 };
 
+// Muss mit den erlaubten Werten in src/lib/validation/registration.ts
+// übereinstimmen; alles andere fällt dort ohnehin auf "direkt" zurück.
+const ALLOWED_SOURCES = ["netzwerktreffen", "mail"];
+
+// ?src= ist eine reine Browser-Grösse (kein Prop, kein State), die beim
+// ersten Render auf dem Server nicht existiert. useSyncExternalStore liest
+// sie ohne setState-in-Effect und ohne Hydration-Mismatch: Server-Snapshot
+// liefert immer "direkt", der Client-Snapshot den echten Wert nach Hydration.
+function subscribeToNothing() {
+  return () => {};
+}
+function getSourceSnapshot() {
+  const raw = new URLSearchParams(window.location.search).get("src");
+  return raw && ALLOWED_SOURCES.includes(raw) ? raw : "direkt";
+}
+function getServerSourceSnapshot() {
+  return "direkt";
+}
+
 // Felder werden vollständig kontrolliert geführt: React setzt nach jeder
 // Server-Action-Übermittlung unkontrollierte Formularfelder automatisch
 // zurück (auch bei einer Fehlerantwort), wodurch z.B. die Institutions-Auswahl
@@ -59,6 +78,10 @@ export function RegistrationForm({ locale }: { locale: Locale }) {
   const [state, formAction, pending] = useActionState(registerAction, initialRegisterState);
   const [values, setValues] = useState<FormValues>(emptyValues);
   const [consent, setConsent] = useState(false);
+  // Kein next/navigation useSearchParams: das würde die sonst statisch
+  // generierbare Seite in dynamisches Rendering zwingen, nur für dieses
+  // einzelne Analytics-Attribut.
+  const source = useSyncExternalStore(subscribeToNothing, getSourceSnapshot, getServerSourceSnapshot);
   const fieldRefs = useRef<Partial<Record<string, HTMLElement | null>>>({});
 
   useEffect(() => {
@@ -128,6 +151,11 @@ export function RegistrationForm({ locale }: { locale: Locale }) {
           autoComplete="off"
         />
       </div>
+
+      {/* Kontext-Attribute für Brevo, nicht nutzersichtbar: Herkunft (?src=)
+          und aktuelle Sprachroute, siehe docs/04_registration-flow.md. */}
+      <input type="hidden" name="source" value={source} />
+      <input type="hidden" name="language" value={locale} />
 
       <div>
         <Label htmlFor="email">{t("fields.emailLabel")}</Label>

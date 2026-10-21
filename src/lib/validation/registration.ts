@@ -4,6 +4,19 @@ import { roleValues } from "@/lib/roles";
 
 export const HONEYPOT_FIELD_NAME = "website";
 
+// Erlaubte source-Werte gemäss docs/04_registration-flow.md Abschnitt 2,
+// alles andere (inkl. fehlender Wert) fällt auf "direkt" zurück.
+const ALLOWED_SOURCES = ["netzwerktreffen", "mail"] as const;
+
+function readSource(formData: FormData): string {
+  const raw = String(formData.get("source") ?? "");
+  return (ALLOWED_SOURCES as readonly string[]).includes(raw) ? raw : "direkt";
+}
+
+function readLanguage(formData: FormData): "de" | "en" {
+  return formData.get("language") === "en" ? "en" : "de";
+}
+
 export const registrationSchema = z
   .object({
     email: z.email(),
@@ -32,7 +45,13 @@ export const registrationSchema = z
     { when: () => true }
   );
 
-export type RegistrationData = z.infer<typeof registrationSchema>;
+// source/language kommen nicht vom Zod-Schema: es sind reine Kontext-
+// Attribute (Herkunft, Sprache) ohne nutzerseitige Fehleranzeige, werden
+// unten direkt aus formData mit Fallback gelesen statt validiert.
+export type RegistrationData = z.infer<typeof registrationSchema> & {
+  source: string;
+  language: "de" | "en";
+};
 
 export type RegistrationFieldName =
   | "email"
@@ -88,7 +107,10 @@ export function validateRegistration(
 
   const result = registrationSchema.safeParse(raw);
   if (result.success) {
-    return { success: true, data: result.data };
+    return {
+      success: true,
+      data: { ...result.data, source: readSource(formData), language: readLanguage(formData) },
+    };
   }
 
   const fieldErrors: RegistrationFieldErrors = {};
