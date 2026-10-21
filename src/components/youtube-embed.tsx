@@ -22,9 +22,18 @@ export function YoutubeEmbed({
 
   if (isPlaying) {
     return (
-      <div className={cn("aspect-video w-full overflow-hidden rounded-2xl border border-border bg-black", className)}>
+      <div
+        className={cn(
+          "relative aspect-video w-full overflow-hidden rounded-2xl border border-border bg-black",
+          className
+        )}
+      >
+        {/* YouTube lässt bei exaktem 16:9-Rahmen teils einen hauchdünnen
+            schwarzen Rand am Spielerrand stehen. Der Iframe wird deshalb
+            minimal überskaliert und zentriert, der Container schneidet den
+            Rand sauber ab – kein sichtbarer Inhaltsverlust. */}
         <iframe
-          className="size-full"
+          className="absolute left-1/2 top-1/2 h-[104%] w-[104%] -translate-x-1/2 -translate-y-1/2"
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
