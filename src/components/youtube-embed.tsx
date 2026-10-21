@@ -28,19 +28,16 @@ export function YoutubeEmbed({
           className
         )}
       >
-        {/* YouTube lässt bei exaktem 16:9-Rahmen teils einen hauchdünnen
-            schwarzen Rand am Spielerrand stehen. Der Iframe wird deshalb
-            minimal überskaliert, der Container schneidet den Rand sauber ab
-            – kein sichtbarer Inhaltsverlust. Breite/Höhe explizit, weil ein
-            Iframe als Replaced Element bei reinem `inset` ohne width/height
-            sonst auf seine intrinsische Default-Grösse (300×150) zurückfällt.
-            clip-path statt nur overflow-hidden: Chromium clippt die Ecken
-            eines Iframes über reines overflow-hidden + border-radius auf dem
-            Elternelement zuverlässig nicht (eigene Rendering-Surface),
+        {/* Iframe exakt 1:1 in Originalgrösse, keine Überskalierung – sonst
+            rückt YouTubes eigenes UI (Titelleiste, Fortschrittsbalken) näher
+            an unseren Rand heran, als nötig. Die Maskierung übernimmt allein
+            das clip-path auf dem Container: reines overflow-hidden +
+            border-radius auf dem Elternelement clippt die Ecken eines
+            Iframes in Chromium zuverlässig nicht (eigene Rendering-Surface),
             clip-path funktioniert dafür zuverlässig (1rem = rounded-2xl,
             --radius-2xl). */}
         <iframe
-          className="absolute left-[-2%] top-[-2%] h-[104%] w-[104%]"
+          className="size-full"
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
