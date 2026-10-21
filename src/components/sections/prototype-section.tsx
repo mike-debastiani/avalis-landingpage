@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { VideoPlaceholder } from "@/components/video-placeholder";
+import { YoutubeEmbed } from "@/components/youtube-embed";
 
 export async function PrototypeSection() {
   const t = await getTranslations("Prototype");
@@ -11,13 +11,7 @@ export async function PrototypeSection() {
         <p className="mt-2 text-paragraph-large text-muted-foreground">{t("context")}</p>
 
         <div className="mt-8">
-          <VideoPlaceholder
-            formatLabel={t("videoFormat")}
-            statusLabel={t("videoStatus")}
-            title={t("videoTitle")}
-            subtitle={t("videoSubtitle")}
-            ccLabel={t("videoCc")}
-          />
+          <YoutubeEmbed videoId="k2H6iYlSwaQ" title={t("videoTitle")} />
         </div>
 
         <p className="mt-6 text-paragraph-small text-muted-foreground">{t("statusNote")}</p>

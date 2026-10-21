@@ -38,15 +38,11 @@
   "Team": {
     "eyebrow": "Who is behind it",
     "headline": "Three perspectives. One shared concern.",
-    "lead": "Behind avalis are Chiara Tremml, Dario Foti and Mike De Bastiani – a three-person team with a UX design background. In the planned video, we introduce ourselves and how we got into this topic.",
+    "lead": "Behind avalis are Chiara Tremml, Dario Foti and Mike De Bastiani – a three-person team with a UX design background. In the video, we introduce ourselves and how we got into this topic.",
     "member1": "Chiara Tremml",
     "member2": "Dario Foti",
     "member3": "Mike De Bastiani",
-    "videoFormat": "VIDEO · 16:9",
-    "videoStatus": "Placeholder · not playable",
-    "videoTitle": "The people behind avalis",
-    "videoSubtitle": "Team video and original poster coming soon.",
-    "videoCc": "CC"
+    "videoTitle": "The people behind avalis"
   },
   "Solution": {
     "eyebrow": "What avalis is and solves",
@@ -76,12 +72,8 @@
   },
   "Prototype": {
     "title": "A look inside avalis",
-    "context": "The planned walkthrough gives an overview of the web prototype and how everyone involved works together. The recording is coming soon.",
-    "videoFormat": "VIDEO · 16:9",
-    "videoStatus": "Placeholder · not playable",
+    "context": "The walkthrough gives an overview of the web prototype and how everyone involved works together.",
     "videoTitle": "avalis at a glance",
-    "videoSubtitle": "Walkthrough and original poster coming soon.",
-    "videoCc": "CC",
     "statusNote": "Development status: a functional web prototype tested with subject-matter experts. Not intended for productive use."
   },
   "Registration": {

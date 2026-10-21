@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { VideoPlaceholder } from "@/components/video-placeholder";
+import { YoutubeEmbed } from "@/components/youtube-embed";
 
 export async function TeamSection() {
   const t = await getTranslations("Team");
@@ -24,13 +24,7 @@ export async function TeamSection() {
           </ul>
         </div>
 
-        <VideoPlaceholder
-          formatLabel={t("videoFormat")}
-          statusLabel={t("videoStatus")}
-          title={t("videoTitle")}
-          subtitle={t("videoSubtitle")}
-          ccLabel={t("videoCc")}
-        />
+        <YoutubeEmbed videoId="o09aJQUZevs" title={t("videoTitle")} />
       </div>
     </section>
   );

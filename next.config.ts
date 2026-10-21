@@ -13,11 +13,16 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 // 'unsafe-eval' nur im Dev-Modus: React nutzt eval() dort für Debugging-Features
 // (Callstack-Rekonstruktion), in Production nie (siehe docs/08_open-points.md #26).
 const isDev = process.env.NODE_ENV === "development";
+// img-src/frame-src erlauben YouTube (youtube-nocookie.com) für die
+// eingebetteten Team-/Prototyp-Videos (Klick-zum-Abspielen, siehe
+// src/components/youtube-embed.tsx) – i.ytimg.com liefert nur das
+// Vorschaubild, geladen wird erst nach Klick über die Privacy-Enhanced-Domain.
 const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
+  "img-src 'self' data: https://i.ytimg.com",
+  "frame-src https://www.youtube-nocookie.com",
   "font-src 'self'",
   "connect-src 'self'",
   "frame-ancestors 'none'",
@@ -35,6 +40,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname),
+  },
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com" }],
   },
   async headers() {
     return [
