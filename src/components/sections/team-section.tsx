@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { VideoPlaceholder } from "@/components/video-placeholder";
+import { YoutubeEmbed } from "@/components/youtube-embed";
 
 export async function TeamSection() {
   const t = await getTranslations("Team");
@@ -7,24 +7,24 @@ export async function TeamSection() {
 
   return (
     <section id="team" className="section-container section-spacing">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="text-paragraph-small font-medium uppercase tracking-wide text-muted-foreground">
-          {t("eyebrow")}
-        </p>
-        <h2 className="mt-4 text-heading-2 text-foreground">{t("headline")}</h2>
-        <p className="mt-4 text-paragraph-large text-muted-foreground">{t("lead")}</p>
+      <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <p className="text-paragraph-small font-medium uppercase tracking-wide text-muted-foreground">
+            {t("eyebrow")}
+          </p>
+          <h2 className="mt-4 text-heading-2 text-foreground">{t("headline")}</h2>
+          <p className="mt-4 text-paragraph-large text-muted-foreground">{t("lead")}</p>
 
-        <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {members.map((member) => (
-            <li key={member} className="text-paragraph-regular font-medium text-foreground">
-              {member}
-            </li>
-          ))}
-        </ul>
-      </div>
+          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+            {members.map((member) => (
+              <li key={member} className="text-paragraph-regular font-medium text-foreground">
+                {member}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      <div className="mx-auto mt-10 max-w-3xl">
-        <VideoPlaceholder label={t("videoLabel")} />
+        <YoutubeEmbed videoId="o09aJQUZevs" title={t("videoTitle")} />
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { LogoMark } from "@/components/logo-mark";
 import type { Locale } from "@/i18n/routing";
 
 export async function SiteHeader({ locale }: { locale: Locale }) {
@@ -9,15 +10,16 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
   const navItems = [
     { href: "#team", label: t("navTeam") },
     { href: "#loesung", label: t("navSolution") },
-    { href: "#registrierung", label: t("navRegistration") },
+    { href: "#einblick", label: t("navPrototype") },
     { href: "#kontakt", label: t("navContact") },
   ];
 
   return (
     <header id="top" className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="section-container flex h-16 items-center justify-between gap-4">
-        <a href="#top" className="text-paragraph-large font-semibold tracking-tight text-foreground">
-          avalis
+        <a href="#top" className="flex items-center gap-2 font-semibold tracking-tight text-foreground">
+          <LogoMark className="size-7" />
+          <span className="text-paragraph-large">avalis</span>
         </a>
 
         <nav aria-label="Hauptnavigation" className="hidden items-center gap-6 md:flex">

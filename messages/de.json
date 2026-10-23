@@ -1,68 +1,102 @@
 {
   "Metadata": {
     "title": "avalis – Die digitale Lösung für Nachteilsausgleichsprozesse an Schweizer Hochschulen",
-    "description": "avalis bündelt den Nachteilsausgleichsprozess an Schweizer Hochschulen in einer digitalen Lösung. Registrieren Sie sich für den Research Report und Updates zum Projekt."
+    "description": "avalis ist eine digitale Lösung für den Nachteilsausgleichsprozess an Schweizer Hochschulen."
   },
   "Layout": {
     "skipLink": "Zum Inhalt springen"
   },
+  "ImpactRoles": {
+    "students": "Studierende",
+    "advisory": "Fachstellen",
+    "decision": "Entscheidungsinstanzen"
+  },
   "Header": {
     "navTeam": "Team",
     "navSolution": "Lösung",
-    "navRegistration": "Research Report",
+    "navPrototype": "Einblick",
     "navContact": "Kontakt",
     "cta": "Research Report erhalten"
   },
   "Footer": {
-    "tagline": "avalis ist ein eigenständiges Projekt für den Nachteilsausgleichsprozess an Schweizer Hochschulen.",
-    "contact": "kontakt@avalis-projekt.ch",
+    "tagline": "Eine digitale Lösung für den Nachteilsausgleich an Schweizer Hochschulen.",
+    "legalPending": "Impressum und Datenschutzerklärung werden vor Veröffentlichung ergänzt.",
     "imprint": "Impressum",
     "privacy": "Datenschutz"
   },
   "Hero": {
     "eyebrow": "Nachteilsausgleich an Schweizer Hochschulen",
-    "headline": "Die digitale Lösung für den Nachteilsausgleich an Schweizer Hochschulen",
-    "lead": "Der Nachteilsausgleichsprozess ist heute fragmentiert und ressourcenintensiv. avalis bündelt ihn in einer digitalen Lösung und macht ihn für alle Beteiligten transparent.",
+    "headlineLine1": "Nachteilsausgleich.",
+    "headlineLine2": "Digital gebündelt.",
+    "headlineLine3Before": "Für ",
+    "headlineAccent": "alle",
+    "headlineLine3After": " Beteiligten.",
+    "lead": "avalis ist eine digitale Lösung für den Nachteilsausgleichsprozess an Schweizer Hochschulen. Sie bündelt den Weg vom Antrag bis zur Umsetzung, vereinfacht, transparent und zugänglich.",
     "primaryCta": "Research Report erhalten",
-    "secondaryCta": "Was ist avalis?",
-    "imageLabel": "Platzhalter für einen Screenshot des Prototyps"
+    "secondaryCta": "Was ist avalis?"
   },
   "Team": {
-    "eyebrow": "Team",
-    "headline": "Wer hinter avalis steht",
-    "lead": "Hinter avalis steht ein dreiköpfiges Team mit Designhintergrund. Im Video erzählen wir, wie wir zum Thema kamen und warum es uns beschäftigt.",
+    "eyebrow": "Wer dahinter steht",
+    "headline": "Drei Perspektiven. Ein gemeinsames Anliegen.",
+    "lead": "Hinter avalis stehen Chiara Tremml, Dario Foti und Mike De Bastiani – ein dreiköpfiges Team mit UX-Designhintergrund. Im Video stellen wir uns und unseren Bezug zum Thema vor.",
     "member1": "Chiara Tremml",
     "member2": "Dario Foti",
     "member3": "Mike De Bastiani",
-    "videoLabel": "Vorstellungsvideo, folgt in Kürze"
+    "videoTitle": "Die Menschen hinter avalis"
   },
   "Solution": {
     "eyebrow": "Was avalis ist und löst",
-    "headline": "Ein Prozess, viele Schnittstellen",
-    "problemTitle": "Die Ausgangslage",
-    "problemBody": "Der Nachteilsausgleich ist ein mehrstufiger Prozess über mehrere Instanzen hinweg. Er läuft heute grösstenteils über E-Mail, PDF und Excel: Anträge bleiben an Schnittstellen liegen, und der Status ist für Betroffene oft nicht sichtbar.",
-    "solutionTitle": "Die Lösung",
-    "solutionBody": "avalis bündelt den Prozess von der Antragseinreichung über die Bewilligung bis zur Umsetzung in einer digitalen Lösung. Antragstellende, Beratungsfachstellen, Entscheidungsinstanzen, Prüfungsplanung, Dozierende und Prüfungsverantwortliche sind vernetzt. Entstanden auf Basis eines schweizweiten Researchs, modular aufgebaut und an die Prozessstrukturen einzelner Hochschulen anpassbar.",
-    "videoContext": "Ein kurzer Rundgang zeigt, wie der Antragsprozess in avalis abläuft.",
-    "videoLabel": "Walkthrough-Video, folgt in Kürze",
-    "statusNote": "avalis ist ein funktionaler Prototyp und wurde mit Fachpersonen getestet. Für den produktiven Einsatz an Hochschulen ist er nicht vorgesehen."
+    "headline": "Ein gemeinsamer Ort für einen komplexen Prozess.",
+    "intro": "Nachteilsausgleich ermöglicht Studierenden mit Beeinträchtigungen angepasste Studien- und Prüfungsbedingungen. Der Weg dorthin führt über mehrere Instanzen, vom Antrag über Beratung und Bewilligung bis zur Umsetzung.",
+    "roles": {
+      "students": {
+        "pillLabel": "Für Studierende",
+        "title": "Klar geführt und Anträge jederzeit einsehbar",
+        "body": "Studierende reichen ihren Antrag einmalig digital ein und behalten den Status jederzeit im Blick. Der Prozess wird von der Antragstellung bis zur Verfügung Schritt für Schritt begleitet. Sensible Angaben bleiben geschützt und werden nur an beteiligte Stellen weitergegeben."
+      },
+      "advisory": {
+        "pillLabel": "Für Fachstellen",
+        "title": "Digitales Fallführungssystem an zentralem Ort",
+        "body": "Fachstellen verwalten alle Fälle in einem strukturierten System: Anträge prüfen, Beratungstermine koordinieren, Rückmeldungen erfassen. Manuelle Abstimmungen per E-Mail entfallen. Die Kommunikation zwischen allen Beteiligten läuft nachvollziehbar und dokumentiert über avalis."
+      },
+      "decision": {
+        "pillLabel": "Für Entscheidungsinstanzen",
+        "title": "Strukturiert und automatisches Erstellen von Verfügungen",
+        "body": "Entscheidungsinstanzen erhalten geprüfte Anträge mit allen relevanten Unterlagen und geben ihre Entscheide direkt im System ein. Verfügungen werden auf Basis des Entscheids automatisch erstellt."
+      }
+    }
+  },
+  "Modularity": {
+    "title": "Anpassbar und flexibel für jede Hochschule",
+    "body": "Schweizer Hochschulen organisieren den Nachteilsausgleichsprozess unterschiedlich. Als modularer Webprototyp konzipiert, lässt sich avalis flexibel an die bestehenden Prozessstrukturen und institutionelle Zuständigkeiten jeder Hochschule anpassen."
+  },
+  "Prototype": {
+    "title": "Einblick in avalis",
+    "context": "Der Walkthrough gibt einen Überblick über den Webprototyp und das Zusammenspiel der Beteiligten.",
+    "videoTitle": "avalis im Überblick",
+    "statusNote": "Entwicklungsstand: funktionaler, mit Fachpersonen getesteter Webprototyp. Nicht für den produktiven Einsatz bestimmt."
   },
   "Registration": {
-    "eyebrow": "Registrierung",
-    "title": "Registrieren und Research Report erhalten",
-    "lead": "Grundlage ist eine schweizweite Erhebung über 17 Hochschulen hinweg, mit Interviews, Umfragen und der Auswertung offizieller Prozessdokumente. Der Report zeigt, wie der Nachteilsausgleichsprozess an Schweizer Hochschulen tatsächlich abläuft und wo er an Grenzen stösst. Wer sich registriert, erhält zusätzlich gelegentliche Updates zur Weiterentwicklung von avalis. Abmeldung jederzeit möglich, keine Weitergabe an Dritte.",
-    "coverLabel": "Platzhalter für das Cover des Research Reports",
+    "eyebrow": "Research Report",
+    "title": "Den Nachteilsausgleich besser verstehen.",
+    "lead1": "Eine schweizweite Erhebung über 17 Hochschulen: Interviews, Umfragen und die Auswertung offizieller Prozessdokumente.",
+    "lead2": "Wie läuft Nachteilsausgleich ab? Wo liegen die Grenzen? Und was bedeutet das für eine digitale Lösung?",
+    "mapLabel": "Platzhalter für eine interaktive Karte der teilnehmenden Hochschulen",
+    "mapCaption": "Interaktive Karte aller teilnehmenden Hochschulen",
+    "formTitle": "Research Report erhalten",
+    "formLead": "Registrieren Sie sich für den Report und gelegentliche Updates zur Weiterentwicklung von avalis.",
+    "requiredHint": "* Pflichtfeld · alle weiteren Angaben sind optional",
     "fields": {
       "emailLabel": "E-Mail-Adresse",
       "emailPlaceholder": "name@hochschule.ch",
       "firstNameLabel": "Vorname",
       "lastNameLabel": "Nachname",
-      "institutionLabel": "Institution",
-      "institutionPlaceholder": "Bitte auswählen",
+      "institutionLabel": "Hochschule",
+      "institutionPlaceholder": "Hochschule auswählen",
       "otherInstitutionLabel": "Name der Institution",
       "roleLabel": "Rolle",
-      "rolePlaceholder": "Bitte auswählen",
-      "consentLabel": "Ich bin einverstanden, dass avalis mich per E-Mail kontaktiert und meine Angaben gemäss",
+      "rolePlaceholder": "Rolle auswählen",
+      "consentLabel": "Ich möchte den Research Report und gelegentliche Updates per E-Mail erhalten und stimme der",
       "consentLinkLabel": "Datenschutzerklärung"
     },
     "institutions": {
@@ -86,17 +120,20 @@
       "invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       "too_long": "Diese Angabe ist zu lang."
     },
-    "submit": "Research Report erhalten",
+    "submit": "Jetzt registrieren",
     "submitPending": "Wird gesendet …",
+    "belowButtonNote": "Jederzeit abmeldbar. Keine Weitergabe Ihrer Daten an Dritte.",
+    "draftNote": "Formularentwurf · noch ohne Versandfunktion",
     "successTitle": "Fast geschafft",
     "successBody": "Bitte bestätigen Sie Ihre Anmeldung über den Link in der E-Mail, die wir Ihnen gerade geschickt haben. Prüfen Sie bei Bedarf auch Ihren Spam-Ordner.",
     "errorTitle": "Das hat leider nicht geklappt",
     "errorBody": "Die Anmeldung hat nicht funktioniert. Bitte versuchen Sie es in ein paar Minuten erneut."
   },
   "Contact": {
-    "title": "Fragen zu avalis?",
-    "body": "Wir sprechen gerne über das Projekt, stellen es vor und tauschen uns zum Nachteilsausgleichsprozess aus.",
-    "email": "kontakt@avalis-projekt.ch"
+    "eyebrow": "Kontakt",
+    "title": "Im Gespräch bleiben.",
+    "body": "Gerne stellen wir Ihnen das Projekt avalis vor und tauschen uns mit Ihnen zum Nachteilsausgleichsprozess aus.",
+    "addressPending": "Kontaktadresse folgt"
   },
   "Confirmed": {
     "title": "Anmeldung bestätigt",
