@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 
 export async function SolutionSection() {
   const t = await getTranslations("Solution");
-  const tRoles = await getTranslations("ImpactRoles");
 
   return (
     <section id="loesung" className="border-t border-border bg-background-ghost">
@@ -26,7 +25,8 @@ export async function SolutionSection() {
                   reversed ? "lg:flex-row-reverse" : "lg:flex-row"
                 )}
               >
-                <RoleAvatar role={key} label={tRoles(key)} size="lg" />
+                {/* Ohne Label: die Rolle steht bereits als Pill über dem Text */}
+                <RoleAvatar role={key} size="lg" />
                 <div
                   className={cn(
                     "flex w-full flex-col items-center gap-4 text-center lg:max-w-154 lg:flex-1 lg:items-start lg:text-left",
@@ -43,8 +43,8 @@ export async function SolutionSection() {
                   >
                     {t(`roles.${key}.pillLabel`)}
                   </span>
-                  <h3 className="text-title text-foreground">{t(`roles.${key}.title`)}</h3>
-                  <p className="text-paragraph-large leading-[1.6] text-muted-foreground">
+                  <h3 className="text-balance text-subtitle text-foreground">{t(`roles.${key}.title`)}</h3>
+                  <p className="text-paragraph-regular leading-[1.6] text-muted-foreground">
                     {t(`roles.${key}.body`)}
                   </p>
                 </div>

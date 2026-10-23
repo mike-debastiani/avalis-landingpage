@@ -14,8 +14,8 @@ export async function RegistrationSection({ locale }: { locale: Locale }) {
             <div className="flex flex-col gap-7">
               <p className="text-paragraph-small font-medium uppercase">{t("eyebrow")}</p>
               <h2 className="text-title-xl">{t("title")}</h2>
-              <p className="text-paragraph-large">{t("lead1")}</p>
-              <p className="text-paragraph-large">{t("lead2")}</p>
+              <p className="text-paragraph-regular leading-[1.6]">{t("lead1")}</p>
+              <p className="text-paragraph-regular leading-[1.6]">{t("lead2")}</p>
             </div>
 
             <div className="mt-12 flex flex-col gap-10 lg:mt-20">

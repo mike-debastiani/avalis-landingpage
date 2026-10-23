@@ -25,7 +25,7 @@ export function RoleAvatar({
   className,
 }: {
   role: ImpactRoleKey;
-  label: string;
+  label?: string;
   size?: keyof typeof sizes;
   className?: string;
 }) {
@@ -46,7 +46,9 @@ export function RoleAvatar({
           )}
         />
       </span>
-      <span className={cn("text-center text-paragraph-small font-medium", labelFg)}>{label}</span>
+      {label && (
+        <span className={cn("text-center text-paragraph-small font-medium", labelFg)}>{label}</span>
+      )}
     </div>
   );
 }

@@ -24,7 +24,7 @@ Unverändert zu bisher: avalis in Sekunden erfassbar machen, Vertrauen aufbauen,
 
 | # | Section (Figma-Name) | Anchor/Nav | Ziel |
 |---|---|---|---|
-| S1 | Header | – | Logo, Sprachwahl, Nav (Lösung / Einblick / Team / Kontakt), CTA |
+| S1 | Header | – | Logo, Sprachwahl, Nav (Team / Lösung / Einblick / Kontakt), CTA |
 | S2 | Hero | `#hero` | Sofort verstehen, worum es geht, Registrierung anbieten |
 | S3 | Wer dahinter steht | `#team` | Team zeigen, Vertrauen aufbauen |
 | S4 | Was avalis ist und löst (Rollenimpact) | `#loesung` | Nutzen pro Rolle konkret zeigen |
@@ -41,7 +41,7 @@ Unverändert zu bisher: avalis in Sekunden erfassbar machen, Vertrauen aufbauen,
 ### Header
 
 - Logo (Icon + Wortmarke «avalis», durchgehend klein geschrieben, auch im Logo)
-- Nav: **Lösung · Einblick · Team · Kontakt** (aktiver Punkt wird beim Scrollen hervorgehoben)
+- Nav: **Team · Lösung · Einblick · Kontakt** (gleiche Reihenfolge wie die Sections auf der Seite, im Figma-Entwurf V5 steht Team noch an dritter Stelle; aktiver Punkt wird beim Scrollen hervorgehoben)
 - Sprachwahl DE/EN
 - CTA-Button: **«Research Report erhalten»**
 

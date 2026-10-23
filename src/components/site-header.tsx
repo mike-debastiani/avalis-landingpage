@@ -13,9 +13,9 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
   // ist es ein reiner Anker-Sprung (Smooth-Scroll, kein Neuladen).
   const home = `/${locale}`;
   const navItems = [
+    { id: "team", href: `${home}#team`, label: t("navTeam") },
     { id: "loesung", href: `${home}#loesung`, label: t("navSolution") },
     { id: "einblick", href: `${home}#einblick`, label: t("navPrototype") },
-    { id: "team", href: `${home}#team`, label: t("navTeam") },
     { id: "kontakt", href: `${home}#kontakt`, label: t("navContact") },
   ];
 

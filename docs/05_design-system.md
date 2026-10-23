@@ -47,7 +47,7 @@ Das Design System wurde für eine Web-Applikation erstellt. Für eine Landingpag
 
 Fehlen diese in Figma: im Team klären und in Figma ergänzen, bevor sie im Code verwendet werden.
 
-**Entscheid (15.09.2026):** Die Display-Typografie für den Hero (`--text-display`, fluid 28–68px, auf Mobile steiler, damit der Hero-Titel nicht umbricht; ebenso `--text-title-xl` 48px, `--text-title` 44px, `--text-lead` 22px mit Desktop-Werten exakt wie in Figma V5) ist als Ausnahme direkt im Code definiert (`src/app/globals.css`), da der Webapp-Styleguide keine solche Stufe enthält und für App-UI auch keine braucht. Verhältnis und Weight (SemiBold) folgen konsistent der bestehenden Heading-Konvention. Noch nicht in Figma nachgezogen, siehe `08_open-points.md`.
+**Entscheid (15.09.2026):** Die Display-Typografie für den Hero (`--text-display`, fluid 28–60px, auf Mobile steiler, damit der Hero-Titel nicht umbricht; ebenso `--text-title-xl` 42px, `--text-title` 38px, `--text-lead` 20px; seit 23.10.2026 bewusst ~10–14 % kleiner als die Figma-V5-Werte 68/48/44/22px, Fliesstext in Sections 16px statt 18px) ist als Ausnahme direkt im Code definiert (`src/app/globals.css`), da der Webapp-Styleguide keine solche Stufe enthält und für App-UI auch keine braucht. Verhältnis und Weight (SemiBold) folgen konsistent der bestehenden Heading-Konvention. Noch nicht in Figma nachgezogen, siehe `08_open-points.md`.
 
 ## 5. Barrierefreiheit (verbindlich)
 
@@ -115,7 +115,7 @@ Nicht übernommen: die vier reinen App-Workflow-Paletten `Entwurf`, `In-Review`,
 | `paragraph/small/font-size` + `/line-height` | `--paragraph-small-size` / `-line-height` | `0.875rem` / `1.25rem` |
 | `paragraph/mini/font-size` + `/line-height` | `--paragraph-mini-size` / `-line-height` | `0.75rem` / `1rem` |
 | `font definitions/font-family-body` | `--font-dm-sans` (via `next/font/google` in `layout.tsx`) | DM Sans |
-| *nicht in Figma* (Code-Entscheid) | `--text-display` | `clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 4.25rem)` (68px), Zeilenhöhe 1.08. Weitere Landingpage-Stufen: `--text-title-xl` (48px, 1.12), `--text-title` (44px, 1.15), `--text-lead` (22px, 1.55) |
+| *nicht in Figma* (Code-Entscheid) | `--text-display` | `clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 3.75rem)` (60px), Zeilenhöhe 1.08. Weitere Landingpage-Stufen: `--text-title-xl` (42px, 1.12), `--text-title` (38px, 1.15), `--text-lead` (20px, 1.55), `--text-subtitle` (30px, 1.2, Rollen-Überschriften in «Was avalis ist und löst») |
 
 Heading 2 (30px) im Code ergänzt analog zur Skala, im MCP-Response nicht enthalten — bei Gelegenheit gegen Figma verifizieren.
 
