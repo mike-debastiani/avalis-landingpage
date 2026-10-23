@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type CSSProperties } from "react";
 import { useTranslations } from "next-intl";
-import { Check, Mail } from "lucide-react";
+import { Check, Mail, MailWarning } from "lucide-react";
 import { LogoMark } from "@/components/logo-mark";
 import { Separator } from "@/components/ui/separator";
 
@@ -28,7 +28,6 @@ const confetti = [
 const steps = [
   { key: "successStep1", className: "bg-bewilligt-100 text-bewilligt-800" },
   { key: "successStep2", className: "bg-beratung-100 text-beratung-700" },
-  { key: "successStep3", className: "bg-in-decision-100 text-in-decision-700" },
 ] as const;
 
 const enterFrom = "motion-safe:animate-in motion-safe:fade-in motion-safe:fill-mode-backwards";
@@ -83,7 +82,7 @@ export function RegistrationSuccess({ email }: { email: string }) {
             <LogoMark className="size-11" />
             <span
               style={{ animationDelay: "350ms" }}
-              className={`absolute -right-0.5 -bottom-0.5 flex size-8 items-center justify-center rounded-full bg-bewilligt-800 text-white ring-4 ring-background-ghost ${enterFrom} motion-safe:zoom-in-0 motion-safe:duration-300`}
+              className={`absolute -right-0.5 -bottom-0.5 flex size-8 items-center justify-center rounded-full bg-bewilligt-400 text-white ring-4 ring-background-ghost ${enterFrom} motion-safe:zoom-in-0 motion-safe:duration-300`}
             >
               <Check className="size-4" strokeWidth={3} />
             </span>
@@ -113,6 +112,17 @@ export function RegistrationSuccess({ email }: { email: string }) {
             {t("successSentTo")}
           </p>
           <p className="break-all text-paragraph-regular font-semibold text-foreground">{email}</p>
+        </div>
+      </div>
+
+      {/* Der Report-Link kommt per Mail und landet erfahrungsgemäss teils im
+          Spam-Ordner: deshalb ein eigener, gut sichtbarer Hinweis statt nur
+          einer Zeile im Kleingedruckten. */}
+      <div className="mt-4 flex items-start gap-3 rounded-lg border border-border bg-secondary px-4 py-3">
+        <MailWarning className="mt-0.5 size-5 shrink-0 text-foreground" aria-hidden="true" />
+        <div>
+          <p className="text-paragraph-regular font-semibold text-foreground">{t("successSpamTitle")}</p>
+          <p className="mt-1 text-paragraph-regular text-foreground">{t("successSpamBody")}</p>
         </div>
       </div>
 
