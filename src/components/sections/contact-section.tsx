@@ -11,7 +11,14 @@ export async function ContactSection() {
         </p>
         <h2 className="mt-3 text-heading-3 text-foreground">{t("title")}</h2>
         <p className="mt-3 text-paragraph-regular text-muted-foreground">{t("body")}</p>
-        <p className="mt-3 text-paragraph-regular text-muted-foreground">{t("addressPending")}</p>
+        <p className="mt-3 text-paragraph-regular">
+          <a
+            href={`mailto:${t("email")}`}
+            className="font-medium text-foreground underline underline-offset-4 hover:text-muted-foreground"
+          >
+            {t("email")}
+          </a>
+        </p>
       </div>
     </section>
   );

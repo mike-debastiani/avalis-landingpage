@@ -31,14 +31,14 @@
     "headlineLine3Before": "For ",
     "headlineAccent": "everyone",
     "headlineLine3After": " involved.",
-    "lead": "avalis is a digital solution for the accommodation process at Swiss universities. It bundles the path from request to implementation, simplified, transparent and accessible.",
+    "lead": "avalis is a digital solution for the accommodation process at Swiss universities. It bundles the path from request to implementation, simplified, transparent and modularly adaptable.",
     "primaryCta": "Get the Research Report",
     "secondaryCta": "What is avalis?"
   },
   "Team": {
     "eyebrow": "Who is behind it",
     "headline": "Three perspectives. One shared concern.",
-    "lead": "Behind avalis are Chiara Tremml, Dario Foti and Mike De Bastiani – a three-person team with a UX design background. In the video, we introduce ourselves and how we got into this topic.",
+    "lead": "Behind avalis are Chiara Tremml, Dario Foti and Mike De Bastiani, a three-person team with a UX design background. The video shows what motivated the team to take on this project and what avalis solves.",
     "member1": "Chiara Tremml",
     "member2": "Dario Foti",
     "member3": "Mike De Bastiani",
@@ -47,7 +47,7 @@
   "Solution": {
     "eyebrow": "What avalis is and solves",
     "headline": "One shared place for a complex process.",
-    "intro": "Accommodation measures allow students with disabilities adapted study and exam conditions. The path there runs through several instances, from the request through advice and approval to implementation.",
+    "intro": "An accommodation measure allows students with disabilities adapted study and exam conditions. The path there runs through several instances, from the request through advice and approval to implementation, and is fragmented, resource-intensive and marked by breaks between media today. Based on nationwide research and a consistently user-centred design process, avalis bundles this process and connects all the instances involved.",
     "roles": {
       "students": {
         "pillLabel": "For students",
@@ -71,8 +71,9 @@
     "body": "Swiss universities organise the accommodation process differently. Designed as a modular web prototype, avalis can be adapted flexibly to each university's existing process structures and institutional responsibilities."
   },
   "Prototype": {
-    "title": "A look inside avalis",
-    "context": "The walkthrough gives an overview of the web prototype and how everyone involved works together.",
+    "eyebrow": "A look inside avalis",
+    "title": "From request to decision.",
+    "context": "The web prototype walkthrough gives an overview of the solution and how the instances involved work together.",
     "videoTitle": "avalis at a glance",
     "statusNote": "Development status: a functional web prototype tested with subject-matter experts. Not intended for productive use."
   },
@@ -81,16 +82,16 @@
     "title": "Understand the accommodation process better.",
     "lead1": "A nationwide survey across 17 universities: interviews, questionnaires and an analysis of official process documents.",
     "lead2": "How does the accommodation process actually work? Where are its limits? And what does that mean for a digital solution?",
-    "mapLabel": "Placeholder for an interactive map of participating universities",
-    "mapCaption": "Interactive map of all participating universities",
+    "mapLabel": "Map of Swiss cantons: number of participating institutions per canton",
+    "mapCaption": "Number of participating institutions per canton",
     "formTitle": "Get the Research Report",
     "formLead": "Register to receive the report and occasional updates on the development of avalis.",
     "requiredHint": "* Required field · all other details are optional",
     "fields": {
       "emailLabel": "Email address",
-      "emailPlaceholder": "name@university.ch",
-      "firstNameLabel": "First name",
-      "lastNameLabel": "Last name",
+      "emailPlaceholder": "Your email address",
+      "firstNameLabel": "First name (optional)",
+      "lastNameLabel": "Last name (optional)",
       "institutionLabel": "Educational institution",
       "institutionPlaceholder": "e.g. University of Zurich",
       "roleLabel": "Role",
@@ -128,7 +129,7 @@
     "eyebrow": "Contact",
     "title": "Stay in touch.",
     "body": "We're happy to introduce the avalis project and exchange views on the accommodation process with you.",
-    "addressPending": "Contact address coming soon"
+    "email": "nta.avalis@gmail.com"
   },
   "Legal": {
     "imprintTitle": "Imprint",

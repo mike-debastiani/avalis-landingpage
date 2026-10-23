@@ -15,20 +15,18 @@
 | 11 | Rollenliste | Rollen im Formular bestätigen | Team | 04.10. |
 | 12 | Texte | Figma-Entwurf (Stand 20.10., `06_page-structure.md`) mit dem Team final abstimmen – als Richtung gesetzt, aber ausdrücklich nicht final | Team | – |
 | 15 | Team-Sektion | Figma zeigt nur Namen + Video, keine Fotos/Kurzbios/LinkedIn. Bestätigen, dass das so bleibt, oder Mentor:innen-Nennung ergänzen | Team | – |
-| 16 | Kontakt | Öffentliche Kontakt-E-Mail. Bis dahin **nicht** mit einer Platzhalter-Adresse arbeiten, sondern mit dem Figma-Text «Kontaktadresse folgt» | Team | – |
 | 29 | Registrierung | Figma zeigt eine **einzelne kombinierte** Einwilligungs-Checkbox (Report + Updates + Datenschutz) statt getrennter Zustimmungen – mit Brevo-Anbindung (#2–#5) abgleichen, ob das rechtlich/technisch so umsetzbar ist | Mike | – |
-| 30 | Visuals | Schweizer-Kantonskarte in der Registrierungs-Section («Interaktive Karte aller teilnehmenden Hochschulen») braucht echte Geodaten und eine Zuordnung Kanton → teilnehmende Hochschule(n). Ohne diese Daten keine Karte bauen | Team | – |
 | 31 | Rechtliches/Visuals | Logo-Reihe in der Registrierungs-Section zeigt im Figma-Entwurf teils generische Platzhalter-Logos (Notion, Airtable, Evernote – vermutlich Figma-Komponenten-Dummies, kein Bezug zu avalis) neben echten (swissuniversities, HSLU). Klären, welche Logos real gezeigt werden sollen | Team | – |
 | 32 | Rechtliches | **Spannung:** Das Figma-File zeigt bereits ein HSLU-Logo in der Registrierungs-Section, obwohl Punkt #18 (HSLU-Name/Logo-Nutzung) noch offen ist. Vor der Umsetzung klären, sonst wird im Design etwas vorweggenommen, das rechtlich noch nicht abgesegnet ist | Team / Mentor:innen | – |
 | 17 | Rechtliches | Verantwortliche Personen und Adresse für Impressum und Datenschutz | Team | 11.10. |
 | 18 | Rechtliches | Verwendung HSLU-Name und Logo | Team / Mentor:innen | 04.10. |
 | 19 | Rechtliches | Teilnehmende Institutionen namentlich nennen? (Anonymisierung im Report) | Team / Mentor:innen | 04.10. |
-| 21 | Visuals | Screenshots des Prototyps (nur Mock-Daten), OpenGraph-Bild, Schweizer-Kantonskarte (siehe #30) | Team | – |
+| 21 | Visuals | Screenshots des Prototyps (nur Mock-Daten), OpenGraph-Bild | Team | – |
 | 22 | Englisch | Übersetzung der finalen Texte prüfen | Team | – |
 | 23 | Event | QR-Code mit `?src=netzwerktreffen` für Präsentation | Team | 21.10. |
 | 26 | Sicherheit | CSP `script-src` nutzt aktuell `'unsafe-inline'` statt Nonce: Next.js 16 appliziert einen per-Request-Nonce (korrekt via `Content-Security-Policy`-Header gesetzt) nicht auf seine eigenen Hydration-`<script>`-Tags, geprüft in Produktion. Bei neuerer Next.js-Version erneut mit Nonce statt `unsafe-inline` versuchen. Nach dem Projekt-Neuaufbau erneut prüfen, ob/wie CSP-Header wieder gesetzt werden | Mike | – |
 | 27 | Code-Stand | Das komplette Webprojekt wurde am 20.10.2026 gelöscht und wird neu aufgesetzt (reines Next.js/Tailwind-Default-Setup, i18n-Gerüst bleibt). Design-System-Tokens (#24/#25 alt) und alle Sections müssen neu gebaut werden, siehe `05_design-system.md` Abschnitt 7 und `06_page-structure.md` | Mike | – |
-| 28 | Inhalte | Team-Kurzbeschreibungen, Fotos, Kontakt-E-Mail sowie Impressum/Datenschutz-Inhalt sind Platzhalter ("folgt") | Team | – |
+| 28 | Inhalte | Team-Kurzbeschreibungen, Fotos sowie Impressum/Datenschutz-Inhalt sind Platzhalter ("folgt") | Team | – |
 
 ## Entschieden
 
@@ -51,3 +49,5 @@
 | 23.10.2026 | Brevo-Liste „Avalis Registrierungen" (ID 3) und Attribute `HOCHSCHULE`/`ROLLE`/`SOURCE` angelegt (löst Punkte #2/#3 ab) |
 | 23.10.2026 | Umstellung auf **Single Opt-in**: Einwilligungs-Checkbox gilt als Zustimmung, kein Double-Opt-in-Template/-Mailversand mehr nötig (löst Punkt #4 ab). Grund: Ziel ist nur ein grober Überblick über Herkunft/Rolle der Registrierungen, keine verifizierten Adressen. Report erscheint direkt im Formular nach dem Absenden, die separate Seite `/bestaetigt` entfällt damit (löst Punkt #9 ab) |
 | 20.10.2026 | Komplettes Webprojekt zurückgesetzt, Neuaufbau mit reinem Next.js/Tailwind-Default-Setup auf Basis des neuen Figma-Plans (i18n-Gerüst bleibt bestehen) |
+| 23.10.2026 | Kontakt-E-Mail ist `nta.avalis@gmail.com` (löst Punkt #16 ab). Wert aus dem aktuellen Figma-Stand V5, in der Kontakt-Section als `mailto:`-Link umgesetzt |
+| 23.10.2026 | Schweizer-Kantonskarte in der Registrierungs-Section ist ein statisches, vom Team geliefertes SVG (`public/registration/switzerland-map.svg`) inkl. Legende «Anzahl teilnehmende Institutionen pro Kanton» (Skala 0–8), wie in Figma V5. Löst Punkt #30 ab; Karte und Zahlen werden unverändert übernommen, keine eigene Datenzuordnung |

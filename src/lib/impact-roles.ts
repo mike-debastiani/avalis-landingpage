@@ -6,17 +6,17 @@ export type ImpactRoleKey = (typeof impactRoleKeys)[number];
 
 export const impactRoles: Record<
   ImpactRoleKey,
-  { avatarSrc: string; ring: string; pillBg: string; pillFg: string }
+  { avatarSrc: string; halo: string; pillBg: string; pillFg: string }
 > = {
   students: {
     avatarSrc: "/avatars/students.svg",
-    ring: "ring-bewilligt-200",
+    halo: "bg-bewilligt-50",
     pillBg: "bg-bewilligt-100",
     pillFg: "text-bewilligt-800",
   },
   advisory: {
     avatarSrc: "/avatars/advisory.svg",
-    ring: "ring-beratung-200",
+    halo: "bg-beratung-50",
     pillBg: "bg-beratung-100",
     // Figma nennt hier "badge/review/foreground" = beratung-500, das erreicht
     // auf beratung-100 aber nur ~3.6:1 Kontrast (unter WCAG AA 4.5:1 für
@@ -26,7 +26,7 @@ export const impactRoles: Record<
   },
   decision: {
     avatarSrc: "/avatars/decision.svg",
-    ring: "ring-in-decision-200",
+    halo: "bg-in-decision-50",
     pillBg: "bg-in-decision-100",
     pillFg: "text-in-decision-800",
   },

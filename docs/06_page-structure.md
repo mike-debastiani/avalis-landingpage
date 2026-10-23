@@ -100,7 +100,7 @@ Eigenständiger, ruhiger Zwischenabschnitt, kein Rollen-Bezug:
 - Titel: **«Den Nachteilsausgleich besser verstehen.»**
 - Text 1: «Eine schweizweite Erhebung über 17 Hochschulen: Interviews, Umfragen und die Auswertung offizieller Prozessdokumente.»
 - Text 2 (Frage-Format statt Antworten, wie in der Regel vorgesehen): «Wie läuft Nachteilsausgleich ab? Wo liegen die Grenzen? Und was bedeutet das für eine digitale Lösung?»
-- **Neues visuelles Element:** interaktive Schweizer-Kantonskarte, Kantone der teilnehmenden Hochschulen eingefärbt. Caption: «Interaktive Karte aller teilnehmenden Hochschulen». Braucht echte Daten (siehe `08_open-points.md`), aktuell nur eine Skizze.
+- **Visuelles Element:** Schweizer-Kantonskarte (statisches SVG `public/registration/switzerland-map.svg`, vom Team geliefert) mit Legende «Anzahl teilnehmende Institutionen pro Kanton» und Verlaufsbalken 0–8 (Figma V5).
 - **Logo-Reihe** unter der Karte: im Figma-Stand teils generische Platzhalter-Logos (Notion, Airtable, Evernote) und teils echte (swissuniversities, HSLU Hochschule Luzern). Noch zu klären, siehe `08_open-points.md`.
 - Formular-Karte: Titel «Research Report erhalten», Text «Registrieren Sie sich für den Report und gelegentliche Updates zur Weiterentwicklung von avalis.», Hinweis «* Pflichtfeld · alle weiteren Angaben sind optional». Felder siehe `04_registration-flow.md`. Button: **«Jetzt registrieren»**. Darunter: «Jederzeit abmeldbar. Keine Weitergabe Ihrer Daten an Dritte.» und ein kleiner Entwurfshinweis «Formularentwurf · noch ohne Versandfunktion».
 
@@ -109,7 +109,7 @@ Eigenständiger, ruhiger Zwischenabschnitt, kein Rollen-Bezug:
 - Abschnittslabel: «Kontakt»
 - Titel: **«Im Gespräch bleiben.»**
 - Text: «Gerne stellen wir Ihnen das Projekt avalis vor und tauschen uns mit Ihnen zum Nachteilsausgleichsprozess aus.»
-- **Keine erfundene Platzhalter-Adresse mehr verwenden** – Figma zeigt explizit den Platzhaltertext «Kontaktadresse folgt» statt einer (fiktiven) E-Mail-Adresse. So umsetzen, bis die echte Adresse feststeht.
+- Kontakt-E-Mail: **nta.avalis@gmail.com** (Figma V5), als `mailto:`-Link.
 
 ### S9 – Footer
 
@@ -127,4 +127,4 @@ Eigenständiger, ruhiger Zwischenabschnitt, kein Rollen-Bezug:
 
 ## 6. Offene Punkte zu diesem File
 
-Siehe `08_open-points.md` für die laufende Liste (u.a. Schweizer-Kantonskarte mit echten Daten, echte Logo-Reihe statt Platzhalter-Logos, Kontaktadresse, Video-Aufnahmen).
+Siehe `08_open-points.md` für die laufende Liste (u.a. echte Logo-Reihe statt Platzhalter-Logos, Video-Aufnahmen).

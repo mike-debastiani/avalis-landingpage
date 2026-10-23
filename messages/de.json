@@ -31,14 +31,14 @@
     "headlineLine3Before": "Für ",
     "headlineAccent": "alle",
     "headlineLine3After": " Beteiligten.",
-    "lead": "avalis ist eine digitale Lösung für den Nachteilsausgleichsprozess an Schweizer Hochschulen. Sie bündelt den Weg vom Antrag bis zur Umsetzung, vereinfacht, transparent und zugänglich.",
+    "lead": "avalis ist eine digitale Lösung für den Nachteilsausgleichsprozess an Schweizer Hochschulen. Sie bündelt den Weg vom Antrag bis zur Umsetzung, vereinfacht, transparent und modular anpassbar.",
     "primaryCta": "Research Report erhalten",
     "secondaryCta": "Was ist avalis?"
   },
   "Team": {
     "eyebrow": "Wer dahinter steht",
     "headline": "Drei Perspektiven. Ein gemeinsames Anliegen.",
-    "lead": "Hinter avalis stehen Chiara Tremml, Dario Foti und Mike De Bastiani – ein dreiköpfiges Team mit UX-Designhintergrund. Im Video stellen wir uns und unseren Bezug zum Thema vor.",
+    "lead": "Hinter avalis stehen Chiara Tremml, Dario Foti und Mike De Bastiani, ein dreiköpfiges Team mit UX-Designhintergrund. Das Video zeigt, was das Team zu diesem Projekt bewogen hat und was avalis löst.",
     "member1": "Chiara Tremml",
     "member2": "Dario Foti",
     "member3": "Mike De Bastiani",
@@ -47,7 +47,7 @@
   "Solution": {
     "eyebrow": "Was avalis ist und löst",
     "headline": "Ein gemeinsamer Ort für einen komplexen Prozess.",
-    "intro": "Nachteilsausgleich ermöglicht Studierenden mit Beeinträchtigungen angepasste Studien- und Prüfungsbedingungen. Der Weg dorthin führt über mehrere Instanzen, vom Antrag über Beratung und Bewilligung bis zur Umsetzung.",
+    "intro": "Ein Nachteilsausgleich ermöglicht Studierenden mit Beeinträchtigungen angepasste Studien- und Prüfungsbedingungen. Der Weg dorthin führt über mehrere Instanzen, vom Antrag über Beratung und Bewilligung bis zur Umsetzung und ist heute fragmentiert, ressourcenintensiv und von Medienbrüchen geprägt. Auf Basis eines schweizweiten Researchs und eines konsequent nutzerzentrierten Designprozesses bündelt avalis diesen Prozess und vernetzt alle beteiligten Instanzen.",
     "roles": {
       "students": {
         "pillLabel": "Für Studierende",
@@ -71,8 +71,9 @@
     "body": "Schweizer Hochschulen organisieren den Nachteilsausgleichsprozess unterschiedlich. Als modularer Webprototyp konzipiert, lässt sich avalis flexibel an die bestehenden Prozessstrukturen und institutionelle Zuständigkeiten jeder Hochschule anpassen."
   },
   "Prototype": {
-    "title": "Einblick in avalis",
-    "context": "Der Walkthrough gibt einen Überblick über den Webprototyp und das Zusammenspiel der Beteiligten.",
+    "eyebrow": "Einblick in avalis",
+    "title": "Vom Antrag bis zur Verfügung.",
+    "context": "Der Webprototyp-Walkthrough gibt einen Überblick über die Lösung und das Zusammenspiel der beteiligten Instanzen.",
     "videoTitle": "avalis im Überblick",
     "statusNote": "Entwicklungsstand: funktionaler, mit Fachpersonen getesteter Webprototyp. Nicht für den produktiven Einsatz bestimmt."
   },
@@ -81,16 +82,16 @@
     "title": "Den Nachteilsausgleich besser verstehen.",
     "lead1": "Eine schweizweite Erhebung über 17 Hochschulen: Interviews, Umfragen und die Auswertung offizieller Prozessdokumente.",
     "lead2": "Wie läuft Nachteilsausgleich ab? Wo liegen die Grenzen? Und was bedeutet das für eine digitale Lösung?",
-    "mapLabel": "Platzhalter für eine interaktive Karte der teilnehmenden Hochschulen",
-    "mapCaption": "Interaktive Karte aller teilnehmenden Hochschulen",
+    "mapLabel": "Schweizer Kantonskarte: Anzahl teilnehmender Institutionen pro Kanton",
+    "mapCaption": "Anzahl teilnehmende Institutionen pro Kanton",
     "formTitle": "Research Report erhalten",
     "formLead": "Registrieren Sie sich für den Report und gelegentliche Updates zur Weiterentwicklung von avalis.",
     "requiredHint": "* Pflichtfeld · alle weiteren Angaben sind optional",
     "fields": {
       "emailLabel": "E-Mail-Adresse",
-      "emailPlaceholder": "name@hochschule.ch",
-      "firstNameLabel": "Vorname",
-      "lastNameLabel": "Nachname",
+      "emailPlaceholder": "Ihre E-Mail-Adresse",
+      "firstNameLabel": "Vorname (optional)",
+      "lastNameLabel": "Nachname (optional)",
       "institutionLabel": "Bildungsinstitution",
       "institutionPlaceholder": "z. B. Universität Zürich",
       "roleLabel": "Rolle",
@@ -128,7 +129,7 @@
     "eyebrow": "Kontakt",
     "title": "Im Gespräch bleiben.",
     "body": "Gerne stellen wir Ihnen das Projekt avalis vor und tauschen uns mit Ihnen zum Nachteilsausgleichsprozess aus.",
-    "addressPending": "Kontaktadresse folgt"
+    "email": "nta.avalis@gmail.com"
   },
   "Legal": {
     "imprintTitle": "Impressum",

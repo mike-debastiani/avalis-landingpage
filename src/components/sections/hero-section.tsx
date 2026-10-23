@@ -40,10 +40,10 @@ export async function HeroSection() {
         </div>
 
         <div className="flex flex-col items-center gap-6">
-          <RoleAvatar role="advisory" label={tRoles("advisory")} />
-          <div className="flex items-start justify-center gap-6 sm:gap-10">
-            <RoleAvatar role="students" label={tRoles("students")} />
-            <RoleAvatar role="decision" label={tRoles("decision")} />
+          <RoleAvatar role="advisory" size="2xl" label={tRoles("advisory")} />
+          <div className="flex items-start justify-center gap-6 sm:gap-10 lg:gap-4">
+            <RoleAvatar role="students" size="md" label={tRoles("students")} />
+            <RoleAvatar role="decision" size="xl" label={tRoles("decision")} />
           </div>
         </div>
       </div>

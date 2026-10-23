@@ -8,9 +8,9 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
   const t = await getTranslations("Header");
 
   const navItems = [
-    { href: "#team", label: t("navTeam") },
     { href: "#loesung", label: t("navSolution") },
     { href: "#einblick", label: t("navPrototype") },
+    { href: "#team", label: t("navTeam") },
     { href: "#kontakt", label: t("navContact") },
   ];
 
