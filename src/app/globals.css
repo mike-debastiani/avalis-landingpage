@@ -123,10 +123,11 @@
   /*
    * Display (Hero) — Code-Entscheid, nicht im Figma-File als eigenes Token
    * vorhanden (bestätigt beim Auslesen der Landingpage-Variablen). Fluid
-   * zwischen Mobile (40px) und Desktop (64px), SemiBold wie die übrigen
+   * zwischen Mobile (ab 28px, auf Mobile so dimensioniert, dass die längste
+   * Zeile «Nachteilsausgleich.» nicht umbricht) und Desktop (64px), SemiBold wie die übrigen
    * Headings. Siehe docs/05_design-system.md Abschnitt 4.
    */
-  --text-display: clamp(2.5rem, 1.5rem + 4vw, 4rem);
+  --text-display: clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 4rem);
   --text-display--line-height: 1.05;
   --text-display--font-weight: 600;
   --text-display--letter-spacing: 0;

@@ -5,7 +5,9 @@ import { cn } from "@/lib/utils";
 // Handgezeichnete Rollen-Illustrationen aus Figma (public/avatars/*.svg),
 // auf einem grossen, weichen Pastell-Halo in der Rollenfarbe (gleiche Farben
 // wie die Pills in der Solution-Section). Das Padding-Verhältnis Halo:Bild
-// (~16 %) ist in Figma bei allen Instanzen gleich.
+// (~16 %) ist in Figma bei allen Instanzen gleich. Das Bild wird deshalb per
+// inset relativ zum Kreis positioniert: Padding-Prozente würden sich auf die
+// Breite des Elternelements (und damit auf das Label) beziehen.
 const sizes = {
   md: { box: "size-16 sm:size-20 lg:size-24", px: 96 },
   lg: { box: "size-24 sm:size-28 lg:size-32", px: 128 },
@@ -29,13 +31,13 @@ export function RoleAvatar({
 
   return (
     <div className={cn("flex flex-col items-center gap-2", className)}>
-      <span className={cn("block overflow-hidden rounded-full p-[16%]", halo, box)}>
+      <span className={cn("relative block overflow-hidden rounded-full", halo, box)}>
         <Image
           src={avatarSrc}
           alt=""
           width={px}
           height={px}
-          className="size-full rounded-full object-cover"
+          className="absolute inset-[16%] size-[68%] rounded-full object-cover"
         />
       </span>
       <span className={cn("text-paragraph-small font-medium", pillFg)}>{label}</span>
