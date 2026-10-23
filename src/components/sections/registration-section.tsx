@@ -1,6 +1,5 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { MapIcon } from "lucide-react";
-import { PlaceholderBox } from "@/components/placeholder-box";
 import { RegistrationForm } from "@/components/sections/registration-form";
 import type { Locale } from "@/i18n/routing";
 
@@ -12,7 +11,7 @@ export async function RegistrationSection({ locale }: { locale: Locale }) {
     <section id="registrierung" className="bg-primary text-primary-foreground">
       <div className="section-container section-spacing">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
+          <div className="min-w-0">
             <p className="text-paragraph-small font-medium uppercase tracking-wide text-primary-foreground/70">
               {t("eyebrow")}
             </p>
@@ -21,8 +20,24 @@ export async function RegistrationSection({ locale }: { locale: Locale }) {
             <p className="mt-4 text-paragraph-regular text-primary-foreground/80">{t("lead2")}</p>
 
             <div className="mt-8">
-              <PlaceholderBox icon={MapIcon} label={t("mapLabel")} className="aspect-4/3 w-full" />
-              <p className="mt-2 text-paragraph-mini text-primary-foreground/60">{t("mapCaption")}</p>
+              <Image
+                src="/registration/switzerland-map.svg"
+                alt={t("mapLabel")}
+                width={496}
+                height={321}
+                className="h-auto w-full"
+              />
+              <div className="mt-4 max-w-xs">
+                <p className="text-paragraph-small text-primary-foreground/80">{t("mapCaption")}</p>
+                <div className="mt-2 h-2 rounded-full bg-linear-to-r from-bewilligt-100 to-bewilligt-800" />
+                <div
+                  className="mt-1 flex justify-between text-paragraph-mini text-primary-foreground/80"
+                  aria-hidden="true"
+                >
+                  <span>0</span>
+                  <span>8</span>
+                </div>
+              </div>
             </div>
           </div>
 
