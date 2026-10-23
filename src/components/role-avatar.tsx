@@ -3,8 +3,16 @@ import { impactRoles, type ImpactRoleKey } from "@/lib/impact-roles";
 import { cn } from "@/lib/utils";
 
 // Handgezeichnete Rollen-Illustrationen aus Figma (public/avatars/*.svg),
-// mit farbigem Ring zur Rollen-Kennzeichnung (gleiche Farben wie die Pills
-// in der Solution-Section).
+// auf einem grossen, weichen Pastell-Halo in der Rollenfarbe (gleiche Farben
+// wie die Pills in der Solution-Section). Das Padding-Verhältnis Halo:Bild
+// (~16 %) ist in Figma bei allen Instanzen gleich.
+const sizes = {
+  md: { box: "size-16 sm:size-20 lg:size-24", px: 96 },
+  lg: { box: "size-24 sm:size-28 lg:size-32", px: 128 },
+  xl: { box: "size-28 sm:size-32 lg:size-40", px: 160 },
+  "2xl": { box: "size-32 sm:size-40 lg:size-48", px: 192 },
+} as const;
+
 export function RoleAvatar({
   role,
   label,
@@ -13,30 +21,24 @@ export function RoleAvatar({
 }: {
   role: ImpactRoleKey;
   label: string;
-  size?: "md" | "lg";
+  size?: keyof typeof sizes;
   className?: string;
 }) {
-  const { avatarSrc, ring } = impactRoles[role];
-  const dimension = size === "lg" ? 112 : 80;
+  const { avatarSrc, halo, pillFg } = impactRoles[role];
+  const { box, px } = sizes[size];
 
   return (
     <div className={cn("flex flex-col items-center gap-2", className)}>
-      <span
-        className={cn(
-          "flex items-center justify-center overflow-hidden rounded-full ring-4",
-          ring,
-          size === "lg" ? "size-24 sm:size-28" : "size-16 sm:size-20"
-        )}
-      >
+      <span className={cn("block overflow-hidden rounded-full p-[16%]", halo, box)}>
         <Image
           src={avatarSrc}
           alt=""
-          width={dimension}
-          height={dimension}
+          width={px}
+          height={px}
           className="size-full rounded-full object-cover"
         />
       </span>
-      <span className="text-paragraph-small font-medium text-foreground">{label}</span>
+      <span className={cn("text-paragraph-small font-medium", pillFg)}>{label}</span>
     </div>
   );
 }
