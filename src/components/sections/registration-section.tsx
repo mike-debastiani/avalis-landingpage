@@ -10,7 +10,7 @@ export async function RegistrationSection({ locale }: { locale: Locale }) {
   return (
     <section id="registrierung" className="bg-primary text-primary-foreground">
       <div className="section-container section-spacing">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 min-[850px]:grid-cols-2 min-[850px]:gap-16">
           <div className="min-w-0">
             <p className="text-paragraph-small font-medium uppercase tracking-wide text-primary-foreground/70">
               {t("eyebrow")}
