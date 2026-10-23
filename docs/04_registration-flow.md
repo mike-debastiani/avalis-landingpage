@@ -54,7 +54,7 @@ Interessierte registrieren sich mit wenigen Angaben und erhalten den Link zum Re
    - Body: `to` (Adresse der Person), `templateId` (`BREVO_REPORT_TEMPLATE_ID`), `params` (`VORNAME`, `REPORT_URL` = `REPORT_DOWNLOAD_URL`, `UNSUBSCRIBE_URL`), `tags: ["research-report"]`
    - Absender, Betreff und Layout liegen im Brevo-Template (Vorlage: `docs/templates/report-mail.html`)
    - `UNSUBSCRIBE_URL` ist ein signierter Link auf `/{locale}/abmelden` (`src/lib/unsubscribe-token.ts`, HMAC mit `UNSUBSCRIBE_SECRET`)
-6. Erfolgsmeldung im Formular («Vielen Dank für Ihre Registrierung!», Adresse, Hinweis auf den Spam-Ordner). **Kein Download-Button**, der Link wird nie an den Browser ausgeliefert.
+6. Erfolgsansicht im Formular (`src/components/sections/registration-success.tsx`): Celebration-Bereich mit avalis-Logo-Symbol, Check-Badge und Ringen/Konfetti in den Rollenfarben (einmalige Animation, nur ohne «reduced motion»), Badge «Registrierung erfolgreich», Titel «Vielen Dank für Ihre Registrierung!», «Gesendet an» mit der Adresse, drei Schritte «So geht es weiter» (Postfach öffnen, Link klicken, bei Bedarf Spam-Ordner prüfen) und Kontaktadresse für Rückfragen. **Kein Download-Button**, der Link wird nie an den Browser ausgeliefert.
 
 ### Abmeldung vom Verteiler
 
