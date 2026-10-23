@@ -99,24 +99,19 @@ export function RegistrationForm({
 
   if (state.status === "success") {
     return (
-      <div
-        role="status"
-        className="flex items-start gap-3 rounded-xl border border-border bg-background p-5"
-      >
-        <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-foreground" aria-hidden="true" />
-        <div>
-          <p className="text-paragraph-regular font-medium text-foreground">{t("successTitle")}</p>
-          <p className="mt-1 text-paragraph-small text-muted-foreground">{t("successBody")}</p>
-          {reportDownloadUrl ? (
-            <Button asChild size="lg" className="mt-4 rounded-full">
-              <a href={reportDownloadUrl} target="_blank" rel="noopener noreferrer">
-                {t("downloadCta")}
-              </a>
-            </Button>
-          ) : (
-            <p className="mt-3 text-paragraph-mini text-muted-foreground">{t("downloadPending")}</p>
-          )}
-        </div>
+      <div role="status">
+        <CheckCircle2 className="size-8 text-foreground" aria-hidden="true" />
+        <p className="mt-4 text-paragraph-large font-semibold text-foreground">{t("successTitle")}</p>
+        <p className="mt-2 text-paragraph-regular text-muted-foreground">{t("successBody")}</p>
+        {reportDownloadUrl ? (
+          <Button asChild size="lg" className="mt-6 w-full rounded-full sm:w-auto">
+            <a href={reportDownloadUrl} target="_blank" rel="noopener noreferrer">
+              {t("downloadCta")}
+            </a>
+          </Button>
+        ) : (
+          <p className="mt-4 text-paragraph-small text-muted-foreground">{t("downloadPending")}</p>
+        )}
       </div>
     );
   }
@@ -140,7 +135,7 @@ export function RegistrationForm({
   };
 
   return (
-    <form action={formAction} noValidate className="space-y-5">
+    <form action={formAction} noValidate className="@container space-y-5">
       {state.status === "error" && !state.fieldErrors && (
         <div
           role="alert"
@@ -195,7 +190,10 @@ export function RegistrationForm({
         )}
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      {/* Container-Query statt Viewport-Breakpoint: Die Felder stehen nebeneinander,
+          sobald die Formularkarte selbst breit genug ist, egal bei welcher
+          Bildschirmbreite. */}
+      <div className="grid grid-cols-1 gap-5 @min-[22rem]:grid-cols-2">
         <div>
           <Label htmlFor="firstName">{t("fields.firstNameLabel")}</Label>
           <Input
