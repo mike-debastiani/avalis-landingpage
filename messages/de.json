@@ -91,19 +91,13 @@
       "emailPlaceholder": "name@hochschule.ch",
       "firstNameLabel": "Vorname",
       "lastNameLabel": "Nachname",
-      "institutionLabel": "Hochschule",
-      "institutionPlaceholder": "Hochschule auswählen",
-      "otherInstitutionLabel": "Name der Institution",
+      "institutionLabel": "Bildungsinstitution",
+      "institutionPlaceholder": "z. B. Universität Zürich",
       "roleLabel": "Rolle",
       "rolePlaceholder": "Rolle auswählen",
+      "otherRoleLabel": "Bezeichnung der Rolle",
       "consentLabel": "Ich möchte den Research Report und gelegentliche Updates per E-Mail erhalten und stimme der",
       "consentLinkLabel": "Datenschutzerklärung"
-    },
-    "institutions": {
-      "uni": "Universität",
-      "fh": "Fachhochschule",
-      "ph": "Pädagogische Hochschule",
-      "andere": "Andere"
     },
     "roles": {
       "fachstelle": "Fachstelle / Beratung",

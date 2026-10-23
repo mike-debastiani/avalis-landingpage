@@ -6,8 +6,13 @@ import {
   validateRegistration,
   type RegisterState,
 } from "@/lib/validation/registration";
+import type { Locale } from "@/i18n/routing";
 
+// `locale` kommt über registerAction.bind(null, locale) aus der Route, nicht
+// aus formData – reine Redirect-Information für die (zweisprachige)
+// Bestätigungsseite, siehe src/lib/brevo.ts.
 export async function registerAction(
+  locale: Locale,
   _prevState: RegisterState,
   formData: FormData
 ): Promise<RegisterState> {
@@ -24,7 +29,7 @@ export async function registerAction(
   }
 
   try {
-    await subscribeDoubleOptin(result.data);
+    await subscribeDoubleOptin({ ...result.data, locale });
   } catch (error) {
     // Nie personenbezogene Daten oder rohe Brevo-Fehlertexte loggen/ausgeben
     // (siehe docs/03_tech-architecture.md Abschnitt 4). BrevoError enthält

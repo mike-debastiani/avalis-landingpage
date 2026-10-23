@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { institutionValues } from "@/lib/institutions";
 import { roleValues } from "@/lib/roles";
 
 export const HONEYPOT_FIELD_NAME = "website";
@@ -13,28 +12,24 @@ function readSource(formData: FormData): string {
   return (ALLOWED_SOURCES as readonly string[]).includes(raw) ? raw : "direkt";
 }
 
-function readLanguage(formData: FormData): "de" | "en" {
-  return formData.get("language") === "en" ? "en" : "de";
-}
-
 export const registrationSchema = z
   .object({
     email: z.email(),
     firstName: z.string().max(100),
     lastName: z.string().max(100),
-    institution: z.enum(institutionValues),
-    otherInstitution: z.string().max(150),
+    institution: z.string().min(1).max(150),
     role: z.enum(roleValues),
+    otherRole: z.string().max(150),
     consent: z.literal("on"),
   })
   .superRefine(
     (data, ctx) => {
-      if (data.institution === "andere" && data.otherInstitution.trim().length === 0) {
+      if (data.role === "andere" && data.otherRole.trim().length === 0) {
         ctx.addIssue({
           code: "custom",
-          path: ["otherInstitution"],
+          path: ["otherRole"],
           params: { uiCode: "required" },
-          message: "otherInstitution is required when institution is 'andere'",
+          message: "otherRole is required when role is 'andere'",
         });
       }
     },
@@ -45,12 +40,11 @@ export const registrationSchema = z
     { when: () => true }
   );
 
-// source/language kommen nicht vom Zod-Schema: es sind reine Kontext-
-// Attribute (Herkunft, Sprache) ohne nutzerseitige Fehleranzeige, werden
-// unten direkt aus formData mit Fallback gelesen statt validiert.
+// source kommt nicht vom Zod-Schema: ein reines Kontext-Attribut (Herkunft)
+// ohne nutzerseitige Fehleranzeige, wird unten direkt aus formData mit
+// Fallback gelesen statt validiert.
 export type RegistrationData = z.infer<typeof registrationSchema> & {
   source: string;
-  language: "de" | "en";
 };
 
 export type RegistrationFieldName =
@@ -58,8 +52,8 @@ export type RegistrationFieldName =
   | "firstName"
   | "lastName"
   | "institution"
-  | "otherInstitution"
   | "role"
+  | "otherRole"
   | "consent";
 
 export type RegistrationErrorCode = "required" | "invalid_email" | "too_long";
@@ -99,18 +93,15 @@ export function validateRegistration(
     email: String(formData.get("email") ?? "").trim().toLowerCase(),
     firstName: String(formData.get("firstName") ?? "").trim(),
     lastName: String(formData.get("lastName") ?? "").trim(),
-    institution: String(formData.get("institution") ?? ""),
-    otherInstitution: String(formData.get("otherInstitution") ?? "").trim(),
+    institution: String(formData.get("institution") ?? "").trim(),
     role: String(formData.get("role") ?? ""),
+    otherRole: String(formData.get("otherRole") ?? "").trim(),
     consent: String(formData.get("consent") ?? ""),
   };
 
   const result = registrationSchema.safeParse(raw);
   if (result.success) {
-    return {
-      success: true,
-      data: { ...result.data, source: readSource(formData), language: readLanguage(formData) },
-    };
+    return { success: true, data: { ...result.data, source: readSource(formData) } };
   }
 
   const fieldErrors: RegistrationFieldErrors = {};

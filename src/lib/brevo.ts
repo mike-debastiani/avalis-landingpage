@@ -12,10 +12,13 @@ type DoubleOptinPayload = {
   firstName: string;
   lastName: string;
   institution: string;
-  otherInstitution: string;
   role: string;
+  otherRole: string;
   source: string;
-  language: "de" | "en";
+  // Nur für die redirectionUrl der (weiterhin zweisprachigen)
+  // Bestätigungsseite – kein Brevo-Attribut. Mail und Report sind
+  // unabhängig davon immer deutsch, siehe docs/04_registration-flow.md.
+  locale: "de" | "en";
 };
 
 function requireEnv(name: string): string {
@@ -33,12 +36,10 @@ function requireEnv(name: string): string {
 export async function subscribeDoubleOptin(payload: DoubleOptinPayload): Promise<void> {
   const apiKey = requireEnv("BREVO_API_KEY");
   const listId = requireEnv("BREVO_LIST_ID");
-  const templateIdDe = requireEnv("BREVO_DOI_TEMPLATE_ID_DE");
-  const templateIdEn = requireEnv("BREVO_DOI_TEMPLATE_ID_EN");
+  const templateId = requireEnv("BREVO_DOI_TEMPLATE_ID");
   const siteUrl = requireEnv("NEXT_PUBLIC_SITE_URL");
 
-  const templateId = payload.language === "en" ? templateIdEn : templateIdDe;
-  const institution = payload.institution === "andere" ? payload.otherInstitution : payload.institution;
+  const role = payload.role === "andere" ? payload.otherRole : payload.role;
 
   const response = await fetch("https://api.brevo.com/v3/contacts/doubleOptinConfirmation", {
     method: "POST",
@@ -51,14 +52,13 @@ export async function subscribeDoubleOptin(payload: DoubleOptinPayload): Promise
       attributes: {
         FIRSTNAME: payload.firstName,
         LASTNAME: payload.lastName,
-        HOCHSCHULE: institution,
-        ROLLE: payload.role,
+        HOCHSCHULE: payload.institution,
+        ROLLE: role,
         SOURCE: payload.source,
-        SPRACHE: payload.language,
       },
       includeListIds: [Number(listId)],
       templateId: Number(templateId),
-      redirectionUrl: `${siteUrl}/${payload.language}/bestaetigt`,
+      redirectionUrl: `${siteUrl}/${payload.locale}/bestaetigt`,
     }),
   });
 

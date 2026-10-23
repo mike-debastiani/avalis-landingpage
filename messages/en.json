@@ -91,19 +91,13 @@
       "emailPlaceholder": "name@university.ch",
       "firstNameLabel": "First name",
       "lastNameLabel": "Last name",
-      "institutionLabel": "University",
-      "institutionPlaceholder": "Select university",
-      "otherInstitutionLabel": "Name of your institution",
+      "institutionLabel": "Educational institution",
+      "institutionPlaceholder": "e.g. University of Zurich",
       "roleLabel": "Role",
       "rolePlaceholder": "Select role",
+      "otherRoleLabel": "Name of your role",
       "consentLabel": "I would like to receive the Research Report and occasional updates by email and agree to the",
       "consentLinkLabel": "privacy policy"
-    },
-    "institutions": {
-      "uni": "University",
-      "fh": "University of Applied Sciences",
-      "ph": "University of Teacher Education",
-      "andere": "Other"
     },
     "roles": {
       "fachstelle": "Advisory office",
