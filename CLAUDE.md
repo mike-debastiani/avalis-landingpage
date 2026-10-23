@@ -2,7 +2,9 @@
 
 ## Projekt
 
-Landingpage (Onepager) für das Bachelorprojekt **avalis**, eine digitale Lösung für Nachteilsausgleichsprozesse (NTA) an Schweizer Hochschulen. Die Seite erklärt Problem, Research und Lösung von avalis und bewegt Fachpersonen zur Registrierung per E-Mail (Research Report, Updates). Launch spätestens 21.10.2026, Vorstellung am Netzwerktreffen für Chancengleichheit am 23.10.2026.
+Landingpage (Onepager) für **avalis**, eine digitale Lösung für Nachteilsausgleichsprozesse (NTA) an Schweizer Hochschulen. avalis wird als **eigenständiges Projekt** positioniert, nicht als Studien-/Bachelorarbeit – der akademische Entstehungskontext gehört nicht auf die Landingpage (bestätigt durch die Figma-Footer-Tagline, siehe `docs/06_page-structure.md`). Die Seite erklärt, was avalis ist und für wen es was löst, und bewegt Fachpersonen zur Registrierung per E-Mail (Research Report, Updates). Launch spätestens 21.10.2026, Vorstellung am Netzwerktreffen für Chancengleichheit am 23.10.2026.
+
+Visuelle Vorlage ist das Figma-File [Avalis-Landingpage](https://www.figma.com/design/WRJ76gBGDPxE8gJXf7VUY9/Avalis-Landingpage) (Stand 20.10.2026, **nicht final** – Struktur/Richtung ja, Detailtexte und -werte noch nicht in Stein gemeisselt). Details: `docs/05_design-system.md`, `docs/06_page-structure.md`.
 
 Vollständiger Kontext: [`docs/README.md`](docs/README.md), Einstiegspunkt [`docs/00_setup-guide.md`](docs/00_setup-guide.md).
 
@@ -20,7 +22,7 @@ Next.js (App Router, TypeScript strict) · Tailwind CSS mit Figma-Tokens · next
 - Deutsch in Schweizer Rechtschreibung («ss» statt «ß»).
 - Barrierefreiheit nach WCAG 2.2 AA ist Pflicht, nicht optional.
 - Mobile first.
-- Keine Fakten, Zahlen oder Zitate zu avalis erfinden. Quelle ist [`docs/02_avalis-context.md`](docs/02_avalis-context.md) und [`docs/06_content-draft.md`](docs/06_content-draft.md).
+- Keine Fakten, Zahlen oder Zitate zu avalis erfinden. Quelle ist [`docs/02_avalis-context.md`](docs/02_avalis-context.md) und [`docs/06_page-structure.md`](docs/06_page-structure.md).
 - Die Seite muss **100% responsive** sein: auf allen gängigen Breakpoints (Mobile ~360px, Tablet ~768px, Desktop ~1280px+) ohne horizontales Scrollen, Layout-Brüche oder abgeschnittene Inhalte. Gängige Web-Best-Practices sind Pflicht: semantisches HTML, `next/image` für Bilder, keine Layout-Shifts, wiederverwendete Section-Container/-Spacing-Utilities statt Wertwiederholung.
 
 ## Git-Workflow (verbindlich)

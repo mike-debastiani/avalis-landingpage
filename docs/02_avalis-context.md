@@ -1,7 +1,7 @@
 # 02 – Kontext: avalis, Research und Team
 
 > **Zweck:** Inhaltliche Wissensbasis für Texte auf der Landingpage.
-> **Quellen:** Abschlusspräsentation «Avalis» (Juli 2026), Research Report (Draft), Prototypbeschreibung.
+> **Quellen:** Abschlusspräsentation «Avalis» (Juli 2026), Research Report (Draft), Prototypbeschreibung, Figma-File [Avalis-Landingpage](https://www.figma.com/design/WRJ76gBGDPxE8gJXf7VUY9/Avalis-Landingpage) (Content-Richtung und -Formulierungen, Stand 20.10.2026, nicht final).
 > **Regel:** Nur Fakten aus diesem File verwenden. Keine zusätzlichen Zahlen, Zitate oder Aussagen erfinden. Zitate nur wörtlich und mit Quelle.
 
 ---
@@ -95,7 +95,7 @@ Der NTA-Prozess an Schweizer Hochschulen lässt sich auf **drei Prozessmodelle**
 | Rolle | Heute | Mit avalis |
 |---|---|---|
 | Studierende | Kein Statusupdate, unklarer Ablauf, hohe Eigenverantwortung, verstreute Informationen | Geführter Antragsprozess mit Hilfestellungen, Status jederzeit einsehbar, klare Zuständigkeiten, alles an einem Ort |
-| Fachstellen | Prozess über E-Mail, PDF und Excel, Anträge bleiben an Schnittstellen hängen, Statistiken aufwändig, kein Fallüberblick, manuelle Weiterleitung | Digitales Fallführungssystem, Statustracking, Statistiken automatisch verfügbar, zentrale Antragsübersicht, automatische Weiterleitung |
+| Fachstellen | Prozess über E-Mail, PDF und Excel, Anträge bleiben an Schnittstellen hängen, Statistiken aufwändig, kein Fallüberblick, manuelle Weiterleitung | Digitales Fallführungssystem, Beratungstermine koordinieren, Statustracking, Statistiken automatisch verfügbar, zentrale Antragsübersicht, automatische Weiterleitung |
 | Entscheidungsinstanzen | Anträge im E-Mail-Postfach, Entscheid ohne strukturierte Grundlage, fehlende Fachgrundlage, manuelle Verfügungen | Strukturierte Übergabe des Dossiers, geführter Entscheidungsprozess, fachliche Empfehlung direkt einsehbar, automatisch generierte Verfügung |
 
 **Praxisrelevanz und Transferierbarkeit:** Die Lösung schliesst eine Lücke, die im Schweizer Hochschulkontext bisher nicht adressiert wurde. Das Tool erzwingt keinen Einheitsablauf, sondern ist durch seinen modularen Aufbau so konzipiert, dass es sich an die heterogenen Abläufe verschiedener Institutionen anpassen lässt. Zudem schafft das System eine Datengrundlage für hochschulübergreifendes Monitoring und Prozessplanung.
@@ -118,7 +118,7 @@ Requirements Engineering, Rollen erweitern (Prüfungsadministration, Dozierende)
 | **Dario Foti** | Research Report als Referenzdokument *(Beschreibung von Dario bestätigen lassen)* |
 | **Mike De Bastiani** | Konzept zur Aufbereitung der Research-Daten, technische Umsetzung und Systemarchitektur des Web-Prototyps |
 
-Alle drei waren gemeinsam an Research, Auswertung, Ideation, Wireframing sowie Mid- und High-Fidelity-Screens beteiligt.
+Alle drei waren gemeinsam an Research, Auswertung, Ideation, Wireframing sowie Mid- und High-Fidelity-Screens beteiligt. Für die Landingpage (Figma-Text, Team-Section): **«ein dreiköpfiges Team mit UX-Designhintergrund»** – so und nicht nur allgemein «Designhintergrund» verwenden.
 
 **Mentor:innen (laut Research Report):** Angie Born, Patricia Schmidiger, Marcel Uhr, Raphael Theiler, Stefan Fraefel. *(Nennung auf der Seite mit dem Team abstimmen.)*
 

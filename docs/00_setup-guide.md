@@ -25,7 +25,7 @@ Details: `01_project-brief.md`.
 | `03_tech-architecture.md` | Tech-Stack, Architektur, Environment Variables, Sicherheit |
 | `04_registration-flow.md` | Formular, Double-Opt-in mit Brevo, Fehlerfälle |
 | `05_design-system.md` | Figma als Quelle, Tokens, Komponenten, Barrierefreiheit |
-| `06_content-draft.md` | Textentwürfe pro Sektion (DE) |
+| `06_page-structure.md` | Seitenstruktur und Content-Richtung (aus Figma) |
 | `07_legal-privacy.md` | Anforderungen an Impressum, Datenschutz, Einwilligung |
 | `08_open-points.md` | Offene Punkte und Entscheidungen |
 
