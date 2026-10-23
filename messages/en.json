@@ -91,19 +91,13 @@
       "emailPlaceholder": "name@university.ch",
       "firstNameLabel": "First name",
       "lastNameLabel": "Last name",
-      "institutionLabel": "University",
-      "institutionPlaceholder": "Select university",
-      "otherInstitutionLabel": "Name of your institution",
+      "institutionLabel": "Educational institution",
+      "institutionPlaceholder": "e.g. University of Zurich",
       "roleLabel": "Role",
       "rolePlaceholder": "Select role",
+      "otherRoleLabel": "Name of your role",
       "consentLabel": "I would like to receive the Research Report and occasional updates by email and agree to the",
       "consentLinkLabel": "privacy policy"
-    },
-    "institutions": {
-      "uni": "University",
-      "fh": "University of Applied Sciences",
-      "ph": "University of Teacher Education",
-      "andere": "Other"
     },
     "roles": {
       "fachstelle": "Advisory office",
@@ -123,9 +117,10 @@
     "submit": "Register now",
     "submitPending": "Sending …",
     "belowButtonNote": "You can unsubscribe at any time. We never share your data with third parties.",
-    "draftNote": "Form draft · not yet connected for sending",
-    "successTitle": "Almost there",
-    "successBody": "Please confirm your registration via the link in the email we just sent you. Check your spam folder if needed.",
+    "successTitle": "Thank you for registering",
+    "successBody": "You'll receive future updates on avalis.",
+    "downloadCta": "Download the Research Report",
+    "downloadPending": "The download link is coming soon.",
     "errorTitle": "Something went wrong",
     "errorBody": "The registration did not go through. Please try again in a few minutes."
   },
@@ -134,12 +129,6 @@
     "title": "Stay in touch.",
     "body": "We're happy to introduce the avalis project and exchange views on the accommodation process with you.",
     "addressPending": "Contact address coming soon"
-  },
-  "Confirmed": {
-    "title": "Registration confirmed",
-    "body": "Thank you. Your registration is confirmed and you'll receive future updates on avalis. The Research Report will be available for download here soon.",
-    "downloadCta": "Download the Research Report",
-    "downloadPending": "The download link is coming soon."
   },
   "Legal": {
     "imprintTitle": "Imprint",

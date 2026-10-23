@@ -1,11 +1,10 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { CheckCircle2, CircleAlert } from "lucide-react";
 import { registerAction } from "@/actions/register";
 import { HONEYPOT_FIELD_NAME, initialRegisterState } from "@/lib/validation/registration";
-import { institutionValues } from "@/lib/institutions";
 import { roleValues } from "@/lib/roles";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -26,8 +25,8 @@ const FIELD_ORDER = [
   "firstName",
   "lastName",
   "institution",
-  "otherInstitution",
   "role",
+  "otherRole",
   "consent",
 ] as const;
 
@@ -36,8 +35,8 @@ type FormValues = {
   firstName: string;
   lastName: string;
   institution: string;
-  otherInstitution: string;
   role: string;
+  otherRole: string;
 };
 
 const emptyValues: FormValues = {
@@ -45,20 +44,49 @@ const emptyValues: FormValues = {
   firstName: "",
   lastName: "",
   institution: "",
-  otherInstitution: "",
   role: "",
+  otherRole: "",
 };
+
+// Muss mit den erlaubten Werten in src/lib/validation/registration.ts
+// übereinstimmen; alles andere fällt dort ohnehin auf "direkt" zurück.
+const ALLOWED_SOURCES = ["netzwerktreffen", "mail"];
+
+// ?src= ist eine reine Browser-Grösse (kein Prop, kein State), die beim
+// ersten Render auf dem Server nicht existiert. useSyncExternalStore liest
+// sie ohne setState-in-Effect und ohne Hydration-Mismatch: Server-Snapshot
+// liefert immer "direkt", der Client-Snapshot den echten Wert nach Hydration.
+function subscribeToNothing() {
+  return () => {};
+}
+function getSourceSnapshot() {
+  const raw = new URLSearchParams(window.location.search).get("src");
+  return raw && ALLOWED_SOURCES.includes(raw) ? raw : "direkt";
+}
+function getServerSourceSnapshot() {
+  return "direkt";
+}
 
 // Felder werden vollständig kontrolliert geführt: React setzt nach jeder
 // Server-Action-Übermittlung unkontrollierte Formularfelder automatisch
-// zurück (auch bei einer Fehlerantwort), wodurch z.B. die Institutions-Auswahl
+// zurück (auch bei einer Fehlerantwort), wodurch z.B. die Rollen-Auswahl
 // wieder auf den Platzhalter springen würde. Kontrollierte Felder sind davon
 // nicht betroffen, weil ihr Wert immer aus dem React-State kommt.
-export function RegistrationForm({ locale }: { locale: Locale }) {
+export function RegistrationForm({
+  locale,
+  reportDownloadUrl,
+}: {
+  locale: Locale;
+  reportDownloadUrl?: string;
+}) {
   const t = useTranslations("Registration");
   const [state, formAction, pending] = useActionState(registerAction, initialRegisterState);
   const [values, setValues] = useState<FormValues>(emptyValues);
   const [consent, setConsent] = useState(false);
+  // Kein next/navigation useSearchParams: das würde die sonst statisch
+  // generierbare Seite in dynamisches Rendering zwingen, nur für dieses
+  // einzelne Analytics-Attribut.
+  const source = useSyncExternalStore(subscribeToNothing, getSourceSnapshot, getServerSourceSnapshot);
   const fieldRefs = useRef<Partial<Record<string, HTMLElement | null>>>({});
 
   useEffect(() => {
@@ -79,6 +107,15 @@ export function RegistrationForm({ locale }: { locale: Locale }) {
         <div>
           <p className="text-paragraph-regular font-medium text-foreground">{t("successTitle")}</p>
           <p className="mt-1 text-paragraph-small text-muted-foreground">{t("successBody")}</p>
+          {reportDownloadUrl ? (
+            <Button asChild size="lg" className="mt-4 rounded-full">
+              <a href={reportDownloadUrl} target="_blank" rel="noopener noreferrer">
+                {t("downloadCta")}
+              </a>
+            </Button>
+          ) : (
+            <p className="mt-3 text-paragraph-mini text-muted-foreground">{t("downloadPending")}</p>
+          )}
         </div>
       </div>
     );
@@ -128,6 +165,10 @@ export function RegistrationForm({ locale }: { locale: Locale }) {
           autoComplete="off"
         />
       </div>
+
+      {/* Kontext-Attribut für Brevo, nicht nutzersichtbar: Herkunft (?src=),
+          siehe docs/04_registration-flow.md. */}
+      <input type="hidden" name="source" value={source} />
 
       <div>
         <Label htmlFor="email">{t("fields.emailLabel")}</Label>
@@ -205,35 +246,23 @@ export function RegistrationForm({ locale }: { locale: Locale }) {
       </div>
 
       <div>
-        <Label htmlFor="institution-trigger">{t("fields.institutionLabel")}</Label>
-        {/*
-          Kein `name`/`required` am Select-Root: Radix hängt dafür einen
-          Listener auf das native "reset"-Event des Formulars, das React nach
-          jeder Server-Action-Übermittlung auslöst, und würde damit unseren
-          kontrollierten Wert aktiv wieder auf "" zurücksetzen. Der Wert geht
-          stattdessen über das eigene Hidden-Input unten ins FormData.
-        */}
-        <input type="hidden" name="institution" value={values.institution} />
-        <Select value={values.institution} onValueChange={setSelectField("institution")}>
-          <SelectTrigger
-            ref={(el) => {
-              fieldRefs.current.institution = el;
-            }}
-            id="institution-trigger"
-            className="mt-1.5 w-full"
-            aria-invalid={Boolean(errorMessage("institution"))}
-            aria-describedby={errorMessage("institution") ? "institution-error" : undefined}
-          >
-            <SelectValue placeholder={t("fields.institutionPlaceholder")} />
-          </SelectTrigger>
-          <SelectContent>
-            {institutionValues.map((value) => (
-              <SelectItem key={value} value={value}>
-                {t(`institutions.${value}`)}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <Label htmlFor="institution">{t("fields.institutionLabel")}</Label>
+        <Input
+          ref={(el) => {
+            fieldRefs.current.institution = el;
+          }}
+          id="institution"
+          name="institution"
+          type="text"
+          required
+          maxLength={150}
+          placeholder={t("fields.institutionPlaceholder")}
+          className="mt-1.5"
+          value={values.institution}
+          onChange={(e) => setField("institution")(e.target.value)}
+          aria-invalid={Boolean(errorMessage("institution"))}
+          aria-describedby={errorMessage("institution") ? "institution-error" : undefined}
+        />
         {errorMessage("institution") && (
           <p id="institution-error" role="alert" className="mt-1.5 text-paragraph-small text-destructive">
             {errorMessage("institution")}
@@ -241,39 +270,15 @@ export function RegistrationForm({ locale }: { locale: Locale }) {
         )}
       </div>
 
-      {values.institution === "andere" && (
-        <div>
-          <Label htmlFor="otherInstitution">{t("fields.otherInstitutionLabel")}</Label>
-          <Input
-            ref={(el) => {
-              fieldRefs.current.otherInstitution = el;
-            }}
-            id="otherInstitution"
-            name="otherInstitution"
-            type="text"
-            required
-            maxLength={150}
-            className="mt-1.5"
-            value={values.otherInstitution}
-            onChange={(e) => setField("otherInstitution")(e.target.value)}
-            aria-invalid={Boolean(errorMessage("otherInstitution"))}
-            aria-describedby={errorMessage("otherInstitution") ? "otherInstitution-error" : undefined}
-          />
-          {errorMessage("otherInstitution") && (
-            <p
-              id="otherInstitution-error"
-              role="alert"
-              className="mt-1.5 text-paragraph-small text-destructive"
-            >
-              {errorMessage("otherInstitution")}
-            </p>
-          )}
-        </div>
-      )}
-
       <div>
         <Label htmlFor="role-trigger">{t("fields.roleLabel")}</Label>
-        {/* Kein `name`/`required` am Select-Root, siehe Kommentar bei Institution oben. */}
+        {/*
+          Kein `name`/`required` am Select-Root: Radix hängt dafür einen
+          Listener auf das native "reset"-Event des Formulars, das React nach
+          jeder Server-Action-Übermittlung auslöst, und würde damit unseren
+          kontrollierten Wert aktiv wieder auf "" zurücksetzen. Der Wert geht
+          stattdessen über das eigene Hidden-Input unten ins FormData.
+        */}
         <input type="hidden" name="role" value={values.role} />
         <Select value={values.role} onValueChange={setSelectField("role")}>
           <SelectTrigger
@@ -301,6 +306,32 @@ export function RegistrationForm({ locale }: { locale: Locale }) {
           </p>
         )}
       </div>
+
+      {values.role === "andere" && (
+        <div>
+          <Label htmlFor="otherRole">{t("fields.otherRoleLabel")}</Label>
+          <Input
+            ref={(el) => {
+              fieldRefs.current.otherRole = el;
+            }}
+            id="otherRole"
+            name="otherRole"
+            type="text"
+            required
+            maxLength={150}
+            className="mt-1.5"
+            value={values.otherRole}
+            onChange={(e) => setField("otherRole")(e.target.value)}
+            aria-invalid={Boolean(errorMessage("otherRole"))}
+            aria-describedby={errorMessage("otherRole") ? "otherRole-error" : undefined}
+          />
+          {errorMessage("otherRole") && (
+            <p id="otherRole-error" role="alert" className="mt-1.5 text-paragraph-small text-destructive">
+              {errorMessage("otherRole")}
+            </p>
+          )}
+        </div>
+      )}
 
       <div>
         <div className="flex items-start gap-3">

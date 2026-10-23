@@ -91,19 +91,13 @@
       "emailPlaceholder": "name@hochschule.ch",
       "firstNameLabel": "Vorname",
       "lastNameLabel": "Nachname",
-      "institutionLabel": "Hochschule",
-      "institutionPlaceholder": "Hochschule auswählen",
-      "otherInstitutionLabel": "Name der Institution",
+      "institutionLabel": "Bildungsinstitution",
+      "institutionPlaceholder": "z. B. Universität Zürich",
       "roleLabel": "Rolle",
       "rolePlaceholder": "Rolle auswählen",
+      "otherRoleLabel": "Bezeichnung der Rolle",
       "consentLabel": "Ich möchte den Research Report und gelegentliche Updates per E-Mail erhalten und stimme der",
       "consentLinkLabel": "Datenschutzerklärung"
-    },
-    "institutions": {
-      "uni": "Universität",
-      "fh": "Fachhochschule",
-      "ph": "Pädagogische Hochschule",
-      "andere": "Andere"
     },
     "roles": {
       "fachstelle": "Fachstelle / Beratung",
@@ -123,9 +117,10 @@
     "submit": "Jetzt registrieren",
     "submitPending": "Wird gesendet …",
     "belowButtonNote": "Jederzeit abmeldbar. Keine Weitergabe Ihrer Daten an Dritte.",
-    "draftNote": "Formularentwurf · noch ohne Versandfunktion",
-    "successTitle": "Fast geschafft",
-    "successBody": "Bitte bestätigen Sie Ihre Anmeldung über den Link in der E-Mail, die wir Ihnen gerade geschickt haben. Prüfen Sie bei Bedarf auch Ihren Spam-Ordner.",
+    "successTitle": "Vielen Dank für Ihre Registrierung",
+    "successBody": "Sie erhalten künftig Updates zu avalis.",
+    "downloadCta": "Research Report herunterladen",
+    "downloadPending": "Der Download-Link folgt in Kürze.",
     "errorTitle": "Das hat leider nicht geklappt",
     "errorBody": "Die Anmeldung hat nicht funktioniert. Bitte versuchen Sie es in ein paar Minuten erneut."
   },
@@ -134,12 +129,6 @@
     "title": "Im Gespräch bleiben.",
     "body": "Gerne stellen wir Ihnen das Projekt avalis vor und tauschen uns mit Ihnen zum Nachteilsausgleichsprozess aus.",
     "addressPending": "Kontaktadresse folgt"
-  },
-  "Confirmed": {
-    "title": "Anmeldung bestätigt",
-    "body": "Vielen Dank. Ihre Registrierung ist bestätigt, Sie erhalten künftig Updates zu avalis. Der Research Report steht hier bald zum Download bereit.",
-    "downloadCta": "Research Report herunterladen",
-    "downloadPending": "Der Download-Link folgt in Kürze."
   },
   "Legal": {
     "imprintTitle": "Impressum",

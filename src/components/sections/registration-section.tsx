@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/routing";
 
 export async function RegistrationSection({ locale }: { locale: Locale }) {
   const t = await getTranslations("Registration");
+  const reportDownloadUrl = process.env.REPORT_DOWNLOAD_URL;
 
   return (
     <section id="registrierung" className="bg-primary text-primary-foreground">
@@ -31,11 +32,10 @@ export async function RegistrationSection({ locale }: { locale: Locale }) {
             <p className="mt-4 text-paragraph-mini text-muted-foreground">{t("requiredHint")}</p>
 
             <div className="mt-6">
-              <RegistrationForm locale={locale} />
+              <RegistrationForm locale={locale} reportDownloadUrl={reportDownloadUrl} />
             </div>
 
             <p className="mt-6 text-paragraph-small text-muted-foreground">{t("belowButtonNote")}</p>
-            <p className="mt-2 text-paragraph-mini text-muted-foreground">{t("draftNote")}</p>
           </div>
         </div>
       </div>
