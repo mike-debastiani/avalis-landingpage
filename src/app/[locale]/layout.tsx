@@ -8,9 +8,12 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import "../globals.css";
 
+// opsz-Achse: Figma setzt DM Sans mit automatischer optischer Grösse, grosse
+// Überschriften sind dadurch enger gesetzt als der Text-Schnitt.
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
+  axes: ["opsz"],
 });
 
 export function generateStaticParams() {
@@ -48,7 +51,11 @@ export default async function LocaleLayout({
   const t = await getTranslations({ locale, namespace: "Layout" });
 
   return (
-    <html lang={locale} className={`${dmSans.variable} h-full antialiased`}>
+    <html
+      lang={locale}
+      data-scroll-behavior="smooth"
+      className={`${dmSans.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col font-sans">
         <NextIntlClientProvider>
           <a

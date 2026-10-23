@@ -14,6 +14,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-ghost: var(--background-ghost);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-dm-sans);
   --font-heading: var(--font-dm-sans);
@@ -121,20 +122,34 @@
   --text-paragraph-mini--line-height: var(--paragraph-mini-line-height);
 
   /*
-   * Display (Hero) — Code-Entscheid, nicht im Figma-File als eigenes Token
-   * vorhanden (bestätigt beim Auslesen der Landingpage-Variablen). Fluid
-   * zwischen Mobile (ab 28px, auf Mobile so dimensioniert, dass die längste
-   * Zeile «Nachteilsausgleich.» nicht umbricht) und Desktop (64px), SemiBold wie die übrigen
-   * Headings. Siehe docs/05_design-system.md Abschnitt 4.
+   * Display (Hero) und Section-Typografie — Code-Entscheid, im Figma-File als
+   * Rohwerte der Landingpage (68/48/44/22px) vorhanden, aber nicht als eigene
+   * Variablen. Fluid zwischen Mobile und dem Figma-Desktop-Wert (Desktop-
+   * Werte exakt wie in Figma). Der Display-Wert ist auf Mobile so
+   * dimensioniert, dass die längste Zeile «Nachteilsausgleich.» nicht
+   * umbricht. Siehe docs/05_design-system.md Abschnitt 4.
    */
-  --text-display: clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 4rem);
-  --text-display--line-height: 1.05;
+  --text-display: clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 4.25rem);
+  --text-display--line-height: 1.08;
   --text-display--font-weight: 600;
   --text-display--letter-spacing: 0;
+
+  --text-title-xl: clamp(1.75rem, 1rem + 3.4vw, 3rem);
+  --text-title-xl--line-height: 1.12;
+  --text-title-xl--font-weight: 600;
+
+  --text-title: clamp(1.75rem, 1rem + 3vw, 2.75rem);
+  --text-title--line-height: 1.15;
+  --text-title--font-weight: 600;
+
+  --text-lead: clamp(1.125rem, 0.9rem + 0.7vw, 1.375rem);
+  --text-lead--line-height: 1.55;
 }
 
 :root {
   --background: #fafaf9;
+  /* Figma "general/background-ghost": reines Weiss für Header und helle Sections */
+  --background-ghost: #ffffff;
   --foreground: #1c1917;
   --card: #ffffff;
   --card-foreground: #1c1917;
@@ -145,7 +160,8 @@
   --secondary: #f5f5f4;
   --secondary-foreground: #1c1917;
   --muted: #f5f5f4;
-  --muted-foreground: #78716c;
+  /* Figma "general/border-strong" (Stone 600): Sekundärtext, Placeholder, Labels */
+  --muted-foreground: #57534e;
   --accent: #f5f5f5;
   --accent-foreground: #1c1917;
   --destructive: #ef4444;
@@ -153,6 +169,9 @@
   --input: #dedbd9;
   --ring: #78716c;
   --radius: 0.5rem;
+
+  /* Höhe des sticky Headers (Figma Desktop: 104px) */
+  --header-height: 4rem;
 
   /* Graustufen (Stone) */
   --stone-50: #fafaf9;
@@ -238,6 +257,16 @@
   }
   html {
     @apply font-sans;
+    scroll-padding-top: var(--header-height);
+  }
+
+  /* Smooth-Scroll nur für In-Page-Anker und nur ohne "reduced motion". Die
+     Header-Höhe dient als scroll-padding, damit Sections nicht unter dem
+     sticky Header landen. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   /*
@@ -254,13 +283,20 @@
   }
 }
 
+@media (min-width: 64rem) {
+  :root {
+    --header-height: 6.5rem;
+  }
+}
+
 @layer utilities {
   .section-container {
-    @apply mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12;
+    /* 81rem = 1200px Content (Figma) + 2 × 48px Padding */
+    @apply mx-auto w-full max-w-324 px-6 sm:px-8 lg:px-12;
   }
 
   .section-spacing {
-    @apply py-12 sm:py-16 lg:py-24;
+    @apply py-16 sm:py-20 lg:py-30;
   }
 
   /* Rein dekorativer Platzhalter-Balken, keine echten Daten. */
