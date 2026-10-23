@@ -1,6 +1,6 @@
 "use server";
 
-import { BrevoError, sendReportMail, upsertContact } from "@/lib/brevo";
+import { sendReportMail, upsertContact } from "@/lib/brevo";
 import { routing } from "@/i18n/routing";
 import {
   HONEYPOT_FIELD_NAME,
@@ -43,10 +43,13 @@ export async function registerAction(
   } catch (error) {
     // Nie personenbezogene Daten oder rohe Brevo-Fehlertexte loggen/ausgeben
     // (siehe docs/03_tech-architecture.md Abschnitt 4). BrevoError enthält
-    // nur Status-Code und Brevos Fehlercode, keine Nutzerdaten.
+    // nur Status-Code und Brevos Fehlercode, keine Nutzerdaten. Auch andere
+    // Fehler (z.B. fehlendes UNSUBSCRIBE_SECRET, Netzwerkfehler) loggen wir mit
+    // ihrer Meldung, sonst bleibt die Ursache einer Fehlkonfiguration
+    // unsichtbar. Diese Meldungen enthalten nur Variablennamen oder Systemtexte.
     console.error(
-      "Registrierung fehlgeschlagen (Brevo):",
-      error instanceof BrevoError ? error.message : "unbekannter Fehler"
+      "Registrierung fehlgeschlagen:",
+      error instanceof Error ? `${error.name}: ${error.message}` : "unbekannter Fehler"
     );
     return { status: "error" };
   }
