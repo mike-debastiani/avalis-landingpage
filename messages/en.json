@@ -16,11 +16,13 @@
     "navSolution": "Solution",
     "navPrototype": "Preview",
     "navContact": "Contact",
-    "cta": "Research Report"
+    "cta": "Research Report",
+    "navLabel": "Main navigation",
+    "languageLabel": "Language"
   },
   "Footer": {
     "tagline": "A digital solution for the accommodation process at Swiss universities.",
-    "legalPending": "Imprint and privacy policy will be added before publication.",
+    "legalLabel": "Legal",
     "imprint": "Imprint",
     "privacy": "Privacy"
   },
@@ -39,9 +41,6 @@
     "eyebrow": "Who is behind it",
     "headline": "Three perspectives. One shared concern.",
     "lead": "Behind avalis are Chiara Tremml, Dario Foti and Mike De Bastiani, a three-person team with a UX design background. The video shows what motivated the team to take on this project and what avalis solves.",
-    "member1": "Chiara Tremml",
-    "member2": "Dario Foti",
-    "member3": "Mike De Bastiani",
     "videoTitle": "The people behind avalis"
   },
   "Solution": {
@@ -80,7 +79,7 @@
   "Registration": {
     "eyebrow": "Research Report",
     "title": "Understand the accommodation process better.",
-    "lead1": "A nationwide survey across 17 universities: interviews, questionnaires and an analysis of official process documents.",
+    "lead1": "A nationwide survey across 17 universities through interviews, questionnaires and an analysis of official process documents.",
     "lead2": "How does the accommodation process actually work? Where are its limits? And what does that mean for a digital solution?",
     "mapLabel": "Map of Swiss cantons: number of participating institutions per canton",
     "mapCaption": "Number of participating institutions per canton",
@@ -88,17 +87,20 @@
     "formLead": "Register to receive the report and occasional updates on the development of avalis.",
     "requiredHint": "* Required field · all other details are optional",
     "fields": {
-      "emailLabel": "Email address",
+      "emailLabel": "Email *",
       "emailPlaceholder": "Your email address",
       "firstNameLabel": "First name (optional)",
+      "firstNamePlaceholder": "First name",
       "lastNameLabel": "Last name (optional)",
-      "institutionLabel": "Educational institution",
+      "lastNamePlaceholder": "Last name",
+      "institutionLabel": "Educational institution *",
       "institutionPlaceholder": "e.g. University of Zurich",
-      "roleLabel": "Role",
+      "roleLabel": "Role *",
       "rolePlaceholder": "Select role",
-      "otherRoleLabel": "Name of your role",
+      "otherRoleLabel": "Name of your role *",
       "consentLabel": "I would like to receive the Research Report and occasional updates by email and agree to the",
-      "consentLinkLabel": "privacy policy"
+      "consentLinkLabel": "privacy policy",
+      "consentSuffix": ". *"
     },
     "roles": {
       "fachstelle": "Advisory office",

@@ -47,7 +47,7 @@ Das Design System wurde für eine Web-Applikation erstellt. Für eine Landingpag
 
 Fehlen diese in Figma: im Team klären und in Figma ergänzen, bevor sie im Code verwendet werden.
 
-**Entscheid (15.09.2026):** Die Display-Typografie für den Hero (`--text-display`, fluid 28–64px, auf Mobile steiler, damit der Hero-Titel nicht umbricht) ist als Ausnahme direkt im Code definiert (`src/app/globals.css`), da der Webapp-Styleguide keine solche Stufe enthält und für App-UI auch keine braucht. Verhältnis und Weight (SemiBold) folgen konsistent der bestehenden Heading-Konvention. Noch nicht in Figma nachgezogen, siehe `08_open-points.md`.
+**Entscheid (15.09.2026):** Die Display-Typografie für den Hero (`--text-display`, fluid 28–68px, auf Mobile steiler, damit der Hero-Titel nicht umbricht; ebenso `--text-title-xl` 48px, `--text-title` 44px, `--text-lead` 22px mit Desktop-Werten exakt wie in Figma V5) ist als Ausnahme direkt im Code definiert (`src/app/globals.css`), da der Webapp-Styleguide keine solche Stufe enthält und für App-UI auch keine braucht. Verhältnis und Weight (SemiBold) folgen konsistent der bestehenden Heading-Konvention. Noch nicht in Figma nachgezogen, siehe `08_open-points.md`.
 
 ## 5. Barrierefreiheit (verbindlich)
 
@@ -84,7 +84,8 @@ Ausgelesen via Figma MCP (`get_variable_defs`, Node `8122:54610`) und gegen den 
 | Figma-Variable | CSS-Variable | Wert |
 |---|---|---|
 | `general/foreground` | `--foreground` / `--color-foreground` | `#1c1917` (stone-900) |
-| `general/muted foreground` | `--muted-foreground` | `#78716c` (stone-500) |
+| `general/muted foreground` | `--muted-foreground` | `#57534e` (stone-600), entspricht in der Landingpage `general/border-strong` (Sekundärtext, Placeholder). Bis 23.10.2026 stand hier `#78716c` (stone-500), das in Figma V5 nicht vorkommt |
+| `general/background-ghost` | `--background-ghost` | `#ffffff`, Header und helle Sections (Team, Lösung, Einblick, Kontakt) |
 | `general/border` | `--border` | `#dedbd9` (stone-250) |
 | `unofficial/body background` | `--background` | `#ffffff` |
 | — | `--primary` | `#1c1917` (stone-900) |
@@ -114,7 +115,7 @@ Nicht übernommen: die vier reinen App-Workflow-Paletten `Entwurf`, `In-Review`,
 | `paragraph/small/font-size` + `/line-height` | `--paragraph-small-size` / `-line-height` | `0.875rem` / `1.25rem` |
 | `paragraph/mini/font-size` + `/line-height` | `--paragraph-mini-size` / `-line-height` | `0.75rem` / `1rem` |
 | `font definitions/font-family-body` | `--font-dm-sans` (via `next/font/google` in `layout.tsx`) | DM Sans |
-| *nicht in Figma* (Code-Entscheid) | `--text-display` | `clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 4rem)` |
+| *nicht in Figma* (Code-Entscheid) | `--text-display` | `clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 4.25rem)` (68px), Zeilenhöhe 1.08. Weitere Landingpage-Stufen: `--text-title-xl` (48px, 1.12), `--text-title` (44px, 1.15), `--text-lead` (22px, 1.55) |
 
 Heading 2 (30px) im Code ergänzt analog zur Skala, im MCP-Response nicht enthalten — bei Gelegenheit gegen Figma verifizieren.
 
@@ -137,3 +138,11 @@ Beobachtet im Figma-File «Avalis-Landingpage» (Node `10067:2049`), noch nicht 
 - **Modularitäts-Icon-Set:** Drei organische «Puzzleteil»-Formen als Icon-Trio für die Anpassbarkeits-Aussage (S5 in `06_page-structure.md`). Noch nicht im Styleguide-File als eigenständige Komponente identifiziert – beim nächsten Figma-Durchgang klären, ob es eine Icon-Komponente dafür gibt oder ob es Illustration ist.
 - **Video-Platzhalter-Muster (wiederkehrend, zwei Mal verwendet):** Box im Format 16:9, oben links Format-Label («VIDEO · 16:9»), oben rechts Status («Platzhalter · nicht abspielbar»), mittig Icon + Titel + Hinweistext, unten eine (inaktive) Player-Leiste mit Play-Button, Zeitleiste und CC-Untertitel-Control. Als wiederverwendbare Komponente bauen, nicht pro Section neu.
 - **Schweizer-Kantonskarte:** Neues, spezifisches Visual in der Registrierungs-Section («Interaktive Karte aller teilnehmenden Hochschulen»), Kantone grün eingefärbt je nach Teilnahme. Braucht echte Geodaten/Institutionszuordnung, siehe `08_open-points.md`. Keine erfundene Kartendarstellung bauen, bevor die Datengrundlage steht.
+
+## Ergänzungen vom 23.10.2026 (Abgleich mit Figma V5)
+
+- **Container:** Content-Breite 1200px (`.section-container` = `max-w-324`, inkl. 2 × 48px Padding), Section-Abstände 120px (`.section-spacing`), Hero/Registrierung 112px, Kontakt 104px.
+- **Schrift:** DM Sans mit `opsz`-Achse (`next/font`, `axes: ["opsz"]`). Figma setzt grosse Überschriften mit automatischer optischer Grösse; ohne die Achse waren sie ~9 % zu breit.
+- **Klassen-Merger:** `cn` (`src/lib/utils.ts`) kennt die eigenen Typo-Tokens als Schriftgrössen. Ohne das verwirft er z. B. `text-title`, sobald `text-foreground` folgt.
+- **Bewusste Kontrast-Abweichungen von Figma (WCAG AA, kleiner Text):** Studierenden-Label im Hero `bewilligt-800` statt `green/500` (~2:1); Fachstellen-Pill `beratung-600` statt `beratung-500` (~3.6:1, neu ~4.8:1).
+- **Header-Navigation:** Scroll-Spy mit Unterstreichung des aktiven Punkts (`aria-current="location"`), Smooth-Scroll nur bei `prefers-reduced-motion: no-preference`, `scroll-padding-top` = Header-Höhe (`--header-height`).
