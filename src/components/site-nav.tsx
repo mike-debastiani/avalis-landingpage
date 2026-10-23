@@ -25,6 +25,13 @@ const SECTION_TO_NAV: ReadonlyArray<readonly [id: string, nav: string | null]> =
 // Animation und ohne Abhängigkeit von `scrollend`-Unterstützung).
 const SCROLL_IDLE_MS = 200;
 
+// Die Menüpunkte folgen immer der Reihenfolge der Sections auf der Seite, egal
+// in welcher Reihenfolge sie übergeben werden.
+function sortBySectionOrder(items: NavItem[]): NavItem[] {
+  const position = (href: string) => SECTION_TO_NAV.findIndex(([, nav]) => nav === href);
+  return [...items].sort((a, b) => position(a.href) - position(b.href));
+}
+
 export function SiteNav({ items, ariaLabel }: { items: NavItem[]; ariaLabel: string }) {
   const [active, setActive] = useState<string | null>(null);
   const lockRef = useRef(false);
@@ -96,7 +103,7 @@ export function SiteNav({ items, ariaLabel }: { items: NavItem[]; ariaLabel: str
 
   return (
     <nav aria-label={ariaLabel} className="hidden items-center gap-1 md:flex">
-      {items.map((item) => {
+      {sortBySectionOrder(items).map((item) => {
         const isActive = active === item.href;
         return (
           <a

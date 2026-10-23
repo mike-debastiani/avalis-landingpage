@@ -124,25 +124,30 @@
   /*
    * Display (Hero) und Section-Typografie — Code-Entscheid, im Figma-File als
    * Rohwerte der Landingpage (68/48/44/22px) vorhanden, aber nicht als eigene
-   * Variablen. Fluid zwischen Mobile und dem Figma-Desktop-Wert (Desktop-
-   * Werte exakt wie in Figma). Der Display-Wert ist auf Mobile so
+   * Variablen. Fluid zwischen Mobile und dem Desktop-Wert. Desktop-Werte seit
+   * 23.10.2026 bewusst ca. 10-14 % kleiner als in Figma (60/42/38/20px), weil
+   * die Figma-Grössen auf dem 1920px-Frame auf normalen Laptops zu gross wirken. Der Display-Wert ist auf Mobile so
    * dimensioniert, dass die längste Zeile «Nachteilsausgleich.» nicht
    * umbricht. Siehe docs/05_design-system.md Abschnitt 4.
    */
-  --text-display: clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 4.25rem);
+  --text-display: clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 3.75rem);
   --text-display--line-height: 1.08;
   --text-display--font-weight: 600;
   --text-display--letter-spacing: 0;
 
-  --text-title-xl: clamp(1.75rem, 1rem + 3.4vw, 3rem);
+  --text-title-xl: clamp(1.75rem, 1rem + 2.6vw, 2.625rem);
   --text-title-xl--line-height: 1.12;
   --text-title-xl--font-weight: 600;
 
-  --text-title: clamp(1.75rem, 1rem + 3vw, 2.75rem);
+  --text-title: clamp(1.75rem, 1rem + 2.2vw, 2.375rem);
   --text-title--line-height: 1.15;
   --text-title--font-weight: 600;
 
-  --text-lead: clamp(1.125rem, 0.9rem + 0.7vw, 1.375rem);
+  --text-subtitle: clamp(1.5rem, 1rem + 1.2vw, 1.875rem);
+  --text-subtitle--line-height: 1.2;
+  --text-subtitle--font-weight: 600;
+
+  --text-lead: clamp(1.125rem, 1rem + 0.4vw, 1.25rem);
   --text-lead--line-height: 1.55;
 }
 

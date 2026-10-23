@@ -12,6 +12,7 @@ export const cn = createCn({
             "display",
             "title-xl",
             "title",
+            "subtitle",
             "lead",
             "heading-1",
             "heading-2",
