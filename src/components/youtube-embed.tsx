@@ -24,7 +24,7 @@ export function YoutubeEmbed({
     return (
       <div
         className={cn(
-          "relative aspect-video w-full overflow-hidden rounded-2xl border border-border bg-black [clip-path:inset(0_round_1rem)]",
+          "relative aspect-video w-full overflow-hidden rounded-xl bg-black [clip-path:inset(0_round_0.75rem)]",
           className
         )}
       >
@@ -34,8 +34,8 @@ export function YoutubeEmbed({
             das clip-path auf dem Container: reines overflow-hidden +
             border-radius auf dem Elternelement clippt die Ecken eines
             Iframes in Chromium zuverlässig nicht (eigene Rendering-Surface),
-            clip-path funktioniert dafür zuverlässig (1rem = rounded-2xl,
-            --radius-2xl). */}
+            clip-path funktioniert dafür zuverlässig (0.75rem = rounded-xl,
+            --radius-xl, wie der Video-Rahmen in Figma). */}
         <iframe
           className="size-full"
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
@@ -53,7 +53,7 @@ export function YoutubeEmbed({
       onClick={() => setIsPlaying(true)}
       aria-label={title}
       className={cn(
-        "group relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl border border-border bg-muted",
+        "group relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl bg-muted",
         className
       )}
     >
@@ -61,7 +61,7 @@ export function YoutubeEmbed({
         src={thumbnailSrc}
         alt=""
         fill
-        sizes="(min-width: 1024px) 50vw, 100vw"
+        sizes="(min-width: 1296px) 1200px, 100vw"
         className="object-cover"
         onError={() => setThumbnailSrc(`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`)}
       />
