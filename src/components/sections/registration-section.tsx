@@ -5,7 +5,6 @@ import type { Locale } from "@/i18n/routing";
 
 export async function RegistrationSection({ locale }: { locale: Locale }) {
   const t = await getTranslations("Registration");
-  const reportDownloadUrl = process.env.REPORT_DOWNLOAD_URL;
 
   return (
     <section id="registrierung" className="bg-primary text-primary-foreground">
@@ -44,20 +43,7 @@ export async function RegistrationSection({ locale }: { locale: Locale }) {
           </div>
 
           <div className="h-fit rounded-xl bg-background-ghost p-6 text-card-foreground sm:p-10">
-            <div className="flex flex-col gap-3">
-              {/* text-box-trim wie in Figma (Kappenhöhe bis Grundlinie), wo der Browser es unterstützt */}
-              <h3 className="text-heading-3 font-semibold [text-box:trim-both_cap_alphabetic]">
-                {t("formTitle")}
-              </h3>
-              <p className="text-paragraph-regular text-muted-foreground">{t("formLead")}</p>
-              <p className="text-paragraph-small text-muted-foreground">{t("requiredHint")}</p>
-            </div>
-
-            <div className="mt-6">
-              <RegistrationForm locale={locale} reportDownloadUrl={reportDownloadUrl} />
-            </div>
-
-            <p className="mt-6 text-paragraph-small text-muted-foreground">{t("belowButtonNote")}</p>
+            <RegistrationForm locale={locale} />
           </div>
         </div>
       </div>

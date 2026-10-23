@@ -8,9 +8,9 @@
 
 | # | Thema | Was fehlt | Wer | Bis |
 |---|---|---|---|---|
-| 5 | Brevo | Neuer API-Key, nur in Vercel und `.env.local` hinterlegt; IP-Sperre deaktiviert | Mike | 20.09. |
+| 5 | Brevo | Neuer API-Key, nur in Vercel und `.env.local` hinterlegt; IP-Sperre deaktiviert. Zusätzlich für die Report-Mail: Absender verifizieren, Template «Research Report» anlegen (Vorlage `docs/templates/report-mail.html`), `BREVO_REPORT_TEMPLATE_ID` und `UNSUBSCRIBE_SECRET` setzen, siehe `04_registration-flow.md` Abschnitt 8 | Mike | – |
 | 6 | Vercel | Projekt-URL für `NEXT_PUBLIC_SITE_URL` | Mike | 20.09. |
-| 7 | Domain | Domain kaufen, bei Vercel verbinden, Absender-Domain in Brevo verifizieren (SPF, DKIM, DMARC) | Team | 04.10. |
+| 7 | Domain | Domain kaufen, bei Vercel verbinden, Absender-Domain in Brevo verifizieren (SPF, DKIM, DMARC). **Wichtiger denn je:** Der Report-Link kommt nur noch per Mail, ohne verifizierte Absender-Domain landen die Mails häufig im Spam | Team | 04.10. |
 | 8 | Research Report | Google-Drive-Link, Freigabe «Jeder mit dem Link» prüfen | Team | 11.10. |
 | 11 | Rollenliste | Rollen im Formular bestätigen | Team | 04.10. |
 | 12 | Texte | Figma-Entwurf (Stand 20.10., `06_page-structure.md`) mit dem Team final abstimmen – als Richtung gesetzt, aber ausdrücklich nicht final | Team | – |
@@ -18,7 +18,8 @@
 | 29 | Registrierung | Figma zeigt eine **einzelne kombinierte** Einwilligungs-Checkbox (Report + Updates + Datenschutz) statt getrennter Zustimmungen – mit Brevo-Anbindung (#2–#5) abgleichen, ob das rechtlich/technisch so umsetzbar ist | Mike | – |
 | 31 | Rechtliches/Visuals | Logo-Reihe in der Registrierungs-Section zeigt im Figma-Entwurf teils generische Platzhalter-Logos (Notion, Airtable, Evernote – vermutlich Figma-Komponenten-Dummies, kein Bezug zu avalis) neben echten (swissuniversities, HSLU). Klären, welche Logos real gezeigt werden sollen | Team | – |
 | 32 | Rechtliches | **Spannung:** Das Figma-File zeigt bereits ein HSLU-Logo in der Registrierungs-Section, obwohl Punkt #18 (HSLU-Name/Logo-Nutzung) noch offen ist. Vor der Umsetzung klären, sonst wird im Design etwas vorweggenommen, das rechtlich noch nicht abgesegnet ist | Team / Mentor:innen | – |
-| 17 | Rechtliches | Verantwortliche Personen und Adresse für Impressum und Datenschutz | Team | 11.10. |
+| 17 | Rechtliches | Verantwortliche Personen und Adresse für Impressum und Datenschutz (Datenschutzerklärung nennt bisher nur «Projektteam avalis» und die E-Mail-Adresse) | Team | 11.10. |
+| 33 | Datenschutz | Datenschutzerklärung ist umgesetzt (Entwurf). Vor dem Launch die Punkte a–j in `07_legal-privacy.md` Abschnitt 6 klären: Verantwortlicher, Speicherdauer, Brevo-Tracking aus, AVV/DPA, Löschung bei Abmeldung, Analytics-Aussage, juristische Prüfung | Team / Mike | 23.10. |
 | 18 | Rechtliches | Verwendung HSLU-Name und Logo | Team / Mentor:innen | 04.10. |
 | 19 | Rechtliches | Teilnehmende Institutionen namentlich nennen? (Anonymisierung im Report) | Team / Mentor:innen | 04.10. |
 | 21 | Visuals | Screenshots des Prototyps (nur Mock-Daten), OpenGraph-Bild | Team | – |
@@ -51,3 +52,5 @@
 | 20.10.2026 | Komplettes Webprojekt zurückgesetzt, Neuaufbau mit reinem Next.js/Tailwind-Default-Setup auf Basis des neuen Figma-Plans (i18n-Gerüst bleibt bestehen) |
 | 23.10.2026 | Kontakt-E-Mail ist `nta.avalis@gmail.com` (löst Punkt #16 ab). Wert aus dem aktuellen Figma-Stand V5, in der Kontakt-Section als `mailto:`-Link umgesetzt |
 | 23.10.2026 | Schweizer-Kantonskarte in der Registrierungs-Section ist ein statisches, vom Team geliefertes SVG (`public/registration/switzerland-map.svg`) inkl. Legende «Anzahl teilnehmende Institutionen pro Kanton» (Skala 0–8), wie in Figma V5. Löst Punkt #30 ab; Karte und Zahlen werden unverändert übernommen, keine eigene Datenzuordnung |
+| 23.10.2026 | Report-Link wird **nur noch per Brevo-Transaktionsmail** zugestellt (statt Download-Button auf der Seite). Erfolgsmeldung weist auf die Mail hin. Die Mail enthält einen eigenen, signierten Abmeldelink der Website (`/abmelden`), der den Kontakt aus der Brevo-Liste entfernt. Löst «Report direkt auf der Seite» vom selben Tag ab |
+| 23.10.2026 | Datenschutzerklärung (DE/EN) auf Basis des tatsächlichen Codes verfasst und umgesetzt: DSG mit DSGVO-Ergänzung, keine Tracking-Cookies, YouTube erst nach Klick, Brevo/Vercel/Google als Empfänger. Offene Prüfpunkte siehe #33 |

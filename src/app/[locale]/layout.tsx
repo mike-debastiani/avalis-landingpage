@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { DM_Sans } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { SiteHeader } from "@/components/site-header";
@@ -49,6 +49,11 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Layout" });
+  // Der Rechtstext wird nur serverseitig gerendert, die Client-Komponenten
+  // brauchen ihn nicht: spart die Übertragung auf jeder Seite.
+  const clientMessages = Object.fromEntries(
+    Object.entries(await getMessages()).filter(([namespace]) => namespace !== "Legal")
+  );
 
   return (
     <html
@@ -57,7 +62,7 @@ export default async function LocaleLayout({
       className={`${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={clientMessages}>
           <a
             href="#main"
             className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"

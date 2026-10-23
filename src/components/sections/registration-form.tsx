@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
-import { CheckCircle2, CircleAlert } from "lucide-react";
+import { CircleAlert } from "lucide-react";
 import { registerAction } from "@/actions/register";
 import { HONEYPOT_FIELD_NAME, initialRegisterState } from "@/lib/validation/registration";
 import { roleValues } from "@/lib/roles";
@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { RegistrationSuccess } from "@/components/sections/registration-success";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 
@@ -78,13 +79,7 @@ function getServerSourceSnapshot() {
 // zurück (auch bei einer Fehlerantwort), wodurch z.B. die Rollen-Auswahl
 // wieder auf den Platzhalter springen würde. Kontrollierte Felder sind davon
 // nicht betroffen, weil ihr Wert immer aus dem React-State kommt.
-export function RegistrationForm({
-  locale,
-  reportDownloadUrl,
-}: {
-  locale: Locale;
-  reportDownloadUrl?: string;
-}) {
+export function RegistrationForm({ locale }: { locale: Locale }) {
   const t = useTranslations("Registration");
   const [state, formAction, pending] = useActionState(registerAction, initialRegisterState);
   const [values, setValues] = useState<FormValues>(emptyValues);
@@ -103,23 +98,10 @@ export function RegistrationForm({
     }
   }, [state]);
 
+  // Der Report-Link kommt ausschliesslich per E-Mail (Brevo), siehe
+  // docs/04_registration-flow.md. Die Adresse wird nur zur Bestätigung gezeigt.
   if (state.status === "success") {
-    return (
-      <div role="status">
-        <CheckCircle2 className="size-8 text-foreground" aria-hidden="true" />
-        <p className="mt-4 text-paragraph-large font-semibold text-foreground">{t("successTitle")}</p>
-        <p className="mt-2 text-paragraph-regular text-muted-foreground">{t("successBody")}</p>
-        {reportDownloadUrl ? (
-          <Button asChild size="lg" className="mt-6 w-full rounded-full sm:w-auto">
-            <a href={reportDownloadUrl} target="_blank" rel="noopener noreferrer">
-              {t("downloadCta")}
-            </a>
-          </Button>
-        ) : (
-          <p className="mt-4 text-paragraph-small text-muted-foreground">{t("downloadPending")}</p>
-        )}
-      </div>
-    );
+    return <RegistrationSuccess email={values.email} />;
   }
 
   const errorMessage = (field: (typeof FIELD_ORDER)[number]) => {
@@ -141,7 +123,15 @@ export function RegistrationForm({
   };
 
   return (
-    <form action={formAction} noValidate className="@container space-y-6">
+    <>
+    <div className="flex flex-col gap-3">
+      {/* text-box-trim wie in Figma (Kappenhöhe bis Grundlinie), wo der Browser es unterstützt */}
+      <h3 className="text-heading-3 font-semibold [text-box:trim-both_cap_alphabetic]">{t("formTitle")}</h3>
+      <p className="text-paragraph-regular text-muted-foreground">{t("formLead")}</p>
+      <p className="text-paragraph-small text-muted-foreground">{t("requiredHint")}</p>
+    </div>
+
+    <form action={formAction} noValidate className="@container mt-6 space-y-6">
       {state.status === "error" && !state.fieldErrors && (
         <div
           role="alert"
@@ -170,6 +160,8 @@ export function RegistrationForm({
       {/* Kontext-Attribut für Brevo, nicht nutzersichtbar: Herkunft (?src=),
           siehe docs/04_registration-flow.md. */}
       <input type="hidden" name="source" value={source} />
+      {/* Sprache für den Abmeldelink in der Report-Mail */}
+      <input type="hidden" name="locale" value={locale} />
 
       <div>
         <Label htmlFor="email">{t("fields.emailLabel")}</Label>
@@ -376,5 +368,8 @@ export function RegistrationForm({
         {pending ? t("submitPending") : t("submit")}
       </Button>
     </form>
+
+    <p className="mt-6 text-paragraph-small text-muted-foreground">{t("belowButtonNote")}</p>
+    </>
   );
 }

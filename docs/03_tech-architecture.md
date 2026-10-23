@@ -29,11 +29,15 @@ Browser (Formular)
 Next.js Server Action  (src/actions/register.ts, läuft auf Vercel)
    │  1. Honeypot prüfen
    │  2. Eingaben mit Zod validieren
-   │  3. Brevo-API: Kontakt anlegen/aktualisieren (Single Opt-in,
-   │     kein Mailversand)
+   │  3. Brevo-API: Kontakt in der Liste anlegen/aktualisieren
+   │  4. Brevo-API: Transaktionsmail (Template) mit Report-Link und
+   │     signiertem Abmeldelink verschicken
    ▼
-Erfolgsmeldung direkt im Formular, inkl. Download-Button zum
-Research Report (REPORT_DOWNLOAD_URL) – kein Redirect, kein Mail-Klick
+Erfolgsmeldung im Formular: «Der Link kommt per E-Mail» (der Link selbst
+wird nie an den Browser ausgeliefert)
+
+Abmeldung: Link in der Mail → /[locale]/abmelden (signiert, Bestätigung per
+Button) → Server Action entfernt den Kontakt aus der Brevo-Liste
 ```
 
 ## 3. Environment Variables
@@ -44,8 +48,10 @@ In Vercel unter *Settings → Environment Variables* für Production, Preview un
 |---|---|---|
 | `BREVO_API_KEY` | **ja** | API-Key von Brevo. Nie im Client, nie in Logs, nie in Docs |
 | `BREVO_LIST_ID` | nein | ID der Liste «Avalis Registrierungen» (bereits angelegt, ID 3) |
+| `BREVO_REPORT_TEMPLATE_ID` | nein | ID des Brevo-Transaktions-Templates «Research Report» (Mail mit Download-Link) |
+| `UNSUBSCRIBE_SECRET` | **ja** | Zufälliger Schlüssel (mind. 32 Zeichen) zum Signieren der Abmeldelinks, z.B. `openssl rand -base64 32`. Wird er geändert, werden bereits verschickte Abmeldelinks ungültig |
 | `NEXT_PUBLIC_SITE_URL` | nein | Basis-URL, z.B. `https://….vercel.app`, später eigene Domain |
-| `REPORT_DOWNLOAD_URL` | nein | Google-Drive-Link zum Research Report |
+| `REPORT_DOWNLOAD_URL` | nein | Google-Drive-Link zum Research Report. Wird nur serverseitig als Template-Parameter an Brevo übergeben |
 | `TURNSTILE_SECRET_KEY` | **ja** | Nur falls Turnstile verwendet wird |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | nein | Nur falls Turnstile verwendet wird |
 
@@ -55,7 +61,7 @@ Code muss so gebaut sein, dass fehlende Variablen beim Start eine klare Fehlerme
 
 - `BREVO_API_KEY` wird ausschliesslich in serverseitigem Code gelesen (`src/lib/brevo.ts`, markiert mit `import "server-only"`).
 - Keine Brevo-Fehlermeldungen ungefiltert an den Client weitergeben.
-- Keine personenbezogenen Daten in URL-Parametern, Logs oder Analytics-Events.
+- Keine personenbezogenen Daten in URL-Parametern, Logs oder Analytics-Events. **Einzige Ausnahme:** Der signierte Abmeldelink in der Report-Mail enthält die E-Mail-Adresse (base64url) und eine HMAC-Signatur, wie bei Abmeldelinks üblich. Die Seite ist `noindex`, hat keine externen Links (kein Referrer-Leak) und meldet erst nach Klick auf den Button ab.
 - Serverseitige Validierung ist massgebend, clientseitige nur Komfort.
 - Sicherheits-Header (u.a. Content-Security-Policy, Referrer-Policy) in `next.config` setzen.
 - In Brevo die Sperre für unbekannte IP-Adressen deaktivieren, da Vercel wechselnde IPs nutzt.
