@@ -8,14 +8,10 @@
 
 | # | Thema | Was fehlt | Wer | Bis |
 |---|---|---|---|---|
-| 2 | Brevo | Liste anlegen, Listen-ID | Mike | 04.10. |
-| 3 | Brevo | Attribute `HOCHSCHULE`, `ROLLE`, `SOURCE` anlegen | Mike | 04.10. |
-| 4 | Brevo | Ein Double-Opt-in-Template (Deutsch), Template-ID | Team | 11.10. |
 | 5 | Brevo | Neuer API-Key, nur in Vercel und `.env.local` hinterlegt; IP-Sperre deaktiviert | Mike | 20.09. |
 | 6 | Vercel | Projekt-URL für `NEXT_PUBLIC_SITE_URL` | Mike | 20.09. |
 | 7 | Domain | Domain kaufen, bei Vercel verbinden, Absender-Domain in Brevo verifizieren (SPF, DKIM, DMARC) | Team | 04.10. |
 | 8 | Research Report | Google-Drive-Link, Freigabe «Jeder mit dem Link» prüfen | Team | 11.10. |
-| 9 | Research Report | Darf der Download-Link auf `/bestaetigt` öffentlich erreichbar sein, oder nur per Mail? | Team | 04.10. |
 | 11 | Rollenliste | Rollen im Formular bestätigen | Team | 04.10. |
 | 12 | Texte | Figma-Entwurf (Stand 20.10., `06_page-structure.md`) mit dem Team final abstimmen – als Richtung gesetzt, aber ausdrücklich nicht final | Team | – |
 | 15 | Team-Sektion | Figma zeigt nur Namen + Video, keine Fotos/Kurzbios/LinkedIn. Bestätigen, dass das so bleibt, oder Mentor:innen-Nennung ergänzen | Team | – |
@@ -51,5 +47,7 @@
 | 20.10.2026 | Schreibweise: **«avalis» durchgehend klein**, auch im Logo-Wortzeichen (durch Figma bestätigt) |
 | 21.10.2026 | Spam-Schutz: vorerst nur Honeypot, kein Cloudflare Turnstile |
 | 23.10.2026 | Institution im Formular ist ein freies Textfeld («Bildungsinstitution») statt einer Auswahl – keine kuratierte Hochschulliste mehr nötig, löst Punkt #10 ab |
-| 23.10.2026 | Keine Sprachunterscheidung in Brevo (kein `SPRACHE`-Attribut, ein Double-Opt-in-Template statt DE/EN): der Research Report existiert nur auf Deutsch |
+| 23.10.2026 | Keine Sprachunterscheidung in Brevo (kein `SPRACHE`-Attribut): der Research Report existiert nur auf Deutsch |
+| 23.10.2026 | Brevo-Liste „Avalis Registrierungen" (ID 3) und Attribute `HOCHSCHULE`/`ROLLE`/`SOURCE` angelegt (löst Punkte #2/#3 ab) |
+| 23.10.2026 | Umstellung auf **Single Opt-in**: Einwilligungs-Checkbox gilt als Zustimmung, kein Double-Opt-in-Template/-Mailversand mehr nötig (löst Punkt #4 ab). Grund: Ziel ist nur ein grober Überblick über Herkunft/Rolle der Registrierungen, keine verifizierten Adressen. Report erscheint direkt im Formular nach dem Absenden, die separate Seite `/bestaetigt` entfällt damit (löst Punkt #9 ab) |
 | 20.10.2026 | Komplettes Webprojekt zurückgesetzt, Neuaufbau mit reinem Next.js/Tailwind-Default-Setup auf Basis des neuen Figma-Plans (i18n-Gerüst bleibt bestehen) |

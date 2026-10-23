@@ -1,18 +1,13 @@
 "use server";
 
-import { BrevoError, subscribeDoubleOptin } from "@/lib/brevo";
+import { BrevoError, upsertContact } from "@/lib/brevo";
 import {
   HONEYPOT_FIELD_NAME,
   validateRegistration,
   type RegisterState,
 } from "@/lib/validation/registration";
-import type { Locale } from "@/i18n/routing";
 
-// `locale` kommt über registerAction.bind(null, locale) aus der Route, nicht
-// aus formData – reine Redirect-Information für die (zweisprachige)
-// Bestätigungsseite, siehe src/lib/brevo.ts.
 export async function registerAction(
-  locale: Locale,
   _prevState: RegisterState,
   formData: FormData
 ): Promise<RegisterState> {
@@ -29,7 +24,7 @@ export async function registerAction(
   }
 
   try {
-    await subscribeDoubleOptin({ ...result.data, locale });
+    await upsertContact(result.data);
   } catch (error) {
     // Nie personenbezogene Daten oder rohe Brevo-Fehlertexte loggen/ausgeben
     // (siehe docs/03_tech-architecture.md Abschnitt 4). BrevoError enthält
@@ -42,8 +37,8 @@ export async function registerAction(
   }
 
   // Jede 2xx-Antwort von Brevo gilt als Erfolg, auch bei bereits
-  // existierendem Kontakt – erfüllt die Vorgabe "neutrale Erfolgsmeldung,
-  // keine Auskunft ob eine E-Mail bereits registriert ist" ohne weitere
-  // Sonderlogik (siehe docs/04_registration-flow.md Abschnitt 4).
+  // existierendem Kontakt (updateEnabled) – erfüllt die Vorgabe "neutrale
+  // Erfolgsmeldung, keine Auskunft ob eine E-Mail bereits registriert ist"
+  // ohne weitere Sonderlogik (siehe docs/04_registration-flow.md Abschnitt 4).
   return { status: "success" };
 }

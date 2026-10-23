@@ -7,7 +7,7 @@ import "server-only";
 
 export class BrevoError extends Error {}
 
-type DoubleOptinPayload = {
+type ContactPayload = {
   email: string;
   firstName: string;
   lastName: string;
@@ -15,10 +15,6 @@ type DoubleOptinPayload = {
   role: string;
   otherRole: string;
   source: string;
-  // Nur für die redirectionUrl der (weiterhin zweisprachigen)
-  // Bestätigungsseite – kein Brevo-Attribut. Mail und Report sind
-  // unabhängig davon immer deutsch, siehe docs/04_registration-flow.md.
-  locale: "de" | "en";
 };
 
 function requireEnv(name: string): string {
@@ -29,19 +25,18 @@ function requireEnv(name: string): string {
   return value;
 }
 
-// Double-Opt-in-Kontakt in Brevo anlegen. Löst bei fehlender Konfiguration
-// oder einem API-Fehler eine BrevoError, die vom Aufrufer als generischer
-// "Anmeldung hat nicht geklappt"-Zustand behandelt wird (nie eine
-// Falscherfolgsmeldung, siehe docs/04_registration-flow.md Abschnitt 4).
-export async function subscribeDoubleOptin(payload: DoubleOptinPayload): Promise<void> {
+// Single Opt-in: legt den Kontakt direkt in Brevo an (oder aktualisiert ihn),
+// keine Bestätigungsmail. Löst bei fehlender Konfiguration oder einem API-
+// Fehler eine BrevoError, die vom Aufrufer als generischer "Anmeldung hat
+// nicht geklappt"-Zustand behandelt wird (nie eine Falscherfolgsmeldung,
+// siehe docs/04_registration-flow.md Abschnitt 4).
+export async function upsertContact(payload: ContactPayload): Promise<void> {
   const apiKey = requireEnv("BREVO_API_KEY");
   const listId = requireEnv("BREVO_LIST_ID");
-  const templateId = requireEnv("BREVO_DOI_TEMPLATE_ID");
-  const siteUrl = requireEnv("NEXT_PUBLIC_SITE_URL");
 
   const role = payload.role === "andere" ? payload.otherRole : payload.role;
 
-  const response = await fetch("https://api.brevo.com/v3/contacts/doubleOptinConfirmation", {
+  const response = await fetch("https://api.brevo.com/v3/contacts", {
     method: "POST",
     headers: {
       "api-key": apiKey,
@@ -59,9 +54,12 @@ export async function subscribeDoubleOptin(payload: DoubleOptinPayload): Promise
         ROLLE: role,
         SOURCE: payload.source,
       },
-      includeListIds: [Number(listId)],
-      templateId: Number(templateId),
-      redirectionUrl: `${siteUrl}/${payload.locale}/bestaetigt`,
+      listIds: [Number(listId)],
+      // Erneute Registrierung mit derselben Adresse aktualisiert den
+      // bestehenden Kontakt statt eines 400er-Fehlers ("duplicate_parameter")
+      // – erfüllt weiterhin "neutrale Erfolgsmeldung, egal ob schon
+      // registriert", siehe docs/04_registration-flow.md Abschnitt 4.
+      updateEnabled: true,
     }),
   });
 
@@ -76,6 +74,6 @@ export async function subscribeDoubleOptin(payload: DoubleOptinPayload): Promise
         typeof body === "object" && body !== null && "code" in body ? String(body.code) : "unknown"
       )
       .catch(() => "unparsable");
-    throw new BrevoError(`Brevo doubleOptinConfirmation fehlgeschlagen: status=${response.status} code=${brevoCode}`);
+    throw new BrevoError(`Brevo contacts-Aufruf fehlgeschlagen: status=${response.status} code=${brevoCode}`);
   }
 }

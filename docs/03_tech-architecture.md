@@ -13,7 +13,7 @@
 | i18n | **next-intl** mit Routen `/de` und `/en` | Sprachversionen sauber erweiterbar (FR, IT) |
 | Validierung | **Zod** | Gleiche Regeln serverseitig und clientseitig |
 | Schrift | **DM Sans**, lokal über `next/font` eingebunden | Keine Anfragen an Google-Server (Datenschutz), keine Layout-Sprünge |
-| Mail und Kontakte | **Brevo** (REST-API per `fetch`, kein SDK nötig) | EU-Hosting, Double-Opt-in, Newsletter-Editor für das Team |
+| Kontakte | **Brevo** (REST-API per `fetch`, kein SDK nötig) | EU-Hosting, Single-Opt-in-Registrierung, Newsletter-Editor für das Team |
 | Hosting | **Vercel** (Free), verbunden mit GitHub | Automatische Deploys und Previews pro Branch |
 | Analytics | **Vercel Web Analytics** | Ohne Cookies |
 | Spam-Schutz | Honeypot-Feld, optional **Cloudflare Turnstile** | Siehe `08_open-points.md` |
@@ -29,15 +29,11 @@ Browser (Formular)
 Next.js Server Action  (src/actions/register.ts, läuft auf Vercel)
    │  1. Honeypot prüfen
    │  2. Eingaben mit Zod validieren
-   │  3. Brevo-API: Double-Opt-in-Kontakt anlegen
+   │  3. Brevo-API: Kontakt anlegen/aktualisieren (Single Opt-in,
+   │     kein Mailversand)
    ▼
-Brevo
-   │  verschickt Bestätigungsmail (Template je Sprache)
-   ▼
-Person klickt Bestätigungslink
-   │  Brevo fügt Kontakt der Liste hinzu
-   ▼
-Redirect auf /[locale]/bestaetigt  → Zugang zum Research Report
+Erfolgsmeldung direkt im Formular, inkl. Download-Button zum
+Research Report (REPORT_DOWNLOAD_URL) – kein Redirect, kein Mail-Klick
 ```
 
 ## 3. Environment Variables
@@ -47,17 +43,13 @@ In Vercel unter *Settings → Environment Variables* für Production, Preview un
 | Variable | Geheim | Beschreibung |
 |---|---|---|
 | `BREVO_API_KEY` | **ja** | API-Key von Brevo. Nie im Client, nie in Logs, nie in Docs |
-| `BREVO_LIST_ID` | nein | ID der Liste «Avalis Registrierungen» |
-| `BREVO_DOI_TEMPLATE_ID_DE` | nein | Template-ID Bestätigungsmail Deutsch |
-| `BREVO_DOI_TEMPLATE_ID_EN` | nein | Template-ID Bestätigungsmail Englisch |
+| `BREVO_LIST_ID` | nein | ID der Liste «Avalis Registrierungen» (bereits angelegt, ID 3) |
 | `NEXT_PUBLIC_SITE_URL` | nein | Basis-URL, z.B. `https://….vercel.app`, später eigene Domain |
 | `REPORT_DOWNLOAD_URL` | nein | Google-Drive-Link zum Research Report |
 | `TURNSTILE_SECRET_KEY` | **ja** | Nur falls Turnstile verwendet wird |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | nein | Nur falls Turnstile verwendet wird |
 
-Die Redirect-URL nach der Bestätigung wird aus `NEXT_PUBLIC_SITE_URL` und der Sprache zusammengesetzt.
-
-**Werte sind noch nicht angelegt** (Brevo-Liste, Templates, Vercel-URL, Drive-Link folgen). Code muss so gebaut sein, dass fehlende Variablen beim Start eine klare Fehlermeldung erzeugen statt stillschweigend zu scheitern.
+Code muss so gebaut sein, dass fehlende Variablen beim Start eine klare Fehlermeldung erzeugen statt stillschweigend zu scheitern.
 
 ## 4. Sicherheitsregeln
 
@@ -72,7 +64,7 @@ Die Redirect-URL nach der Bestätigung wird aus `NEXT_PUBLIC_SITE_URL` und der S
 
 - Routen: `/de/...` und `/en/...`, Standardsprache `de`. Die Root-URL leitet anhand der Browsersprache weiter, mit `de` als Fallback.
 - Alle Texte in `messages/de.json` und `messages/en.json`, strukturiert nach Sektionen.
-- Neue Sprache = neue JSON-Datei + Eintrag in der i18n-Konfiguration + Double-Opt-in-Template in Brevo. Kein Code in Komponenten ändern.
+- Neue Sprache = neue JSON-Datei + Eintrag in der i18n-Konfiguration. Kein Code in Komponenten ändern.
 - Sprachumschalter im Header, per Tastatur bedienbar, mit `lang`-Attribut und `hreflang`-Links.
 - Englische Texte werden aus den abgestimmten deutschen Texten übersetzt und vom Team geprüft.
 

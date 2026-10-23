@@ -72,12 +72,15 @@ function getServerSourceSnapshot() {
 // zurück (auch bei einer Fehlerantwort), wodurch z.B. die Rollen-Auswahl
 // wieder auf den Platzhalter springen würde. Kontrollierte Felder sind davon
 // nicht betroffen, weil ihr Wert immer aus dem React-State kommt.
-export function RegistrationForm({ locale }: { locale: Locale }) {
+export function RegistrationForm({
+  locale,
+  reportDownloadUrl,
+}: {
+  locale: Locale;
+  reportDownloadUrl?: string;
+}) {
   const t = useTranslations("Registration");
-  const [state, formAction, pending] = useActionState(
-    registerAction.bind(null, locale),
-    initialRegisterState
-  );
+  const [state, formAction, pending] = useActionState(registerAction, initialRegisterState);
   const [values, setValues] = useState<FormValues>(emptyValues);
   const [consent, setConsent] = useState(false);
   // Kein next/navigation useSearchParams: das würde die sonst statisch
@@ -104,6 +107,15 @@ export function RegistrationForm({ locale }: { locale: Locale }) {
         <div>
           <p className="text-paragraph-regular font-medium text-foreground">{t("successTitle")}</p>
           <p className="mt-1 text-paragraph-small text-muted-foreground">{t("successBody")}</p>
+          {reportDownloadUrl ? (
+            <Button asChild size="lg" className="mt-4 rounded-full">
+              <a href={reportDownloadUrl} target="_blank" rel="noopener noreferrer">
+                {t("downloadCta")}
+              </a>
+            </Button>
+          ) : (
+            <p className="mt-3 text-paragraph-mini text-muted-foreground">{t("downloadPending")}</p>
+          )}
         </div>
       </div>
     );
