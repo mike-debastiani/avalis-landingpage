@@ -82,7 +82,7 @@ export function RegistrationSuccess({ email }: { email: string }) {
             <LogoMark className="size-11" />
             <span
               style={{ animationDelay: "350ms" }}
-              className={`absolute -right-0.5 -bottom-0.5 flex size-8 items-center justify-center rounded-full bg-bewilligt-800 text-white ring-4 ring-background-ghost ${enterFrom} motion-safe:zoom-in-0 motion-safe:duration-300`}
+              className={`absolute -right-0.5 -bottom-0.5 flex size-8 items-center justify-center rounded-full bg-bewilligt-400 text-white ring-4 ring-background-ghost ${enterFrom} motion-safe:zoom-in-0 motion-safe:duration-300`}
             >
               <Check className="size-4" strokeWidth={3} />
             </span>
