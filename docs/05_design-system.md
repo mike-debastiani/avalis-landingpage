@@ -47,7 +47,7 @@ Das Design System wurde für eine Web-Applikation erstellt. Für eine Landingpag
 
 Fehlen diese in Figma: im Team klären und in Figma ergänzen, bevor sie im Code verwendet werden.
 
-**Entscheid (15.09.2026):** Die Display-Typografie für den Hero (`--text-display`, fluid 40–64px) ist als Ausnahme direkt im Code definiert (`src/app/globals.css`), da der Webapp-Styleguide keine solche Stufe enthält und für App-UI auch keine braucht. Verhältnis und Weight (SemiBold) folgen konsistent der bestehenden Heading-Konvention. Noch nicht in Figma nachgezogen, siehe `08_open-points.md`.
+**Entscheid (15.09.2026):** Die Display-Typografie für den Hero (`--text-display`, fluid 28–64px, auf Mobile steiler, damit der Hero-Titel nicht umbricht) ist als Ausnahme direkt im Code definiert (`src/app/globals.css`), da der Webapp-Styleguide keine solche Stufe enthält und für App-UI auch keine braucht. Verhältnis und Weight (SemiBold) folgen konsistent der bestehenden Heading-Konvention. Noch nicht in Figma nachgezogen, siehe `08_open-points.md`.
 
 ## 5. Barrierefreiheit (verbindlich)
 
@@ -114,7 +114,7 @@ Nicht übernommen: die vier reinen App-Workflow-Paletten `Entwurf`, `In-Review`,
 | `paragraph/small/font-size` + `/line-height` | `--paragraph-small-size` / `-line-height` | `0.875rem` / `1.25rem` |
 | `paragraph/mini/font-size` + `/line-height` | `--paragraph-mini-size` / `-line-height` | `0.75rem` / `1rem` |
 | `font definitions/font-family-body` | `--font-dm-sans` (via `next/font/google` in `layout.tsx`) | DM Sans |
-| *nicht in Figma* (Code-Entscheid) | `--text-display` | `clamp(2.5rem, 1.5rem + 4vw, 4rem)` |
+| *nicht in Figma* (Code-Entscheid) | `--text-display` | `clamp(1.75rem, min(1.5rem + 4vw, 10.3vw - 0.3rem), 4rem)` |
 
 Heading 2 (30px) im Code ergänzt analog zur Skala, im MCP-Response nicht enthalten — bei Gelegenheit gegen Figma verifizieren.
 
