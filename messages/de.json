@@ -16,11 +16,13 @@
     "navSolution": "Lösung",
     "navPrototype": "Einblick",
     "navContact": "Kontakt",
-    "cta": "Research Report"
+    "cta": "Research Report",
+    "navLabel": "Hauptnavigation",
+    "languageLabel": "Sprachauswahl"
   },
   "Footer": {
     "tagline": "Eine digitale Lösung für den Nachteilsausgleich an Schweizer Hochschulen.",
-    "legalPending": "Impressum und Datenschutzerklärung werden vor Veröffentlichung ergänzt.",
+    "legalLabel": "Rechtliches",
     "imprint": "Impressum",
     "privacy": "Datenschutz"
   },
@@ -39,9 +41,6 @@
     "eyebrow": "Wer dahinter steht",
     "headline": "Drei Perspektiven. Ein gemeinsames Anliegen.",
     "lead": "Hinter avalis stehen Chiara Tremml, Dario Foti und Mike De Bastiani, ein dreiköpfiges Team mit UX-Designhintergrund. Das Video zeigt, was das Team zu diesem Projekt bewogen hat und was avalis löst.",
-    "member1": "Chiara Tremml",
-    "member2": "Dario Foti",
-    "member3": "Mike De Bastiani",
     "videoTitle": "Die Menschen hinter avalis"
   },
   "Solution": {
@@ -80,7 +79,7 @@
   "Registration": {
     "eyebrow": "Research Report",
     "title": "Den Nachteilsausgleich besser verstehen.",
-    "lead1": "Eine schweizweite Erhebung über 17 Hochschulen: Interviews, Umfragen und die Auswertung offizieller Prozessdokumente.",
+    "lead1": "Eine schweizweite Erhebung über 17 Hochschulen durch Interviews, Umfragen und die Auswertung offizieller Prozessdokumente.",
     "lead2": "Wie läuft Nachteilsausgleich ab? Wo liegen die Grenzen? Und was bedeutet das für eine digitale Lösung?",
     "mapLabel": "Schweizer Kantonskarte: Anzahl teilnehmender Institutionen pro Kanton",
     "mapCaption": "Anzahl teilnehmende Institutionen pro Kanton",
@@ -88,17 +87,20 @@
     "formLead": "Registrieren Sie sich für den Report und gelegentliche Updates zur Weiterentwicklung von avalis.",
     "requiredHint": "* Pflichtfeld · alle weiteren Angaben sind optional",
     "fields": {
-      "emailLabel": "E-Mail-Adresse",
+      "emailLabel": "E-Mail *",
       "emailPlaceholder": "Ihre E-Mail-Adresse",
       "firstNameLabel": "Vorname (optional)",
+      "firstNamePlaceholder": "Vorname",
       "lastNameLabel": "Nachname (optional)",
-      "institutionLabel": "Bildungsinstitution",
+      "lastNamePlaceholder": "Nachname",
+      "institutionLabel": "Bildungsinstitution *",
       "institutionPlaceholder": "z. B. Universität Zürich",
-      "roleLabel": "Rolle",
+      "roleLabel": "Rolle *",
       "rolePlaceholder": "Rolle auswählen",
-      "otherRoleLabel": "Bezeichnung der Rolle",
+      "otherRoleLabel": "Bezeichnung der Rolle *",
       "consentLabel": "Ich möchte den Research Report und gelegentliche Updates per E-Mail erhalten und stimme der",
-      "consentLinkLabel": "Datenschutzerklärung"
+      "consentLinkLabel": "Datenschutzerklärung",
+      "consentSuffix": "zu. *"
     },
     "roles": {
       "fachstelle": "Fachstelle / Beratung",

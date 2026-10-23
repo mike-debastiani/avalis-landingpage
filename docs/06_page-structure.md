@@ -24,7 +24,7 @@ Unverändert zu bisher: avalis in Sekunden erfassbar machen, Vertrauen aufbauen,
 
 | # | Section (Figma-Name) | Anchor/Nav | Ziel |
 |---|---|---|---|
-| S1 | Header | – | Logo, Sprachwahl, Nav (Team / Lösung / Einblick / Kontakt), CTA |
+| S1 | Header | – | Logo, Sprachwahl, Nav (Lösung / Einblick / Team / Kontakt), CTA |
 | S2 | Hero | `#hero` | Sofort verstehen, worum es geht, Registrierung anbieten |
 | S3 | Wer dahinter steht | `#team` | Team zeigen, Vertrauen aufbauen |
 | S4 | Was avalis ist und löst (Rollenimpact) | `#loesung` | Nutzen pro Rolle konkret zeigen |
@@ -41,7 +41,7 @@ Unverändert zu bisher: avalis in Sekunden erfassbar machen, Vertrauen aufbauen,
 ### Header
 
 - Logo (Icon + Wortmarke «avalis», durchgehend klein geschrieben, auch im Logo)
-- Nav: **Team · Lösung · Einblick · Kontakt**
+- Nav: **Lösung · Einblick · Team · Kontakt** (aktiver Punkt wird beim Scrollen hervorgehoben)
 - Sprachwahl DE/EN
 - CTA-Button: **«Research Report erhalten»**
 
@@ -58,8 +58,8 @@ Unverändert zu bisher: avalis in Sekunden erfassbar machen, Vertrauen aufbauen,
 
 - Abschnittslabel: «Wer dahinter steht»
 - Titel: **«Drei Perspektiven. Ein gemeinsames Anliegen.»**
-- Beschreibung: «Hinter avalis stehen Chiara Tremml, Dario Foti und Mike De Bastiani – ein dreiköpfiges Team mit **UX-Designhintergrund**. Im geplanten Video stellen wir uns und unseren Bezug zum Thema vor.»
-- Namen als Text: Chiara Tremml · Dario Foti · Mike De Bastiani
+- Beschreibung: «Hinter avalis stehen Chiara Tremml, Dario Foti und Mike De Bastiani, ein dreiköpfiges Team mit UX-Designhintergrund. Das Video zeigt, was das Team zu diesem Projekt bewogen hat und was avalis löst.»
+- Keine separate Namensliste (Figma V5): Die Namen stehen nur im Beschreibungstext.
 - Videoplatzhalter 16:9: Format-Hinweis «VIDEO · 16:9», Status «Platzhalter · nicht abspielbar», Titel «Die Menschen hinter avalis», Hinweis «Teamvideo und Originalposter folgen.», Player-UI (inaktiv) mit Play, Zeitleiste, CC-Untertitel-Control
 
 ### S4 – Was avalis ist und löst (Rollenimpact)

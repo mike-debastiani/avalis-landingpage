@@ -20,6 +20,12 @@ import {
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 
+// Feldgrössen aus Figma: 48px hoch, Radius lg, Hintergrund wie die Seite,
+// kein Schatten bei Textfeldern (Selects haben in Figma shadow-xs).
+const inputClass = "mt-2 h-12 rounded-lg bg-background px-3 shadow-none";
+const selectClass =
+  "mt-2 h-12 w-full rounded-lg bg-background py-2.5 pl-4 pr-2 text-base data-[size=default]:h-12 md:text-sm";
+
 const FIELD_ORDER = [
   "email",
   "firstName",
@@ -135,7 +141,7 @@ export function RegistrationForm({
   };
 
   return (
-    <form action={formAction} noValidate className="@container space-y-5">
+    <form action={formAction} noValidate className="@container space-y-6">
       {state.status === "error" && !state.fieldErrors && (
         <div
           role="alert"
@@ -177,7 +183,7 @@ export function RegistrationForm({
           required
           autoComplete="email"
           placeholder={t("fields.emailPlaceholder")}
-          className="mt-1.5"
+          className={inputClass}
           value={values.email}
           onChange={(e) => setField("email")(e.target.value)}
           aria-invalid={Boolean(errorMessage("email"))}
@@ -193,7 +199,7 @@ export function RegistrationForm({
       {/* Container-Query statt Viewport-Breakpoint: Die Felder stehen nebeneinander,
           sobald die Formularkarte selbst breit genug ist, egal bei welcher
           Bildschirmbreite. */}
-      <div className="grid grid-cols-1 gap-5 @min-[22rem]:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 @min-[22rem]:grid-cols-2 @min-[22rem]:gap-5">
         <div>
           <Label htmlFor="firstName">{t("fields.firstNameLabel")}</Label>
           <Input
@@ -205,7 +211,8 @@ export function RegistrationForm({
             type="text"
             autoComplete="given-name"
             maxLength={100}
-            className="mt-1.5"
+            className={inputClass}
+            placeholder={t("fields.firstNamePlaceholder")}
             value={values.firstName}
             onChange={(e) => setField("firstName")(e.target.value)}
             aria-invalid={Boolean(errorMessage("firstName"))}
@@ -229,7 +236,8 @@ export function RegistrationForm({
             type="text"
             autoComplete="family-name"
             maxLength={100}
-            className="mt-1.5"
+            className={inputClass}
+            placeholder={t("fields.lastNamePlaceholder")}
             value={values.lastName}
             onChange={(e) => setField("lastName")(e.target.value)}
             aria-invalid={Boolean(errorMessage("lastName"))}
@@ -255,7 +263,7 @@ export function RegistrationForm({
           required
           maxLength={150}
           placeholder={t("fields.institutionPlaceholder")}
-          className="mt-1.5"
+          className={inputClass}
           value={values.institution}
           onChange={(e) => setField("institution")(e.target.value)}
           aria-invalid={Boolean(errorMessage("institution"))}
@@ -284,7 +292,7 @@ export function RegistrationForm({
               fieldRefs.current.role = el;
             }}
             id="role-trigger"
-            className="mt-1.5 w-full"
+            className={selectClass}
             aria-invalid={Boolean(errorMessage("role"))}
             aria-describedby={errorMessage("role") ? "role-error" : undefined}
           >
@@ -317,7 +325,7 @@ export function RegistrationForm({
             type="text"
             required
             maxLength={150}
-            className="mt-1.5"
+            className={inputClass}
             value={values.otherRole}
             onChange={(e) => setField("otherRole")(e.target.value)}
             aria-invalid={Boolean(errorMessage("otherRole"))}
@@ -335,23 +343,26 @@ export function RegistrationForm({
         <div className="flex items-start gap-3">
           {/* Kein `name` an der Checkbox, siehe Kommentar bei Institution oben. */}
           <input type="hidden" name="consent" value={consent ? "on" : ""} />
-          <Checkbox
-            ref={(el) => {
-              fieldRefs.current.consent = el;
-            }}
-            id="consent"
-            className="mt-0.5"
-            checked={consent}
-            onCheckedChange={(checked) => setConsent(checked === true)}
-            aria-invalid={Boolean(errorMessage("consent"))}
-            aria-describedby={errorMessage("consent") ? "consent-error" : undefined}
-          />
-          <Label htmlFor="consent" className="text-paragraph-small font-normal text-muted-foreground">
+          {/* Klickfläche 44px wie in Figma (WCAG 2.2 Target Size) */}
+          <span className="flex size-11 shrink-0 items-center justify-center">
+            <Checkbox
+              ref={(el) => {
+                fieldRefs.current.consent = el;
+              }}
+              id="consent"
+              className="bg-background shadow-none"
+              checked={consent}
+              onCheckedChange={(checked) => setConsent(checked === true)}
+              aria-invalid={Boolean(errorMessage("consent"))}
+              aria-describedby={errorMessage("consent") ? "consent-error" : undefined}
+            />
+          </span>
+          <Label htmlFor="consent" className="block pt-0.5 text-paragraph-small font-normal leading-5 text-foreground">
             {t("fields.consentLabel")}{" "}
             <Link href="/datenschutz" locale={locale} className="underline underline-offset-4">
               {t("fields.consentLinkLabel")}
-            </Link>
-            .
+            </Link>{" "}
+            {t("fields.consentSuffix")}
           </Label>
         </div>
         {errorMessage("consent") && (
@@ -361,7 +372,7 @@ export function RegistrationForm({
         )}
       </div>
 
-      <Button type="submit" size="lg" className="w-full rounded-full sm:w-auto" disabled={pending}>
+      <Button type="submit" size="lg" className="h-12 w-full rounded-full text-base" disabled={pending}>
         {pending ? t("submitPending") : t("submit")}
       </Button>
     </form>
