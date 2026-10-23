@@ -147,7 +147,213 @@
   },
   "Legal": {
     "imprintTitle": "Impressum",
-    "privacyTitle": "Datenschutz",
-    "pending": "Inhalt folgt."
+    "privacyTitle": "Datenschutzerklärung",
+    "pending": "Inhalt folgt.",
+    "privacy": {
+      "updated": "Stand: 23. Oktober 2026",
+      "intro": "Der Schutz Ihrer Personendaten ist uns wichtig. Diese Erklärung zeigt Ihnen, welche Daten wir bearbeiten, wenn Sie die Website von avalis besuchen, sich für den Research Report registrieren oder mit uns Kontakt aufnehmen.",
+      "sections": [
+        {
+          "id": "verantwortliche",
+          "title": "Verantwortliche Stelle und Kontakt",
+          "blocks": [
+            {
+              "p": "Verantwortlich für die Bearbeitung von Personendaten auf dieser Website ist das Projektteam avalis (nachfolgend «wir»). Sie erreichen uns unter <mail>{email}</mail>."
+            },
+            {
+              "p": "Wir halten uns an das schweizerische Datenschutzgesetz (DSG). Soweit die Datenschutz-Grundverordnung der EU (DSGVO) anwendbar ist, beachten wir zusätzlich deren Vorgaben."
+            }
+          ]
+        },
+        {
+          "id": "daten",
+          "title": "Welche Personendaten wir bearbeiten",
+          "blocks": [
+            {
+              "h": "Beim Besuch der Website"
+            },
+            {
+              "p": "Beim Aufruf der Website bearbeitet unser Hosting-Anbieter technisch notwendige Verbindungsdaten: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, übertragene Datenmenge sowie Angaben zu Browser und Betriebssystem. Diese Daten braucht es für den Betrieb und die Sicherheit der Website. Wir werten sie nicht personenbezogen aus."
+            },
+            {
+              "p": "Derzeit setzen wir keine Analyse- oder Tracking-Werkzeuge ein."
+            },
+            {
+              "h": "Bei der Registrierung für den Research Report"
+            },
+            {
+              "p": "Wenn Sie das Registrierungsformular absenden, bearbeiten wir folgende Angaben:"
+            },
+            {
+              "ul": [
+                "E-Mail-Adresse (Pflichtangabe)",
+                "Bildungsinstitution (Pflichtangabe, Freitext)",
+                "Rolle (Pflichtangabe; bei «Andere» die von Ihnen eingegebene Bezeichnung)",
+                "Vorname und Nachname (freiwillig)",
+                "Herkunft Ihres Besuchs («Netzwerktreffen», «Mail» oder «direkt»), sofern Sie über einen entsprechenden Link oder QR-Code auf die Seite gelangt sind",
+                "Zeitpunkt der Registrierung (wird von Brevo automatisch erfasst)"
+              ]
+            },
+            {
+              "p": "Bitte geben Sie in den Freitextfeldern keine besonders schützenswerten Personendaten (z. B. Gesundheitsdaten) an."
+            },
+            {
+              "h": "Beim Versand der Report-Mail"
+            },
+            {
+              "p": "Den Link zum Research Report senden wir Ihnen ausschliesslich per E-Mail an die angegebene Adresse. Der Link wird auf der Website nicht angezeigt. Beim Versand erfasst Brevo technische Zustellinformationen (z. B. ob die E-Mail zugestellt werden konnte). Ob und wann Sie die E-Mail öffnen oder auf Links klicken, werten wir nicht aus."
+            },
+            {
+              "h": "Bei der Abmeldung"
+            },
+            {
+              "p": "Der Abmeldelink in der Report-Mail enthält Ihre E-Mail-Adresse (codiert) und eine digitale Signatur. Er dient allein dazu, Sie sicher aus dem Verteiler zu entfernen. Die Abmeldung erfolgt erst, wenn Sie auf der Abmeldeseite auf «Jetzt abmelden» klicken. Die Seite wird von Suchmaschinen nicht indexiert."
+            },
+            {
+              "h": "Bei Kontakt per E-Mail"
+            },
+            {
+              "p": "Wenn Sie uns schreiben, bearbeiten wir Ihre Absenderadresse, Ihre Nachricht und die darin enthaltenen Angaben, um Ihr Anliegen zu beantworten. Unser Postfach wird bei Google (Gmail) betrieben."
+            }
+          ]
+        },
+        {
+          "id": "zwecke",
+          "title": "Zwecke und Rechtsgrundlagen",
+          "blocks": [
+            {
+              "ul": [
+                "Betrieb und Sicherheit der Website: Wir haben ein berechtigtes Interesse an einem funktionierenden und sicheren Webauftritt (Art. 6 Abs. 1 lit. f DSGVO).",
+                "Zustellung des Research Reports und gelegentliche Updates zu avalis: Grundlage ist Ihre Einwilligung durch das Setzen des Häkchens im Formular (Art. 31 Abs. 1 DSG; Art. 6 Abs. 1 lit. a DSGVO).",
+                "Auswertung, aus welchen Institutionen, Rollen und Kanälen Interesse an avalis besteht: Wir werten diese Angaben nur zusammengefasst aus und veröffentlichen keine Einzelangaben (berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO).",
+                "Beantwortung von Anfragen per E-Mail: berechtigtes Interesse an einer sachgerechten Kommunikation (Art. 6 Abs. 1 lit. f DSGVO).",
+                "Wiedergabe von Videos: Ihre Einwilligung durch den Klick auf «Abspielen» (Art. 6 Abs. 1 lit. a DSGVO)."
+              ]
+            },
+            {
+              "p": "Wir verwenden Ihre Daten nicht für Werbung Dritter und treffen keine automatisierten Einzelentscheidungen. Ein Profiling findet nicht statt."
+            }
+          ]
+        },
+        {
+          "id": "empfaenger",
+          "title": "Empfänger und beigezogene Dienstleister",
+          "blocks": [
+            {
+              "p": "Wir verkaufen Ihre Daten nicht und geben sie nicht zu deren eigenen Zwecken an Dritte weiter. Wir ziehen folgende Dienstleister bei, die Daten in unserem Auftrag bearbeiten und vertraglich zum Datenschutz verpflichtet sind:"
+            },
+            {
+              "ul": [
+                "<brevo>Brevo</brevo> (Anbieter mit Sitz in der EU): Speicherung der Registrierungsdaten in unserer Kontaktliste und Versand der Report-Mail. Brevo speichert die Daten nach eigenen Angaben in der EU.",
+                "<vercel>Vercel Inc.</vercel> (USA): Hosting der Website, Auslieferung der Seiten und Entgegennahme des Registrierungsformulars.",
+                "<google>Google</google>: Der Research Report wird über Google Drive bereitgestellt. Wenn Sie den Link in der Mail öffnen, rufen Sie eine Seite von Google auf. Google bearbeitet dabei Daten wie Ihre IP-Adresse in eigener Verantwortung. Zudem betreibt Google unser E-Mail-Postfach (Gmail).",
+                "YouTube (ein Dienst von Google): siehe «Eingebettete Videos»."
+              ]
+            },
+            {
+              "p": "Auf die Daten haben nur Mitglieder des Projektteams avalis Zugriff. Darüber hinaus geben wir Daten nur bekannt, wenn wir dazu gesetzlich verpflichtet sind oder eine Behörde dies verlangt."
+            }
+          ]
+        },
+        {
+          "id": "ausland",
+          "title": "Bekanntgabe ins Ausland",
+          "blocks": [
+            {
+              "p": "Vercel und Google haben ihren Sitz in den USA, Daten können deshalb dorthin gelangen. Beide Unternehmen sind unter dem Swiss-U.S. bzw. EU-U.S. Data Privacy Framework zertifiziert. Für zertifizierte Unternehmen gilt in den USA ein angemessenes Datenschutzniveau. Soweit darüber hinaus Daten in Länder ohne angemessenes Datenschutzniveau gelangen, geschieht dies auf Grundlage geeigneter Garantien, insbesondere anerkannter Standardvertragsklauseln."
+            },
+            {
+              "p": "Brevo hat seinen Sitz in der EU, die für die Schweiz als Land mit angemessenem Datenschutzniveau gilt. Brevo kann seinerseits Unterauftragsbearbeiter einsetzen; Näheres steht in den Datenschutzunterlagen von Brevo."
+            }
+          ]
+        },
+        {
+          "id": "speicherdauer",
+          "title": "Speicherdauer",
+          "blocks": [
+            {
+              "ul": [
+                "Verbindungsdaten (Server-Logs) speichert unser Hosting-Anbieter nur so lange, wie es für Betrieb und Sicherheit nötig ist.",
+                "Registrierungsdaten speichern wir, bis Sie sich abmelden oder die Löschung verlangen, längstens bis zum Ende des Projekts avalis. Danach löschen wir sie, sofern Sie nicht ausdrücklich eingewilligt haben, dass wir sie weiter nutzen.",
+                "E-Mails an uns bewahren wir so lange auf, wie es zur Bearbeitung Ihres Anliegens nötig ist, oder soweit eine gesetzliche Pflicht dies verlangt."
+              ]
+            },
+            {
+              "p": "Mit der Abmeldung entfernen wir Sie aus dem Verteiler, und Sie erhalten keine Mails mehr. Möchten Sie, dass wir auch Ihre übrigen Angaben vollständig löschen, schreiben Sie uns kurz an <mail>{email}</mail>."
+            }
+          ]
+        },
+        {
+          "id": "cookies",
+          "title": "Cookies und Schriften",
+          "blocks": [
+            {
+              "p": "Wir setzen keine Tracking- und Werbe-Cookies ein. Die Website speichert lediglich Ihre Sprachwahl in einem technisch notwendigen Cookie (NEXT_LOCALE). Es enthält nur die gewählte Sprache und wird beim Schliessen des Browsers gelöscht. Dafür ist keine Einwilligung nötig."
+            },
+            {
+              "p": "Die Schrift DM Sans ist lokal eingebunden und wird von unserem eigenen Server ausgeliefert. Es besteht keine Verbindung zu Google Fonts."
+            }
+          ]
+        },
+        {
+          "id": "videos",
+          "title": "Eingebettete Videos",
+          "blocks": [
+            {
+              "p": "Auf der Website sind zwei Videos von YouTube eingebettet. Zunächst sehen Sie nur ein Vorschaubild, das über unseren eigenen Server geladen wird. Beim blossen Besuch der Seite baut Ihr Browser deshalb keine Verbindung zu YouTube auf."
+            },
+            {
+              "p": "Erst wenn Sie auf «Abspielen» klicken, laden wir das Video im erweiterten Datenschutzmodus (youtube-nocookie.com). Dabei erhält Google, das YouTube betreibt, Ihre IP-Adresse und Angaben zu Ihrem Browser und kann Cookies oder ähnliche Technologien auf Ihrem Gerät speichern. Mit dem Klick willigen Sie in diese Bearbeitung ein. Wie Google Daten bearbeitet, steht in der <google>Datenschutzerklärung von Google</google>. Wenn Sie das nicht möchten, klicken Sie nicht auf «Abspielen»."
+            }
+          ]
+        },
+        {
+          "id": "sicherheit",
+          "title": "Datensicherheit",
+          "blocks": [
+            {
+              "p": "Wir treffen angemessene technische und organisatorische Massnahmen, um Ihre Daten zu schützen. Dazu gehören die verschlüsselte Übertragung (HTTPS), die serverseitige Verarbeitung des Formulars, ein Spam-Schutz und signierte Abmeldelinks. Eine E-Mail-Kommunikation ist nicht durchgehend verschlüsselt. Vollständige Sicherheit kann im Internet nicht garantiert werden."
+            }
+          ]
+        },
+        {
+          "id": "rechte",
+          "title": "Ihre Rechte",
+          "blocks": [
+            {
+              "p": "Sie haben nach dem DSG und, soweit anwendbar, nach der DSGVO folgende Rechte:"
+            },
+            {
+              "ul": [
+                "Auskunft darüber, ob und welche Personendaten wir von Ihnen bearbeiten",
+                "Berichtigung unrichtiger Daten",
+                "Löschung oder Einschränkung der Bearbeitung",
+                "Widerspruch gegen eine Bearbeitung, die auf unserem berechtigten Interesse beruht",
+                "Herausgabe Ihrer Daten in einem gängigen elektronischen Format",
+                "Widerruf Ihrer Einwilligung, jederzeit und mit Wirkung für die Zukunft: über den Abmeldelink in der Report-Mail oder per E-Mail. Bereits erfolgte Bearbeitungen bleiben rechtmässig."
+              ]
+            },
+            {
+              "p": "Um Ihre Rechte auszuüben, schreiben Sie uns an <mail>{email}</mail>. Wir können einen Identitätsnachweis verlangen und antworten in der Regel innert 30 Tagen."
+            },
+            {
+              "p": "Die Angabe von E-Mail-Adresse, Institution und Rolle ist nötig, damit wir Ihnen den Report zustellen können. Ohne diese Angaben ist keine Registrierung möglich. Alle übrigen Angaben sind freiwillig."
+            },
+            {
+              "p": "Sie können sich bei einer Datenschutzbehörde beschweren. In der Schweiz ist das der <edoeb>Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB)</edoeb>. Besuchende aus der EU können sich an die Aufsichtsbehörde ihres Wohnsitzstaates wenden."
+            }
+          ]
+        },
+        {
+          "id": "aenderungen",
+          "title": "Änderungen dieser Erklärung",
+          "blocks": [
+            {
+              "p": "Wir können diese Datenschutzerklärung anpassen, zum Beispiel wenn wir die Website erweitern oder neue Dienste einsetzen. Es gilt die jeweils hier veröffentlichte Fassung."
+            }
+          ]
+        }
+      ]
+    }
   }
 }
