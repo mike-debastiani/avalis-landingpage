@@ -1,6 +1,7 @@
 "use server";
 
-import { BrevoError, upsertContact } from "@/lib/brevo";
+import { BrevoError, sendReportMail, upsertContact } from "@/lib/brevo";
+import { routing } from "@/i18n/routing";
 import {
   HONEYPOT_FIELD_NAME,
   validateRegistration,
@@ -23,14 +24,28 @@ export async function registerAction(
     return { status: "error", fieldErrors: result.fieldErrors };
   }
 
+  const locale = String(formData.get("locale") ?? "");
+  const mailLocale = (routing.locales as readonly string[]).includes(locale)
+    ? locale
+    : routing.defaultLocale;
+
   try {
     await upsertContact(result.data);
+    // Der Report-Link wird ausschliesslich per Mail zugestellt. Schlägt der
+    // Versand fehl, melden wir einen Fehler statt einer falschen Erfolgs-
+    // meldung: ein erneutes Absenden aktualisiert den Kontakt (updateEnabled)
+    // und versucht die Mail noch einmal.
+    await sendReportMail({
+      email: result.data.email,
+      firstName: result.data.firstName,
+      locale: mailLocale,
+    });
   } catch (error) {
     // Nie personenbezogene Daten oder rohe Brevo-Fehlertexte loggen/ausgeben
     // (siehe docs/03_tech-architecture.md Abschnitt 4). BrevoError enthält
     // nur Status-Code und Brevos Fehlercode, keine Nutzerdaten.
     console.error(
-      "Brevo-Registrierung fehlgeschlagen:",
+      "Registrierung fehlgeschlagen (Brevo):",
       error instanceof BrevoError ? error.message : "unbekannter Fehler"
     );
     return { status: "error" };
