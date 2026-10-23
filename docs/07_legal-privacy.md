@@ -2,6 +2,7 @@
 
 > **Hinweis:** Dieses File ist eine Arbeitsgrundlage, keine Rechtsberatung. Texte vor Veröffentlichung prüfen, idealerweise mit Mentor:innen oder der HSLU.
 > **Verantwortlich für die Seite:** Das Projektteam (Angaben folgen).
+> **Stand 23.10.2026:** Die Datenschutzerklärung ist umgesetzt (`src/app/[locale]/datenschutz/page.tsx`, Texte in `messages/de.json` und `messages/en.json` unter `Legal.privacy`). Der Impressum-Text fehlt noch. Der Text ist ein Entwurf auf Basis des tatsächlichen Codes und **keine Rechtsberatung**; vor dem Launch von einer fachkundigen Person prüfen lassen. Die Punkte in Abschnitt 6 müssen dafür geklärt sein.
 
 ---
 
@@ -18,30 +19,30 @@
 - Hinweis: Bachelorprojekt im Studiengang Digital Ideation, Hochschule Luzern
 - Klären, ob HSLU-Name und Logo verwendet werden dürfen *(siehe `08_open-points.md`)*
 
-## 3. Datenschutzerklärung (Inhalte)
+## 3. Datenschutzerklärung (Inhalte, umgesetzt)
 
-1. **Verantwortliche:** wer, Kontakt
-2. **Welche Daten:** E-Mail, optional Vor- und Nachname, Institution, Rolle, Herkunftskanal, Sprache, Zeitpunkt der Einwilligung
-3. **Zweck:** Versand des Research Reports und gelegentlicher Updates zum Projekt avalis; anonyme Auswertung, aus welchen Institutionen und Rollen Interesse besteht
-4. **Rechtsgrundlage:** Einwilligung per Double-Opt-in
-5. **Auftragsbearbeiter:**
-   - **Brevo** (Speicherung der Kontakte, Mailversand, Server in der EU)
-   - **Vercel** (Hosting, cookielose Web Analytics; Unternehmen mit Sitz in den USA, Standort der Verarbeitung prüfen)
-   - **Google Drive** (Bereitstellung des Research Reports; beim Download gelten Googles Bedingungen)
-6. **Speicherdauer:** bis zur Abmeldung bzw. bis zum Projektende *(festlegen)*
-7. **Rechte:** Auskunft, Berichtigung, Löschung, Widerruf der Einwilligung jederzeit per Abmeldelink oder E-Mail
-8. **Keine Weitergabe** an Dritte, keine Werbung
-9. **Cookies:** keine Tracking-Cookies (prüfen, dass das auch nach Einbau von Turnstile stimmt)
-10. **Schriften:** lokal eingebunden, keine Verbindung zu Google Fonts
+Die Erklärung hat 11 Ziffern. Sie beschreibt nur, was der Code heute tatsächlich tut. Ändert sich eine der Grundlagen (Analytics, neue Dienstleister, Speicherdauer), muss die Erklärung **im selben Pull Request** angepasst werden.
+
+1. **Verantwortliche Stelle und Kontakt:** Projektteam avalis, `nta.avalis@gmail.com`. Rechtsrahmen: DSG, zusätzlich DSGVO.
+2. **Welche Daten:** Server-Verbindungsdaten (Hosting), Registrierung (E-Mail, Institution, Rolle, optional Vor-/Nachname, Herkunft `source`, Zeitpunkt durch Brevo), Report-Mail inkl. Zustellinformationen, Abmeldung (signierter Link mit codierter E-Mail), Kontakt per E-Mail
+3. **Zwecke und Rechtsgrundlagen:** Einwilligung (Registrierung, Videoklick; Art. 31 DSG, Art. 6 Abs. 1 lit. a DSGVO), berechtigtes Interesse (Betrieb/Sicherheit, aggregierte Auswertung, Anfragen; lit. f). Kein Profiling, keine automatisierten Entscheidungen, keine Werbung Dritter
+4. **Empfänger/Auftragsbearbeiter:** Brevo (Kontaktliste, Mailversand), Vercel (Hosting), Google (Drive für den Report-Link, Gmail-Postfach), YouTube (Videos)
+5. **Bekanntgabe ins Ausland:** USA über Data Privacy Framework (Vercel, Google), Brevo in der EU
+6. **Speicherdauer:** Registrierungsdaten bis Abmeldung/Löschwunsch, längstens bis Projektende
+7. **Cookies und Schriften:** keine Tracking-Cookies, nur das Sitzungs-Cookie `NEXT_LOCALE` (Sprachwahl, von next-intl gesetzt); DM Sans lokal über `next/font`
+8. **Eingebettete Videos:** YouTube erst nach Klick (`youtube-nocookie.com`), Vorschaubild über den eigenen Server (`next/image`)
+9. **Datensicherheit**
+10. **Rechte:** Auskunft, Berichtigung, Löschung/Einschränkung, Widerspruch, Herausgabe, Widerruf; Pflichtangaben; Beschwerde beim EDÖB bzw. der Aufsichtsbehörde im Wohnsitzstaat
+11. **Änderungen**
 
 ## 4. Technische Umsetzung der Datenschutzanforderungen
 
 - Einwilligungs-Checkbox nicht vorausgewählt
-- Double-Opt-in zwingend
-- Abmeldelink in jeder Mail
-- Keine personenbezogenen Daten in URLs, Logs oder Analytics
+- Single Opt-in (Entscheidung vom 23.10.2026, siehe `08_open-points.md`)
+- Abmeldelink in der Report-Mail
+- Keine personenbezogenen Daten in URLs, Logs oder Analytics (Ausnahme: signierter Abmeldelink, siehe `03_tech-architecture.md` Abschnitt 4)
 - DM Sans über `next/font` lokal ausliefern
-- Keine eingebetteten Drittinhalte (YouTube, Maps, Social Widgets) ohne vorherige Zustimmung
+- Keine eingebetteten Drittinhalte ohne vorherige Zustimmung: YouTube-Videos laden erst nach Klick auf «Abspielen» (`src/components/youtube-embed.tsx`)
 - Nach Projektende: Umgang mit der Kontaktliste festlegen (weiterführen, übergeben oder löschen)
 
 ## 5. Offene rechtliche Fragen
@@ -50,3 +51,18 @@
 - Darf das HSLU-Logo verwendet werden?
 - Dürfen die teilnehmenden Institutionen namentlich genannt werden?
 - Dürfen Screenshots des Prototyps mit Mock-Daten gezeigt werden (sicherstellen, dass keine echten Personendaten sichtbar sind)?
+
+## 6. Vor dem Launch zu klären (Datenschutzerklärung)
+
+| # | Punkt | Warum |
+|---|---|---|
+| a | **Verantwortliche Stelle** festlegen (Team, Einzelperson, HSLU) und Postadresse ergänzen | Die Erklärung nennt aktuell nur «Projektteam avalis» und die E-Mail-Adresse. Ein Impressum gibt es noch nicht |
+| b | **Speicherdauer** bestätigen: «bis Abmeldung/Löschwunsch, längstens bis Projektende, danach Löschung» | Entscheid des Teams, siehe Abschnitt 4 «Nach Projektende» |
+| c | **Brevo: Öffnungs-/Klick-Tracking für Transaktionsmails deaktivieren** | Die Erklärung sagt, dass wir Öffnungen und Klicks nicht auswerten. Brevo kann das standardmässig erfassen. Entweder abschalten oder den Text anpassen |
+| d | **Brevo: AVV (Auftragsverarbeitungsvertrag) abschliessen**, Betreibergesellschaft, Rechenzentrumsstandort EU und Unterauftragsbearbeiter prüfen | Die Erklärung nennt Brevo als EU-Anbieter mit Speicherung in der EU, das muss zum Vertrag passen |
+| e | **Vercel/Google: DPA und DPF-Zertifizierung** auf dataprivacyframework.gov prüfen | Grundlage für die Aussage zur Bekanntgabe in die USA |
+| f | **Abmeldung löscht den Kontakt nicht**: `removeContactFromList` entfernt ihn nur aus der Liste, Angaben bleiben in Brevo | Die Erklärung sagt das offen und bietet vollständige Löschung per E-Mail an. Besser wäre, Kontakte bei Abmeldung ganz zu löschen (Code-Änderung, eigener Pull Request) |
+| g | **Analytics**: `docs/03_tech-architecture.md` nennt Vercel Web Analytics, im Code ist es **nicht** eingebaut. Die Erklärung sagt «keine Analyse-Werkzeuge». Wird es ergänzt, Erklärung anpassen | Sonst stimmt die Erklärung nicht mehr |
+| h | **Zugriff** «nur Mitglieder des Projektteams» bestätigen | Aussage in Ziffer 4 |
+| i | **Turnstile**: Falls ergänzt (siehe `08_open-points.md`), Cloudflare als Empfänger aufnehmen und Cookie-Aussage prüfen | Würde Daten an Cloudflare übermitteln |
+| j | Fachliche/juristische Prüfung des Texts (z. B. HSLU-Mentor:innen) | Entwurf, keine Rechtsberatung |

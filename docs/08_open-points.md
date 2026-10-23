@@ -18,7 +18,8 @@
 | 29 | Registrierung | Figma zeigt eine **einzelne kombinierte** Einwilligungs-Checkbox (Report + Updates + Datenschutz) statt getrennter Zustimmungen – mit Brevo-Anbindung (#2–#5) abgleichen, ob das rechtlich/technisch so umsetzbar ist | Mike | – |
 | 31 | Rechtliches/Visuals | Logo-Reihe in der Registrierungs-Section zeigt im Figma-Entwurf teils generische Platzhalter-Logos (Notion, Airtable, Evernote – vermutlich Figma-Komponenten-Dummies, kein Bezug zu avalis) neben echten (swissuniversities, HSLU). Klären, welche Logos real gezeigt werden sollen | Team | – |
 | 32 | Rechtliches | **Spannung:** Das Figma-File zeigt bereits ein HSLU-Logo in der Registrierungs-Section, obwohl Punkt #18 (HSLU-Name/Logo-Nutzung) noch offen ist. Vor der Umsetzung klären, sonst wird im Design etwas vorweggenommen, das rechtlich noch nicht abgesegnet ist | Team / Mentor:innen | – |
-| 17 | Rechtliches | Verantwortliche Personen und Adresse für Impressum und Datenschutz | Team | 11.10. |
+| 17 | Rechtliches | Verantwortliche Personen und Adresse für Impressum und Datenschutz (Datenschutzerklärung nennt bisher nur «Projektteam avalis» und die E-Mail-Adresse) | Team | 11.10. |
+| 33 | Datenschutz | Datenschutzerklärung ist umgesetzt (Entwurf). Vor dem Launch die Punkte a–j in `07_legal-privacy.md` Abschnitt 6 klären: Verantwortlicher, Speicherdauer, Brevo-Tracking aus, AVV/DPA, Löschung bei Abmeldung, Analytics-Aussage, juristische Prüfung | Team / Mike | 23.10. |
 | 18 | Rechtliches | Verwendung HSLU-Name und Logo | Team / Mentor:innen | 04.10. |
 | 19 | Rechtliches | Teilnehmende Institutionen namentlich nennen? (Anonymisierung im Report) | Team / Mentor:innen | 04.10. |
 | 21 | Visuals | Screenshots des Prototyps (nur Mock-Daten), OpenGraph-Bild | Team | – |
@@ -52,3 +53,4 @@
 | 23.10.2026 | Kontakt-E-Mail ist `nta.avalis@gmail.com` (löst Punkt #16 ab). Wert aus dem aktuellen Figma-Stand V5, in der Kontakt-Section als `mailto:`-Link umgesetzt |
 | 23.10.2026 | Schweizer-Kantonskarte in der Registrierungs-Section ist ein statisches, vom Team geliefertes SVG (`public/registration/switzerland-map.svg`) inkl. Legende «Anzahl teilnehmende Institutionen pro Kanton» (Skala 0–8), wie in Figma V5. Löst Punkt #30 ab; Karte und Zahlen werden unverändert übernommen, keine eigene Datenzuordnung |
 | 23.10.2026 | Report-Link wird **nur noch per Brevo-Transaktionsmail** zugestellt (statt Download-Button auf der Seite). Erfolgsmeldung weist auf die Mail hin. Die Mail enthält einen eigenen, signierten Abmeldelink der Website (`/abmelden`), der den Kontakt aus der Brevo-Liste entfernt. Löst «Report direkt auf der Seite» vom selben Tag ab |
+| 23.10.2026 | Datenschutzerklärung (DE/EN) auf Basis des tatsächlichen Codes verfasst und umgesetzt: DSG mit DSGVO-Ergänzung, keine Tracking-Cookies, YouTube erst nach Klick, Brevo/Vercel/Google als Empfänger. Offene Prüfpunkte siehe #33 |
