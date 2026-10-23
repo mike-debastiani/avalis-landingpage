@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { LogoMark } from "@/components/logo-mark";
+import { SiteLogoLink } from "@/components/site-logo-link";
 import { SiteNav } from "@/components/site-nav";
 import type { Locale } from "@/i18n/routing";
 
@@ -20,15 +20,9 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
   ];
 
   return (
-    <header
-      id="top"
-      className="sticky top-0 z-40 border-b border-border bg-background-ghost"
-    >
+    <header className="sticky top-0 z-40 border-b border-border bg-background-ghost">
       <div className="section-container flex h-[calc(var(--header-height)-1px)] items-center justify-between gap-4">
-        <a href={`${home}#top`} className="flex items-center gap-2 text-foreground lg:gap-3">
-          <LogoMark className="size-7 sm:size-8 lg:size-9" />
-          <span className="text-lg font-semibold sm:text-xl lg:text-heading-2">avalis</span>
-        </a>
+        <SiteLogoLink />
 
         <SiteNav items={navItems} ariaLabel={t("navLabel")} />
 
