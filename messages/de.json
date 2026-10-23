@@ -120,10 +120,9 @@
     "submit": "Jetzt registrieren",
     "submitPending": "Wird gesendet …",
     "belowButtonNote": "Jederzeit abmeldbar. Keine Weitergabe Ihrer Daten an Dritte.",
-    "successTitle": "Vielen Dank für Ihre Registrierung",
-    "successBody": "Sie erhalten künftig Updates zu avalis.",
-    "downloadCta": "Research Report herunterladen",
-    "downloadPending": "Der Download-Link folgt in Kürze.",
+    "successTitle": "Vielen Dank für Ihre Registrierung!",
+    "successBody": "Wir haben den Link zum Research Report soeben an diese Adresse geschickt:",
+    "successHint": "Keine E-Mail erhalten? Bitte schauen Sie auch im Spam-Ordner nach. Der Link wird ausschliesslich per E-Mail zugestellt.",
     "errorTitle": "Das hat leider nicht geklappt",
     "errorBody": "Die Anmeldung hat nicht funktioniert. Bitte versuchen Sie es in ein paar Minuten erneut."
   },
@@ -132,6 +131,19 @@
     "title": "Im Gespräch bleiben.",
     "body": "Gerne stellen wir Ihnen das Projekt avalis vor und tauschen uns mit Ihnen zum Nachteilsausgleichsprozess aus.",
     "email": "nta.avalis@gmail.com"
+  },
+  "Unsubscribe": {
+    "title": "Vom Verteiler abmelden",
+    "lead": "Möchten Sie {email} vom Verteiler von avalis abmelden? Sie erhalten danach keine Updates mehr.",
+    "confirm": "Jetzt abmelden",
+    "pending": "Wird abgemeldet …",
+    "successTitle": "Sie wurden abgemeldet",
+    "successBody": "Wir senden Ihnen keine weiteren Updates zu avalis.",
+    "errorTitle": "Das hat leider nicht geklappt",
+    "errorBody": "Die Abmeldung hat nicht funktioniert. Bitte versuchen Sie es in ein paar Minuten erneut.",
+    "invalidTitle": "Ungültiger Link",
+    "invalidBody": "Dieser Abmeldelink ist ungültig oder unvollständig. Bitte verwenden Sie den Link direkt aus der E-Mail.",
+    "backToHome": "Zur Startseite"
   },
   "Legal": {
     "imprintTitle": "Impressum",

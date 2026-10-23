@@ -120,10 +120,9 @@
     "submit": "Register now",
     "submitPending": "Sending …",
     "belowButtonNote": "You can unsubscribe at any time. We never share your data with third parties.",
-    "successTitle": "Thank you for registering",
-    "successBody": "You'll receive future updates on avalis.",
-    "downloadCta": "Download the Research Report",
-    "downloadPending": "The download link is coming soon.",
+    "successTitle": "Thank you for registering!",
+    "successBody": "We have just sent the link to the Research Report to this address:",
+    "successHint": "No email yet? Please also check your spam folder. The link is only delivered by email.",
     "errorTitle": "Something went wrong",
     "errorBody": "The registration did not go through. Please try again in a few minutes."
   },
@@ -132,6 +131,19 @@
     "title": "Stay in touch.",
     "body": "We're happy to introduce the avalis project and exchange views on the accommodation process with you.",
     "email": "nta.avalis@gmail.com"
+  },
+  "Unsubscribe": {
+    "title": "Unsubscribe from the mailing list",
+    "lead": "Do you want to unsubscribe {email} from the avalis mailing list? You will no longer receive updates.",
+    "confirm": "Unsubscribe now",
+    "pending": "Unsubscribing …",
+    "successTitle": "You have been unsubscribed",
+    "successBody": "We will not send you any further updates about avalis.",
+    "errorTitle": "Something went wrong",
+    "errorBody": "The unsubscription did not go through. Please try again in a few minutes.",
+    "invalidTitle": "Invalid link",
+    "invalidBody": "This unsubscribe link is invalid or incomplete. Please use the link directly from the email.",
+    "backToHome": "Back to the homepage"
   },
   "Legal": {
     "imprintTitle": "Imprint",
