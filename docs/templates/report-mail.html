@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light only">
+  <meta name="supported-color-schemes" content="light only">
   <title>Ihr Research Report von avalis</title>
 </head>
 <body style="margin:0;padding:0;background:#fafaf9;font-family:'DM Sans',Arial,Helvetica,sans-serif;color:#1c1917;">
@@ -14,16 +16,65 @@
       {{ params.REPORT_URL }}     Download-Link zum Research Report
       {{ params.UNSUBSCRIBE_URL }} Signierter Link zur Abmeldeseite der Website
     Betreff im Template: «Ihr Research Report von avalis»
+
+    Gestaltung angelehnt an die Erfolgsansicht der Registrierung auf der Website
+    (src/components/sections/registration-success.tsx): Farbwerte sind die Tokens
+    aus src/app/globals.css (Stone, bewilligt/beratung/in-decision). Bewusst nur
+    Tabellen und Inline-Styles, keine Bilder, Verläufe, Animationen oder Web-Fonts,
+    damit die Mail in allen gängigen Mail-Programmen gleich aussieht. Ohne
+    DM Sans fällt die Schrift auf Arial zurück.
   -->
+
+  <!-- Vorschautext im Posteingang, im Mail selbst unsichtbar -->
+  <div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
+    Hier ist der Link zum Research Report über den Nachteilsausgleichsprozess an Schweizer Hochschulen.
+  </div>
+
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fafaf9;">
     <tr>
       <td align="center" style="padding:32px 16px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border:1px solid #dedbd9;border-radius:12px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border:1px solid #dedbd9;border-radius:12px;overflow:hidden;">
+
+          <!-- Markenstreifen in den drei Rollenfarben (Studierende, Fachstellen, Entscheidungsinstanzen) -->
           <tr>
-            <td style="padding:40px 40px 8px 40px;font-size:24px;font-weight:600;line-height:1.2;color:#1c1917;">avalis</td>
+            <td style="padding:0;font-size:0;line-height:0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="34%" height="6" bgcolor="#4ade85" style="background:#4ade85;font-size:0;line-height:0;height:6px;">&nbsp;</td>
+                  <td width="33%" height="6" bgcolor="#4998e7" style="background:#4998e7;font-size:0;line-height:0;height:6px;">&nbsp;</td>
+                  <td width="33%" height="6" bgcolor="#b68bfa" style="background:#b68bfa;font-size:0;line-height:0;height:6px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
           </tr>
+
+          <!-- Kopfbereich wie der Celebration-Bereich der Website: heller Grünton, Wortmarke, Check-Kreis, Badge, Titel -->
           <tr>
-            <td style="padding:16px 40px 0 40px;font-size:16px;line-height:1.6;color:#1c1917;">
+            <td align="center" bgcolor="#f0fdf5" style="background:#f0fdf5;padding:32px 40px 32px 40px;text-align:center;">
+              <div style="font-size:24px;font-weight:600;line-height:1.2;color:#1c1917;">avalis</div>
+
+              <table role="presentation" align="center" cellpadding="0" cellspacing="0" style="margin:24px auto 0 auto;">
+                <tr>
+                  <td align="center" valign="middle" width="64" height="64" bgcolor="#4ade85" aria-hidden="true" style="width:64px;height:64px;border-radius:32px;background:#4ade85;color:#ffffff;font-size:30px;font-weight:700;line-height:64px;text-align:center;">&#10003;</td>
+                </tr>
+              </table>
+
+              <table role="presentation" align="center" cellpadding="0" cellspacing="0" style="margin:20px auto 0 auto;">
+                <tr>
+                  <td bgcolor="#dcfce9" style="background:#dcfce9;border-radius:9999px;padding:4px 12px;font-size:14px;font-weight:500;line-height:20px;color:#166535;">
+                    Research Report
+                  </td>
+                </tr>
+              </table>
+
+              <h1 style="margin:16px 0 0 0;font-size:28px;font-weight:600;line-height:1.2;color:#1c1917;">
+                Vielen Dank für Ihre Registrierung!
+              </h1>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:32px 40px 0 40px;font-size:16px;line-height:1.6;color:#1c1917;">
               {% if params.VORNAME %}Guten Tag {{ params.VORNAME }}{% else %}Guten Tag{% endif %}
             </td>
           </tr>
@@ -32,22 +83,54 @@
               vielen Dank für Ihr Interesse an avalis. Hier ist der Link zum Research Report über den Nachteilsausgleichsprozess an Schweizer Hochschulen.
             </td>
           </tr>
+
+          <!-- Button wie auf der Website: dunkel, vollständig gerundet. Als Tabellenzelle, damit er auch in Outlook als Fläche erscheint. -->
           <tr>
             <td style="padding:28px 40px 0 40px;">
-              <a href="{{ params.REPORT_URL }}" style="display:inline-block;background:#1c1917;color:#fafaf9;text-decoration:none;font-size:16px;font-weight:500;line-height:48px;padding:0 24px;border-radius:9999px;">Research Report herunterladen</a>
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td bgcolor="#1c1917" style="background:#1c1917;border-radius:9999px;">
+                    <a href="{{ params.REPORT_URL }}" style="display:inline-block;background:#1c1917;color:#fafaf9;text-decoration:none;font-size:16px;font-weight:500;line-height:48px;padding:0 28px;border-radius:9999px;">Research Report herunterladen</a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
+
+          <!-- Ausweich-Link in einer Box wie «Gesendet an» auf der Website -->
           <tr>
-            <td style="padding:20px 40px 0 40px;font-size:14px;line-height:1.5;color:#57534e;">
-              Funktioniert der Button nicht? Kopieren Sie diesen Link in Ihren Browser:<br>
-              <a href="{{ params.REPORT_URL }}" style="color:#57534e;word-break:break-all;">{{ params.REPORT_URL }}</a>
+            <td style="padding:24px 40px 0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fafaf9;border:1px solid #dedbd9;border-radius:8px;">
+                <tr>
+                  <td style="padding:12px 16px;font-size:14px;line-height:1.5;color:#57534e;">
+                    Funktioniert der Button nicht? Kopieren Sie diesen Link in Ihren Browser:<br>
+                    <a href="{{ params.REPORT_URL }}" style="color:#1c1917;font-weight:500;word-break:break-all;">{{ params.REPORT_URL }}</a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
+
           <tr>
             <td style="padding:28px 40px 0 40px;font-size:16px;line-height:1.6;color:#57534e;">
-              Wir halten Sie gelegentlich über die Weiterentwicklung von avalis auf dem Laufenden. Bei Fragen erreichen Sie uns unter nta.avalis@gmail.com.
+              Wir halten Sie gelegentlich über die Weiterentwicklung von avalis auf dem Laufenden. Bei Fragen erreichen Sie uns unter <a href="mailto:nta.avalis@gmail.com" style="color:#1c1917;font-weight:500;">nta.avalis@gmail.com</a>.
             </td>
           </tr>
+
+          <!-- Hinweis für Personen, die diese Mail im Spam-Ordner gefunden haben -->
+          <tr>
+            <td style="padding:20px 40px 0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f4;border:1px solid #dedbd9;border-radius:8px;">
+                <tr>
+                  <td style="padding:12px 16px;font-size:14px;line-height:1.5;color:#1c1917;">
+                    <strong style="font-weight:600;">Diese E-Mail im Spam-Ordner gefunden?</strong><br>
+                    Markieren Sie die Nachricht bitte als «Kein Spam», damit künftige Updates in Ihrem Posteingang ankommen.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
           <tr>
             <td style="padding:32px 40px 40px 40px;">
               <div style="border-top:1px solid #dedbd9;padding-top:20px;font-size:12px;line-height:1.5;color:#57534e;">

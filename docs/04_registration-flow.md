@@ -52,7 +52,7 @@ Interessierte registrieren sich mit wenigen Angaben und erhalten den Link zum Re
 5. Report-Mail als Transaktionsmail verschicken (`sendReportMail` in `src/lib/brevo.ts`):
    - Endpoint: `POST https://api.brevo.com/v3/smtp/email`
    - Body: `to` (Adresse der Person), `templateId` (`BREVO_REPORT_TEMPLATE_ID`), `params` (`VORNAME`, `REPORT_URL` = `REPORT_DOWNLOAD_URL`, `UNSUBSCRIBE_URL`), `tags: ["research-report"]`
-   - Absender, Betreff und Layout liegen im Brevo-Template (Vorlage: `docs/templates/report-mail.html`)
+   - Absender, Betreff und Layout liegen im Brevo-Template (Vorlage: `docs/templates/report-mail.html`, gestalterisch an die Erfolgsansicht der Website angelehnt: Rollenfarben-Streifen, Check-Kreis, Badge, dunkler Button; nur Tabellen und Inline-Styles, keine Bilder). Wird die Vorlage geändert, muss das HTML in Brevo erneut ins Template eingefügt und gespeichert werden
    - `UNSUBSCRIBE_URL` ist ein signierter Link auf `/{locale}/abmelden` (`src/lib/unsubscribe-token.ts`, HMAC mit `UNSUBSCRIBE_SECRET`)
 6. Erfolgsansicht im Formular (`src/components/sections/registration-success.tsx`): Celebration-Bereich mit avalis-Logo-Symbol, Check-Badge und Ringen/Konfetti in den Rollenfarben (einmalige Animation, nur ohne «reduced motion»), Badge «Registrierung erfolgreich», Titel «Vielen Dank für Ihre Registrierung!», «Gesendet an» mit der Adresse, ein gut sichtbarer Spam-Hinweis («Nichts im Posteingang?»), zwei Schritte «So geht es weiter» (Postfach öffnen, Link klicken) und Kontaktadresse für Rückfragen. **Kein Download-Button**, der Link wird nie an den Browser ausgeliefert.
 
