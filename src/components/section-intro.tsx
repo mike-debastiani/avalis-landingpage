@@ -19,7 +19,8 @@ export function SectionIntro({
         <p className="text-paragraph-small font-medium uppercase text-muted-foreground">{eyebrow}</p>
         <h2 className="mt-5 text-title text-foreground">{title}</h2>
       </div>
-      <p className="text-lead text-muted-foreground">{lead}</p>
+      {/* lg:mt-10 = Höhe von Eyebrow (20px) + Abstand (20px): Lead beginnt auf Höhe des Titels */}
+      <p className="text-lead text-muted-foreground lg:mt-10">{lead}</p>
     </div>
   );
 }
