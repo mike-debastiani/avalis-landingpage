@@ -50,8 +50,11 @@ export async function subscribeDoubleOptin(payload: DoubleOptinPayload): Promise
     body: JSON.stringify({
       email: payload.email,
       attributes: {
-        FIRSTNAME: payload.firstName,
-        LASTNAME: payload.lastName,
+        // VORNAME/NACHNAME statt FIRSTNAME/LASTNAME: in diesem (deutsch-
+        // sprachigen) Brevo-Account heissen die Standard-Namensattribute so,
+        // im Brevo-Dashboard unter Settings → Contact attributes verifiziert.
+        VORNAME: payload.firstName,
+        NACHNAME: payload.lastName,
         HOCHSCHULE: payload.institution,
         ROLLE: role,
         SOURCE: payload.source,

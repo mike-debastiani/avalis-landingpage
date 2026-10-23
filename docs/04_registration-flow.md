@@ -15,8 +15,8 @@ Interessierte registrieren sich mit wenigen Angaben. Nach Bestätigung per Mail 
 | Feld | Pflicht | Typ | Brevo-Attribut | Hinweise |
 |---|---|---|---|---|
 | E-Mail | ja | E-Mail | `email` (Standard) | Trimmen, klein schreiben |
-| Vorname | nein | Text | `FIRSTNAME` (Brevo-Standardattribut) | max. 100 Zeichen |
-| Nachname | nein | Text | `LASTNAME` (Brevo-Standardattribut) | max. 100 Zeichen |
+| Vorname | nein | Text | `VORNAME` (Brevo-Standardattribut) | max. 100 Zeichen |
+| Nachname | nein | Text | `NACHNAME` (Brevo-Standardattribut) | max. 100 Zeichen |
 | Institution | ja | Text | `HOCHSCHULE` | Freies Textfeld («Bildungsinstitution»), keine feste Liste |
 | Rolle | ja | Auswahl | `ROLLE` | Werte siehe unten |
 | Andere Rolle | bedingt | Text | `ROLLE` | Nur sichtbar und Pflicht, wenn bei Rolle «Andere» gewählt wurde – ersetzt dann den Wert `andere` im Attribut |
@@ -46,7 +46,7 @@ Interessierte registrieren sich mit wenigen Angaben. Nach Bestätigung per Mail 
 4. Aufruf der Brevo-API für Double-Opt-in-Kontakte (implementiert in `src/lib/brevo.ts`):
    - Endpoint: `POST https://api.brevo.com/v3/contacts/doubleOptinConfirmation`
    - Header: `api-key: <BREVO_API_KEY>`, `content-type: application/json`
-   - Body: `email`, `attributes` (`FIRSTNAME`, `LASTNAME`, `HOCHSCHULE`, `ROLLE`, `SOURCE`), `includeListIds: [BREVO_LIST_ID]`, `templateId` (immer Deutsch, der Report existiert nur auf Deutsch), `redirectionUrl` (`{NEXT_PUBLIC_SITE_URL}/{locale}/bestaetigt` – `locale` ist rein die Route, in der registriert wurde, kein Brevo-Attribut, die zweisprachige Bestätigungsseite bleibt davon unabhängig)
+   - Body: `email`, `attributes` (`VORNAME`, `NACHNAME`, `HOCHSCHULE`, `ROLLE`, `SOURCE`), `includeListIds: [BREVO_LIST_ID]`, `templateId` (immer Deutsch, der Report existiert nur auf Deutsch), `redirectionUrl` (`{NEXT_PUBLIC_SITE_URL}/{locale}/bestaetigt` – `locale` ist rein die Route, in der registriert wurde, kein Brevo-Attribut, die zweisprachige Bestätigungsseite bleibt davon unabhängig)
    - Fehlt eine der benötigten Umgebungsvariablen, wirft der Code sofort einen klaren Fehler statt still zu scheitern (siehe `docs/03_tech-architecture.md` Abschnitt 3)
 5. Erfolgsmeldung im Formular: «Fast geschafft. Bitte bestätigen Sie Ihre Anmeldung über den Link in der Mail.» Hinweis auf den Spam-Ordner.
 6. Brevo verschickt die Bestätigungsmail.
@@ -95,7 +95,7 @@ Alle Mails enthalten einen Abmeldelink. Ob Automationen im Free-Plan im benötig
 Der Code (`src/lib/brevo.ts`, `src/actions/register.ts`) ist fertig und wartet auf diese Werte. Ohne sie zeigt das Formular korrekt die Fehlermeldung aus Abschnitt 4, statt eine falsche Erfolgsmeldung vorzutäuschen. Entspricht den offenen Punkten #2–#5 in `docs/08_open-points.md`:
 
 1. Liste **„Avalis Registrierungen"** in Brevo anlegen → `BREVO_LIST_ID`.
-2. Kontaktattribute anlegen: `HOCHSCHULE`, `ROLLE`, `SOURCE` (Text). `FIRSTNAME`/`LASTNAME` existieren als Brevo-Standardattribute bereits.
+2. Kontaktattribute anlegen: `HOCHSCHULE`, `ROLLE`, `SOURCE` (Text). `VORNAME`/`NACHNAME` existieren als Brevo-Standardattribute bereits.
 3. Ein Double-Opt-in-Template (Deutsch) erstellen, mit dem Platzhalter `{{ doubleoptin }}` für den Bestätigungsbutton → `BREVO_DOI_TEMPLATE_ID`.
 4. Neuer API-Key, nur serverseitig verwendet → `BREVO_API_KEY`. IP-Sperre für unbekannte Adressen deaktivieren (Vercel nutzt wechselnde IPs).
 5. Alle Werte in Vercel (*Settings → Environment Variables*, Production/Preview/Development) und lokal in `.env.local` eintragen, zusätzlich `NEXT_PUBLIC_SITE_URL`.
