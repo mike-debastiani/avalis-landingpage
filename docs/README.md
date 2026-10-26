@@ -11,7 +11,7 @@ Kontext-Files für die Landingpage des Bachelorprojekts «avalis». Einstiegspun
 | `04_registration-flow.md` | Formular, Double-Opt-in mit Brevo, Fehlerfälle |
 | `05_design-system.md` | Figma als Quelle, Tokens, Komponenten, Barrierefreiheit |
 | `06_page-structure.md` | Seitenstruktur und Content-Richtung (aus Figma) |
-| `07_legal-privacy.md` | Anforderungen an Impressum, Datenschutz, Einwilligung |
+| `07_legal-privacy.md` | Anforderungen an Datenschutz und Einwilligung |
 | `08_open-points.md` | Offene Punkte und Entscheidungen |
 
 ## Regel

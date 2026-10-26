@@ -33,7 +33,7 @@ Das Bachelorprojekt «avalis» (Digital Ideation, Fokus Design, Hochschule Luzer
 - Registrierung mit Double-Opt-in über Brevo
 - Bestätigungsseite nach Double-Opt-in mit Zugang zum Research Report
 - Sprachversionen DE und EN
-- Impressum und Datenschutzerklärung
+- Datenschutzerklärung (kein Impressum, Entscheid vom 26.10.2026)
 - Tracking der Herkunft (`?src=netzwerktreffen`, `?src=mail`)
 - Datenschutzfreundliche Analytics ohne Cookies
 - Social-Preview (OpenGraph)

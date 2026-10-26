@@ -9,7 +9,7 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
   const t = await getTranslations("Header");
 
   // Absolute Pfade mit Anker, damit die Links auch auf Unterseiten (Abmelden,
-  // Impressum, Datenschutz) zur Startseite führen. Auf der Startseite selbst
+  // Datenschutz) zur Startseite führen. Auf der Startseite selbst
   // ist es ein reiner Anker-Sprung (Smooth-Scroll, kein Neuladen).
   const home = `/${locale}`;
   const navItems = [

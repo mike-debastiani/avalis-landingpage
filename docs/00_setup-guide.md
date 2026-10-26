@@ -26,7 +26,7 @@ Details: `01_project-brief.md`.
 | `04_registration-flow.md` | Formular, Double-Opt-in mit Brevo, Fehlerfälle |
 | `05_design-system.md` | Figma als Quelle, Tokens, Komponenten, Barrierefreiheit |
 | `06_page-structure.md` | Seitenstruktur und Content-Richtung (aus Figma) |
-| `07_legal-privacy.md` | Anforderungen an Impressum, Datenschutz, Einwilligung |
+| `07_legal-privacy.md` | Anforderungen an Datenschutz und Einwilligung |
 | `08_open-points.md` | Offene Punkte und Entscheidungen |
 
 **Regel:** Wenn ein File einer Anweisung im Chat widerspricht, gilt der Chat. Nach jeder relevanten Entscheidung wird das betroffene File nachgeführt.
@@ -61,7 +61,6 @@ Jeder Schritt wird zuerst im **Plan Mode** geplant und erst nach Freigabe umgese
     │       ├── layout.tsx
     │       ├── page.tsx       # Onepager
     │       ├── bestaetigt/    # Seite nach Double-Opt-in-Bestätigung
-    │       ├── impressum/
     │       └── datenschutz/
     ├── actions/
     │   └── register.ts        # Server Action Registrierung

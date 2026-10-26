@@ -89,6 +89,7 @@ Eigenständiger, ruhiger Zwischenabschnitt, kein Rollen-Bezug:
 
 - Titel: **«Einblick in avalis»**
 - Kontext: «Der geplante Walkthrough gibt einen Überblick über den Webprototyp und das Zusammenspiel der Beteiligten. Die Aufnahme folgt.»
+- **Disclaimer-Callout vor dem Video (26.10.2026):** «Fiktives Fallbeispiel» – der Walkthrough zeigt den Prozess anhand eines fiktiven Beispiels an der Universität Zürich (UZH), kein produktives System der UZH, alle Daten fiktiv.
 - Videoplatzhalter 16:9 (gleiches Muster wie S3): Titel «avalis im Überblick», Hinweis «Walkthrough und Originalposter folgen.»
 - Statushinweis: «Entwicklungsstand: funktionaler, mit Fachpersonen getesteter Webprototyp. Nicht für den produktiven Einsatz bestimmt.»
 
@@ -115,8 +116,7 @@ Eigenständiger, ruhiger Zwischenabschnitt, kein Rollen-Bezug:
 
 - Logo + Wortmarke «avalis»
 - Tagline: **«Eine digitale Lösung für den Nachteilsausgleich an Schweizer Hochschulen.»** – keine akademische/Bachelorprojekt-Rahmung, bestätigt die bestehende Regel «eigenständiges Projekt»
-- Hinweis: «Impressum und Datenschutzerklärung werden vor Veröffentlichung ergänzt.»
-- Links: Impressum, Datenschutz
+- Link: Datenschutz (kein Impressum, bewusster Entscheid vom 26.10.2026, siehe `08_open-points.md`)
 - Sprachwahl DE/EN
 
 ## 5. Tonalität (bestätigt durch Figma-Texte)

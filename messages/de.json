@@ -23,7 +23,6 @@
   "Footer": {
     "tagline": "Eine digitale Lösung für den Nachteilsausgleich an Schweizer Hochschulen.",
     "legalLabel": "Rechtliches",
-    "imprint": "Impressum",
     "privacy": "Datenschutz"
   },
   "Hero": {
@@ -73,6 +72,8 @@
     "eyebrow": "Einblick in avalis",
     "title": "Vom Antrag bis zur Verfügung.",
     "context": "Der Webprototyp-Walkthrough gibt einen Überblick über die Lösung und das Zusammenspiel der beteiligten Instanzen.",
+    "disclaimerTitle": "Fiktives Fallbeispiel",
+    "disclaimerBody": "Der Walkthrough zeigt den Prozess anhand eines fiktiven Beispiels an der Universität Zürich (UZH). Es handelt sich nicht um ein produktives System der UZH. Alle gezeigten Daten sind fiktiv.",
     "videoTitle": "avalis im Überblick",
     "statusNote": "Entwicklungsstand: funktionaler, mit Fachpersonen getesteter Webprototyp. Nicht für den produktiven Einsatz bestimmt."
   },
@@ -154,9 +155,7 @@
     "backToHome": "Zur Startseite"
   },
   "Legal": {
-    "imprintTitle": "Impressum",
     "privacyTitle": "Datenschutzerklärung",
-    "pending": "Inhalt folgt.",
     "privacy": {
       "updated": "Stand: 23. Oktober 2026",
       "intro": "Der Schutz Ihrer Personendaten ist uns wichtig. Diese Erklärung zeigt Ihnen, welche Daten wir bearbeiten, wenn Sie die Website von avalis besuchen, sich für den Research Report registrieren oder mit uns Kontakt aufnehmen.",

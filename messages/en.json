@@ -23,7 +23,6 @@
   "Footer": {
     "tagline": "A digital solution for the accommodation process at Swiss universities.",
     "legalLabel": "Legal",
-    "imprint": "Imprint",
     "privacy": "Privacy"
   },
   "Hero": {
@@ -73,6 +72,8 @@
     "eyebrow": "A look inside avalis",
     "title": "From request to decision.",
     "context": "The web prototype walkthrough gives an overview of the solution and how the instances involved work together.",
+    "disclaimerTitle": "Fictional case study",
+    "disclaimerBody": "The walkthrough shows the process using a fictional example at the University of Zurich (UZH). It is not a productive system of the UZH. All data shown is fictional.",
     "videoTitle": "avalis at a glance",
     "statusNote": "Development status: a functional web prototype tested with subject-matter experts. Not intended for productive use."
   },
@@ -154,9 +155,7 @@
     "backToHome": "Back to the homepage"
   },
   "Legal": {
-    "imprintTitle": "Imprint",
     "privacyTitle": "Privacy Policy",
-    "pending": "Content coming soon.",
     "privacy": {
       "updated": "Last updated: 23 October 2026",
       "intro": "Protecting your personal data matters to us. This policy explains which data we process when you visit the avalis website, register for the Research Report or contact us.",
