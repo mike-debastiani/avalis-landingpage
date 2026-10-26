@@ -18,7 +18,7 @@
 | 29 | Registrierung | Figma zeigt eine **einzelne kombinierte** Einwilligungs-Checkbox (Report + Updates + Datenschutz) statt getrennter Zustimmungen – mit Brevo-Anbindung (#2–#5) abgleichen, ob das rechtlich/technisch so umsetzbar ist | Mike | – |
 | 31 | Rechtliches/Visuals | Logo-Reihe in der Registrierungs-Section zeigt im Figma-Entwurf teils generische Platzhalter-Logos (Notion, Airtable, Evernote – vermutlich Figma-Komponenten-Dummies, kein Bezug zu avalis) neben echten (swissuniversities, HSLU). Klären, welche Logos real gezeigt werden sollen | Team | – |
 | 32 | Rechtliches | **Spannung:** Das Figma-File zeigt bereits ein HSLU-Logo in der Registrierungs-Section, obwohl Punkt #18 (HSLU-Name/Logo-Nutzung) noch offen ist. Vor der Umsetzung klären, sonst wird im Design etwas vorweggenommen, das rechtlich noch nicht abgesegnet ist | Team / Mentor:innen | – |
-| 17 | Rechtliches | Verantwortliche Personen und Adresse für Impressum und Datenschutz (Datenschutzerklärung nennt bisher nur «Projektteam avalis» und die E-Mail-Adresse) | Team | 11.10. |
+| 17 | Rechtliches | Verantwortliche Personen und Adresse für die Datenschutzerklärung (Datenschutzerklärung nennt bisher nur «Projektteam avalis» und die E-Mail-Adresse) | Team | 11.10. |
 | 33 | Datenschutz | Datenschutzerklärung ist umgesetzt (Entwurf). Vor dem Launch die Punkte a–j in `07_legal-privacy.md` Abschnitt 6 klären: Verantwortlicher, Speicherdauer, Brevo-Tracking aus, AVV/DPA, Löschung bei Abmeldung, Analytics-Aussage, juristische Prüfung | Team / Mike | 23.10. |
 | 18 | Rechtliches | Verwendung HSLU-Name und Logo | Team / Mentor:innen | 04.10. |
 | 19 | Rechtliches | Teilnehmende Institutionen namentlich nennen? (Anonymisierung im Report) | Team / Mentor:innen | 04.10. |
@@ -27,7 +27,7 @@
 | 23 | Event | QR-Code mit `?src=netzwerktreffen` für Präsentation | Team | 21.10. |
 | 26 | Sicherheit | CSP `script-src` nutzt aktuell `'unsafe-inline'` statt Nonce: Next.js 16 appliziert einen per-Request-Nonce (korrekt via `Content-Security-Policy`-Header gesetzt) nicht auf seine eigenen Hydration-`<script>`-Tags, geprüft in Produktion. Bei neuerer Next.js-Version erneut mit Nonce statt `unsafe-inline` versuchen. Nach dem Projekt-Neuaufbau erneut prüfen, ob/wie CSP-Header wieder gesetzt werden | Mike | – |
 | 27 | Code-Stand | Das komplette Webprojekt wurde am 20.10.2026 gelöscht und wird neu aufgesetzt (reines Next.js/Tailwind-Default-Setup, i18n-Gerüst bleibt). Design-System-Tokens (#24/#25 alt) und alle Sections müssen neu gebaut werden, siehe `05_design-system.md` Abschnitt 7 und `06_page-structure.md` | Mike | – |
-| 28 | Inhalte | Team-Kurzbeschreibungen, Fotos sowie Impressum/Datenschutz-Inhalt sind Platzhalter ("folgt") | Team | – |
+| 28 | Inhalte | Team-Kurzbeschreibungen und Fotos sind Platzhalter ("folgt") | Team | – |
 
 ## Entschieden
 
@@ -54,3 +54,5 @@
 | 23.10.2026 | Schweizer-Kantonskarte in der Registrierungs-Section ist ein statisches, vom Team geliefertes SVG (`public/registration/switzerland-map.svg`) inkl. Legende «Anzahl teilnehmende Institutionen pro Kanton» (Skala 0–8), wie in Figma V5. Löst Punkt #30 ab; Karte und Zahlen werden unverändert übernommen, keine eigene Datenzuordnung |
 | 23.10.2026 | Report-Link wird **nur noch per Brevo-Transaktionsmail** zugestellt (statt Download-Button auf der Seite). Erfolgsmeldung weist auf die Mail hin. Die Mail enthält einen eigenen, signierten Abmeldelink der Website (`/abmelden`), der den Kontakt aus der Brevo-Liste entfernt. Löst «Report direkt auf der Seite» vom selben Tag ab |
 | 23.10.2026 | Datenschutzerklärung (DE/EN) auf Basis des tatsächlichen Codes verfasst und umgesetzt: DSG mit DSGVO-Ergänzung, keine Tracking-Cookies, YouTube erst nach Klick, Brevo/Vercel/Google als Empfänger. Offene Prüfpunkte siehe #33 |
+| 26.10.2026 | **Impressum entfernt** (Route, Footer-Link, Texte). Bewusster Entscheid des Teams. Hinweis in `07_legal-privacy.md` Abschnitt 2 |
+| 26.10.2026 | **Disclaimer vor dem Walkthrough-Video** (Section «Einblick»): Das Video zeigt ein fiktives Fallbeispiel an der UZH, kein produktives System der UZH. Umgesetzt als Callout vor dem Video |

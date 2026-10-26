@@ -2,7 +2,7 @@
 
 > **Hinweis:** Dieses File ist eine Arbeitsgrundlage, keine Rechtsberatung. Texte vor Veröffentlichung prüfen, idealerweise mit Mentor:innen oder der HSLU.
 > **Verantwortlich für die Seite:** Das Projektteam (Angaben folgen).
-> **Stand 23.10.2026:** Die Datenschutzerklärung ist umgesetzt (`src/app/[locale]/datenschutz/page.tsx`, Texte in `messages/de.json` und `messages/en.json` unter `Legal.privacy`). Der Impressum-Text fehlt noch. Der Text ist ein Entwurf auf Basis des tatsächlichen Codes und **keine Rechtsberatung**; vor dem Launch von einer fachkundigen Person prüfen lassen. Die Punkte in Abschnitt 6 müssen dafür geklärt sein.
+> **Stand 23.10.2026:** Die Datenschutzerklärung ist umgesetzt (`src/app/[locale]/datenschutz/page.tsx`, Texte in `messages/de.json` und `messages/en.json` unter `Legal.privacy`). Ein Impressum gibt es bewusst nicht mehr (Entscheid vom 26.10.2026, siehe Abschnitt 2). Der Text ist ein Entwurf auf Basis des tatsächlichen Codes und **keine Rechtsberatung**; vor dem Launch von einer fachkundigen Person prüfen lassen. Die Punkte in Abschnitt 6 müssen dafür geklärt sein.
 
 ---
 
@@ -12,12 +12,9 @@
 - Da auch Personen aus dem EU-Raum die Seite nutzen könnten, orientieren sich die Texte zusätzlich an den Grundsätzen der DSGVO (Transparenz, Einwilligung, Widerruf).
 - Grundsatz der **Datensparsamkeit:** Nur Daten erheben, die wir für Versand und Auswertung wirklich brauchen.
 
-## 2. Impressum (Inhalte)
+## 2. Impressum (entfällt)
 
-- Verantwortliche Personen: Namen *(folgen)*
-- Kontaktadresse und E-Mail *(folgen)*
-- Hinweis: Bachelorprojekt im Studiengang Digital Ideation, Hochschule Luzern
-- Klären, ob HSLU-Name und Logo verwendet werden dürfen *(siehe `08_open-points.md`)*
+Das Impressum wurde am 26.10.2026 bewusst von der Seite entfernt (Route, Footer-Link, Texte). Hinweis: Ein Impressum ist in der Schweiz für Websites mit kommerziellem Bezug üblich (UWG Art. 3 Abs. 1 lit. s). Das Team trägt den Entscheid. Als Kontakt dienen die Kontakt-Section und die Datenschutzerklärung (`nta.avalis@gmail.com`). Soll es später wieder eingeführt werden: Verantwortliche Personen, Kontaktadresse, ggf. Hinweis auf den Hochschulkontext und die Klärung der HSLU-Logo-Nutzung (siehe `08_open-points.md`).
 
 ## 3. Datenschutzerklärung (Inhalte, umgesetzt)
 
@@ -56,7 +53,7 @@ Die Erklärung hat 11 Ziffern. Sie beschreibt nur, was der Code heute tatsächli
 
 | # | Punkt | Warum |
 |---|---|---|
-| a | **Verantwortliche Stelle** festlegen (Team, Einzelperson, HSLU) und Postadresse ergänzen | Die Erklärung nennt aktuell nur «Projektteam avalis» und die E-Mail-Adresse. Ein Impressum gibt es noch nicht |
+| a | **Verantwortliche Stelle** festlegen (Team, Einzelperson, HSLU) und Postadresse ergänzen | Die Erklärung nennt aktuell nur «Projektteam avalis» und die E-Mail-Adresse. Ein Impressum gibt es bewusst nicht (siehe Abschnitt 2) |
 | b | **Speicherdauer** bestätigen: «bis Abmeldung/Löschwunsch, längstens bis Projektende, danach Löschung» | Entscheid des Teams, siehe Abschnitt 4 «Nach Projektende» |
 | c | **Brevo: Öffnungs-/Klick-Tracking für Transaktionsmails deaktivieren** | Die Erklärung sagt, dass wir Öffnungen und Klicks nicht auswerten. Brevo kann das standardmässig erfassen. Entweder abschalten oder den Text anpassen |
 | d | **Brevo: AVV (Auftragsverarbeitungsvertrag) abschliessen**, Betreibergesellschaft, Rechenzentrumsstandort EU und Unterauftragsbearbeiter prüfen | Die Erklärung nennt Brevo als EU-Anbieter mit Speicherung in der EU, das muss zum Vertrag passen |
