@@ -23,7 +23,6 @@
   "Footer": {
     "tagline": "A digital solution for the accommodation process at Swiss universities.",
     "legalLabel": "Legal",
-    "imprint": "Imprint",
     "privacy": "Privacy"
   },
   "Hero": {
@@ -156,9 +155,7 @@
     "backToHome": "Back to the homepage"
   },
   "Legal": {
-    "imprintTitle": "Imprint",
     "privacyTitle": "Privacy Policy",
-    "pending": "Content coming soon.",
     "privacy": {
       "updated": "Last updated: 23 October 2026",
       "intro": "Protecting your personal data matters to us. This policy explains which data we process when you visit the avalis website, register for the Research Report or contact us.",

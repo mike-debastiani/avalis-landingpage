@@ -21,9 +21,6 @@ export async function SiteFooter({ locale }: { locale: Locale }) {
 
         <div className="flex flex-wrap items-center gap-x-7 gap-y-1">
           <nav aria-label={t("legalLabel")} className="flex items-center gap-7 text-paragraph-small">
-            <Link href="/impressum" locale={locale} className="inline-flex h-11 items-center text-foreground hover:text-muted-foreground">
-              {t("imprint")}
-            </Link>
             <Link href="/datenschutz" locale={locale} className="inline-flex h-11 items-center text-foreground hover:text-muted-foreground">
               {t("privacy")}
             </Link>

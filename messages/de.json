@@ -23,7 +23,6 @@
   "Footer": {
     "tagline": "Eine digitale Lösung für den Nachteilsausgleich an Schweizer Hochschulen.",
     "legalLabel": "Rechtliches",
-    "imprint": "Impressum",
     "privacy": "Datenschutz"
   },
   "Hero": {
@@ -156,9 +155,7 @@
     "backToHome": "Zur Startseite"
   },
   "Legal": {
-    "imprintTitle": "Impressum",
     "privacyTitle": "Datenschutzerklärung",
-    "pending": "Inhalt folgt.",
     "privacy": {
       "updated": "Stand: 23. Oktober 2026",
       "intro": "Der Schutz Ihrer Personendaten ist uns wichtig. Diese Erklärung zeigt Ihnen, welche Daten wir bearbeiten, wenn Sie die Website von avalis besuchen, sich für den Research Report registrieren oder mit uns Kontakt aufnehmen.",
