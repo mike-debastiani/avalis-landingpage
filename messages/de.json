@@ -73,6 +73,8 @@
     "eyebrow": "Einblick in avalis",
     "title": "Vom Antrag bis zur Verfügung.",
     "context": "Der Webprototyp-Walkthrough gibt einen Überblick über die Lösung und das Zusammenspiel der beteiligten Instanzen.",
+    "disclaimerTitle": "Fiktives Fallbeispiel",
+    "disclaimerBody": "Der Walkthrough zeigt den Prozess anhand eines fiktiven Beispiels an der Universität Zürich (UZH). Es handelt sich nicht um ein produktives System der UZH. Alle gezeigten Daten sind fiktiv.",
     "videoTitle": "avalis im Überblick",
     "statusNote": "Entwicklungsstand: funktionaler, mit Fachpersonen getesteter Webprototyp. Nicht für den produktiven Einsatz bestimmt."
   },

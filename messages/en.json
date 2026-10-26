@@ -73,6 +73,8 @@
     "eyebrow": "A look inside avalis",
     "title": "From request to decision.",
     "context": "The web prototype walkthrough gives an overview of the solution and how the instances involved work together.",
+    "disclaimerTitle": "Fictional case study",
+    "disclaimerBody": "The walkthrough shows the process using a fictional example at the University of Zurich (UZH). It is not a productive system of the UZH. All data shown is fictional.",
     "videoTitle": "avalis at a glance",
     "statusNote": "Development status: a functional web prototype tested with subject-matter experts. Not intended for productive use."
   },
